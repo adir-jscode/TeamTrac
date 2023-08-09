@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            button2 = new Button();
             checkBox1 = new CheckBox();
             button1 = new Button();
             textBox2 = new TextBox();
@@ -41,7 +41,6 @@
             panel2 = new Panel();
             label5 = new Label();
             label4 = new Label();
-            button2 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -63,6 +62,16 @@
             panel1.Size = new Size(365, 426);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(64, 341);
+            button2.Name = "button2";
+            button2.Size = new Size(216, 49);
+            button2.TabIndex = 7;
+            button2.Text = "On Board Delegates";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // checkBox1
             // 
@@ -132,7 +141,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.login_teamtrac;
             pictureBox1.Location = new Point(25, 143);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(392, 295);
@@ -168,16 +177,6 @@
             label4.Size = new Size(308, 28);
             label4.TabIndex = 0;
             label4.Text = "Colaboration Without Hassle";
-            // 
-            // button2
-            // 
-            button2.Location = new Point(64, 341);
-            button2.Name = "button2";
-            button2.Size = new Size(216, 49);
-            button2.TabIndex = 7;
-            button2.Text = "On Board Delegates";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // Form1
             // 
