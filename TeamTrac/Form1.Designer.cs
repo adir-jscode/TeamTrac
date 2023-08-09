@@ -144,7 +144,7 @@
             panel2.Font = new Font("Cambria", 18F, FontStyle.Regular, GraphicsUnit.Point);
             panel2.Location = new Point(72, 41);
             panel2.Name = "panel2";
-            panel2.Size = new Size(297, 77);
+            panel2.Size = new Size(319, 85);
             panel2.TabIndex = 2;
             // 
             // label5
@@ -160,11 +160,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(33, 18);
+            label4.Location = new Point(3, 14);
             label4.Name = "label4";
-            label4.Size = new Size(234, 28);
+            label4.Size = new Size(308, 28);
             label4.TabIndex = 0;
-            label4.Text = "Collab without hussle";
+            label4.Text = "Colaboration Without Hassle";
             // 
             // Form1
             // 

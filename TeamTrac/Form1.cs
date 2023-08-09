@@ -15,7 +15,7 @@ namespace TeamTrac
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             bool isChecked = checkBox1.Checked;
-            if(isChecked)
+            if (isChecked)
             {
                 textBox2.UseSystemPasswordChar = false;
             }
