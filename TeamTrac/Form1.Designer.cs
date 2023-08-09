@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
             checkBox1 = new CheckBox();
             button1 = new Button();
@@ -129,7 +130,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.login_teamtrac;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(25, 143);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(392, 295);
