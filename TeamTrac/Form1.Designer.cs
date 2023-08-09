@@ -41,6 +41,7 @@
             panel2 = new Panel();
             label5 = new Label();
             label4 = new Label();
+            button2 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -48,6 +49,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(button2);
             panel1.Controls.Add(checkBox1);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(textBox2);
@@ -76,7 +78,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(143, 271);
+            button1.Location = new Point(125, 274);
             button1.Name = "button1";
             button1.Size = new Size(109, 49);
             button1.TabIndex = 5;
@@ -167,6 +169,16 @@
             label4.TabIndex = 0;
             label4.Text = "Colaboration Without Hassle";
             // 
+            // button2
+            // 
+            button2.Location = new Point(64, 341);
+            button2.Name = "button2";
+            button2.Size = new Size(216, 49);
+            button2.TabIndex = 7;
+            button2.Text = "On Board Delegates";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -199,5 +211,6 @@
         private Label label4;
         private CheckBox checkBox1;
         private Button button1;
+        private Button button2;
     }
 }

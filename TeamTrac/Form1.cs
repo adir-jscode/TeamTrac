@@ -35,5 +35,11 @@ namespace TeamTrac
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OnBoardDelegate RegisterDelegate = new OnBoardDelegate();
+            RegisterDelegate.Show();
+        }
     }
 }
