@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
             button2 = new Button();
             checkBox1 = new CheckBox();
@@ -41,9 +42,13 @@
             panel2 = new Panel();
             label5 = new Label();
             label4 = new Label();
+            errorProvider1 = new ErrorProvider(components);
+            errorProvider2 = new ErrorProvider(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -178,6 +183,14 @@
             label4.TabIndex = 0;
             label4.Text = "Empower, Organize, Succeed";
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            errorProvider2.ContainerControl = this;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -193,6 +206,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
             ResumeLayout(false);
         }
 
@@ -211,5 +226,7 @@
         private CheckBox checkBox1;
         private Button button1;
         private Button button2;
+        private ErrorProvider errorProvider1;
+        private ErrorProvider errorProvider2;
     }
 }
