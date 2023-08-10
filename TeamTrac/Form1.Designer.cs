@@ -176,7 +176,7 @@
             label4.Name = "label4";
             label4.Size = new Size(308, 28);
             label4.TabIndex = 0;
-            label4.Text = "Colaboration Without Hassle";
+            label4.Text = "Empower, Organize, Succeed";
             // 
             // Form1
             // 
