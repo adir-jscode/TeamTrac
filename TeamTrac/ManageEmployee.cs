@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace TeamTrac
 {
-    public partial class OnBoardDelegate : Form
+    public partial class ManageEmployee : Form
     {
-        public OnBoardDelegate()
+        public ManageEmployee()
         {
             InitializeComponent();
-        }
-
-        private void OnBoardDelegate_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

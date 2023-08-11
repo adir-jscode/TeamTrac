@@ -60,7 +60,7 @@ namespace TeamTrac
                         //Dashboard dashboard = new Dashboard();
                         //dashboard.Show();
                     }
-                    else if(Global.Get.LoginAuthEmployee(UserName, Password))
+                    else if (Global.Get.LoginAuthEmployee(UserName, Password))
                     {
                         MessageBox.Show("Welcome to OnBoard " + UserName);
                         //this.Hide();
@@ -96,7 +96,7 @@ namespace TeamTrac
             }
 
             //Login as Employee 
-            
+
             //if (!string.IsNullOrEmpty(UserName))
             //{
             //    if (!string.IsNullOrEmpty(Password))
@@ -128,7 +128,7 @@ namespace TeamTrac
 
         }
 
-       
+
 
     }
 }

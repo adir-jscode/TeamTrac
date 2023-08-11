@@ -70,18 +70,22 @@
             // 
             // button2
             // 
+            button2.BackColor = Color.FromArgb(35, 112, 248);
+            button2.FlatStyle = FlatStyle.Popup;
+            button2.ForeColor = Color.White;
             button2.Location = new Point(64, 341);
             button2.Name = "button2";
             button2.Size = new Size(216, 49);
             button2.TabIndex = 7;
             button2.Text = "On Board Delegates";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
             checkBox1.Font = new Font("Cambria", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox1.ForeColor = SystemColors.ActiveCaption;
             checkBox1.Location = new Point(186, 224);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(113, 19);
@@ -92,12 +96,15 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(35, 112, 248);
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.ForeColor = Color.White;
             button1.Location = new Point(125, 274);
             button1.Name = "button1";
             button1.Size = new Size(109, 49);
             button1.TabIndex = 5;
             button1.Text = "Login";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // textBox2
@@ -120,6 +127,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = Color.White;
             label3.Location = new Point(6, 174);
             label3.Name = "label3";
             label3.Size = new Size(100, 25);
@@ -129,6 +137,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = Color.White;
             label2.Location = new Point(3, 121);
             label2.Name = "label2";
             label2.Size = new Size(103, 25);
@@ -139,6 +148,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Cambria", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(125, 29);
             label1.Name = "label1";
             label1.Size = new Size(82, 32);
@@ -169,6 +179,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Cambria", 8.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label5.ForeColor = SystemColors.ActiveCaption;
             label5.Location = new Point(128, 56);
             label5.Name = "label5";
             label5.Size = new Size(55, 12);
@@ -178,6 +189,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.ForeColor = Color.White;
             label4.Location = new Point(3, 14);
             label4.Name = "label4";
             label4.Size = new Size(308, 28);
@@ -196,6 +208,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(22, 28, 36);
             ClientSize = new Size(800, 450);
             Controls.Add(panel2);
             Controls.Add(pictureBox1);
