@@ -14,7 +14,7 @@ namespace TeamTrac
         public static string Connection_String()
         {
 
-            return @"Data Source=ADIR\SQLEXPRESS;Initial Catalog=TEST;User Id=Team;password=1234;TrustServerCertificate=True;";
+            return @"Data Source=ADIR\SQLEXPRESS;Initial Catalog=TeamTrac;User Id=Team;password=1234;TrustServerCertificate=True;";
         }
 
         public static string GenarateHash(int length = 20)
@@ -39,12 +39,12 @@ namespace TeamTrac
 
         public class Get
         {
-            public static bool LoginAuth(string email, string password)
+            public static bool LoginAuth(string username, string password)
             {
 
                 using (SqlConnection con = new SqlConnection(Global.Connection_String()))
                 {
-                    using (SqlCommand cmd = new SqlCommand("SELECT  * FROM [TEST].[dbo].[UserDetails] where [Email]='" + email + "' and [Password]='" + password + "'", con))
+                    using (SqlCommand cmd = new SqlCommand("SELECT  * FROM [TeamTrac].[dbo].[CompanyDetails] where [Username]='" + username + "' and [Password]='" + password + "'", con))
                     {
                         con.Open();
 

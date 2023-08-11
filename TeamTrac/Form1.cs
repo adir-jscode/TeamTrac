@@ -41,5 +41,37 @@ namespace TeamTrac
             OnBoardDelegate RegisterDelegate = new OnBoardDelegate();
             RegisterDelegate.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string UserName = textBox1.Text;
+            string Password = textBox2.Text;
+            if (!string.IsNullOrEmpty(UserName))
+            {
+                if (!string.IsNullOrEmpty(Password))
+                {
+                    if (Global.Get.LoginAuth(UserName, Password))
+                    {
+                        MessageBox.Show("Login Successfull");
+                        //this.Hide();
+                        //Dashboard dashboard = new Dashboard();
+                        //dashboard.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Username or Password");
+                    }
+                }
+
+                else
+                {
+                    MessageBox.Show("Please Enter Password");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Enter Username");
+            }
+        }
     }
 }
