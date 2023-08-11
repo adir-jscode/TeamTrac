@@ -46,17 +46,31 @@ namespace TeamTrac
         {
             string UserName = textBox1.Text;
             string Password = textBox2.Text;
+
+            //Login as company
+
             if (!string.IsNullOrEmpty(UserName))
             {
                 if (!string.IsNullOrEmpty(Password))
                 {
                     if (Global.Get.LoginAuth(UserName, Password))
                     {
-                        MessageBox.Show("Login Successfull");
+                        MessageBox.Show("Login Successful");
                         //this.Hide();
                         //Dashboard dashboard = new Dashboard();
                         //dashboard.Show();
                     }
+                    else if(Global.Get.LoginAuthEmployee(UserName, Password))
+                    {
+                        MessageBox.Show("Welcome to OnBoard " + UserName);
+                        //this.Hide();
+                        //Dashboard dashboard = new Dashboard();
+                        //dashboard.Show();
+                    }
+
+
+
+
                     else
                     {
                         MessageBox.Show("Invalid Username or Password");
@@ -72,6 +86,41 @@ namespace TeamTrac
             {
                 MessageBox.Show("Please Enter Username");
             }
+
+            //Login as Employee 
+            
+            //if (!string.IsNullOrEmpty(UserName))
+            //{
+            //    if (!string.IsNullOrEmpty(Password))
+            //    {
+            //        if (Global.Get.LoginAuthEmployee(UserName, Password))
+            //        {
+            //            MessageBox.Show("Welcome to OnBoard" + UserName);
+            //            //this.Hide();
+            //            //Dashboard dashboard = new Dashboard();
+            //            //dashboard.Show();
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Invalid Username or Password");
+            //        }
+            //    }
+
+            //    else
+            //    {
+            //        MessageBox.Show("Please Enter Password");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Please Enter Username");
+            //}
+
+
+
         }
+
+       
+
     }
 }

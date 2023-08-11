@@ -65,6 +65,34 @@ namespace TeamTrac
                 }
             }
 
+            public static bool LoginAuthEmployee(string username, string password)
+            {
+
+                using (SqlConnection con = new SqlConnection(Global.Connection_String()))
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT  * FROM [TeamTrac].[dbo].[EmployeeDetails] where [Username]='" + username + "' and [Password]='" + password + "'", con))
+                    {
+                        con.Open();
+
+                        SqlDataReader sdr = cmd.ExecuteReader();
+
+                        if (sdr.Read())
+                        {
+                            con.Close();
+                            return true;
+                        }
+                        else
+                        {
+                            con.Close();
+                            return false;
+                        }
+                    }
+
+                }
+            }
+
+
+
             //Register 
 
             public static void Register(string Name, string Email, string Password, string Phone)
