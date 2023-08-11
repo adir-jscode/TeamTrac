@@ -92,6 +92,33 @@ namespace TeamTrac
             }
 
 
+            public static bool LoginAuthDelegate(string username, string password)
+            {
+
+                using (SqlConnection con = new SqlConnection(Global.Connection_String()))
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT  * FROM [TeamTrac].[dbo].[DelegateDetails] where [Username]='" + username + "' and [Password]='" + password + "'", con))
+                    {
+                        con.Open();
+
+                        SqlDataReader sdr = cmd.ExecuteReader();
+
+                        if (sdr.Read())
+                        {
+                            con.Close();
+                            return true;
+                        }
+                        else
+                        {
+                            con.Close();
+                            return false;
+                        }
+                    }
+
+                }
+            }
+
+
 
             //Register 
 

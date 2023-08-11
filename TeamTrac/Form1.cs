@@ -68,6 +68,14 @@ namespace TeamTrac
                         //dashboard.Show();
                     }
 
+                    else if (Global.Get.LoginAuthDelegate(UserName, Password))
+                    {
+                        MessageBox.Show("Welcome to our Enviroment " + UserName);
+                        //this.Hide();
+                        //Dashboard dashboard = new Dashboard();
+                        //dashboard.Show();
+                    }
+
 
 
 
