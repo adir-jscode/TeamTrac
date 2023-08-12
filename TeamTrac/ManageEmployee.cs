@@ -16,5 +16,10 @@ namespace TeamTrac
         {
             InitializeComponent();
         }
+
+        private void ManageEmployee_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

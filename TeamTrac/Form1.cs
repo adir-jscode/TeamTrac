@@ -56,24 +56,24 @@ namespace TeamTrac
                     if (Global.Get.LoginAuth(UserName, Password))
                     {
                         MessageBox.Show("Login Successful");
-                        //this.Hide();
-                        //Dashboard dashboard = new Dashboard();
-                        //dashboard.Show();
+                        this.Hide();
+                        Dashboard dashboard = new Dashboard();
+                        dashboard.Show();
                     }
                     else if (Global.Get.LoginAuthEmployee(UserName, Password))
                     {
                         MessageBox.Show("Welcome to OnBoard " + UserName);
-                        //this.Hide();
-                        //Dashboard dashboard = new Dashboard();
-                        //dashboard.Show();
+                        this.Hide();
+                        Dashboard dashboard = new Dashboard();
+                        dashboard.Show();
                     }
 
                     else if (Global.Get.LoginAuthDelegate(UserName, Password))
                     {
                         MessageBox.Show("Welcome to our Enviroment " + UserName);
-                        //this.Hide();
-                        //Dashboard dashboard = new Dashboard();
-                        //dashboard.Show();
+                        this.Hide();
+                        DelegateDashboard dashboardDel = new DelegateDashboard();
+                        dashboardDel.Show();
                     }
 
 

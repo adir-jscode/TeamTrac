@@ -16,5 +16,12 @@ namespace TeamTrac
         {
             InitializeComponent();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddCategory category = new AddCategory();
+            category.Show();
+        }
     }
 }

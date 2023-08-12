@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button9 = new Button();
+            button8 = new Button();
+            button7 = new Button();
+            button6 = new Button();
+            button5 = new Button();
+            button4 = new Button();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            label1 = new Label();
             panel2 = new Panel();
             panel3 = new Panel();
-            label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
-            button9 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -65,6 +65,98 @@
             panel1.Size = new Size(200, 664);
             panel1.TabIndex = 0;
             // 
+            // button9
+            // 
+            button9.Location = new Point(24, 133);
+            button9.Name = "button9";
+            button9.Size = new Size(152, 47);
+            button9.TabIndex = 9;
+            button9.Text = "Access Control";
+            button9.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(12, 186);
+            button8.Name = "button8";
+            button8.Size = new Size(173, 47);
+            button8.TabIndex = 8;
+            button8.Text = "OnBoard Delegates";
+            button8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(12, 239);
+            button7.Name = "button7";
+            button7.Size = new Size(173, 47);
+            button7.TabIndex = 7;
+            button7.Text = "Product Category";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(25, 582);
+            button6.Name = "button6";
+            button6.Size = new Size(152, 47);
+            button6.TabIndex = 6;
+            button6.Text = "Support Tickets";
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(25, 512);
+            button5.Name = "button5";
+            button5.Size = new Size(152, 47);
+            button5.TabIndex = 5;
+            button5.Text = "Stock Request";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(24, 439);
+            button4.Name = "button4";
+            button4.Size = new Size(152, 47);
+            button4.TabIndex = 4;
+            button4.Text = "Shops";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(24, 374);
+            button3.Name = "button3";
+            button3.Size = new Size(152, 47);
+            button3.TabIndex = 3;
+            button3.Text = "Sales";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(24, 307);
+            button2.Name = "button2";
+            button2.Size = new Size(152, 47);
+            button2.TabIndex = 2;
+            button2.Text = "Products";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(25, 80);
+            button1.Name = "button1";
+            button1.Size = new Size(152, 47);
+            button1.TabIndex = 1;
+            button1.Text = "Add Employee";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(55, 31);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(88, 22);
+            label1.TabIndex = 0;
+            label1.Text = "TeamTrac";
+            // 
             // panel2
             // 
             panel2.Controls.Add(panel3);
@@ -83,97 +175,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(980, 546);
             panel3.TabIndex = 2;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(55, 31);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(88, 22);
-            label1.TabIndex = 0;
-            label1.Text = "TeamTrac";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(25, 80);
-            button1.Name = "button1";
-            button1.Size = new Size(152, 47);
-            button1.TabIndex = 1;
-            button1.Text = "Add Employee";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(24, 307);
-            button2.Name = "button2";
-            button2.Size = new Size(152, 47);
-            button2.TabIndex = 2;
-            button2.Text = "Products";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(24, 374);
-            button3.Name = "button3";
-            button3.Size = new Size(152, 47);
-            button3.TabIndex = 3;
-            button3.Text = "Sales";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(24, 439);
-            button4.Name = "button4";
-            button4.Size = new Size(152, 47);
-            button4.TabIndex = 4;
-            button4.Text = "Shops";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(25, 512);
-            button5.Name = "button5";
-            button5.Size = new Size(152, 47);
-            button5.TabIndex = 5;
-            button5.Text = "Stock Request";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Location = new Point(25, 582);
-            button6.Name = "button6";
-            button6.Size = new Size(152, 47);
-            button6.TabIndex = 6;
-            button6.Text = "Support Tickets";
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            button7.Location = new Point(12, 239);
-            button7.Name = "button7";
-            button7.Size = new Size(173, 47);
-            button7.TabIndex = 7;
-            button7.Text = "Product Category";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            button8.Location = new Point(12, 186);
-            button8.Name = "button8";
-            button8.Size = new Size(173, 47);
-            button8.TabIndex = 8;
-            button8.Text = "OnBoard Delegates";
-            button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            button9.Location = new Point(24, 133);
-            button9.Name = "button9";
-            button9.Size = new Size(152, 47);
-            button9.TabIndex = 9;
-            button9.Text = "Access Control";
-            button9.UseVisualStyleBackColor = true;
             // 
             // Dashboard
             // 
