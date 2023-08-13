@@ -58,16 +58,36 @@ namespace TeamTrac
         private void button3_Click(object sender, EventArgs e)
         {
             string id = guna2DataGridView1.CurrentRow.Cells[0].Value.ToString();
-            //after select a cellContentClick read the value of the cell and pass id to the delete function
+
             Global.Get.DeleteProductCategory(id);
             BindGridView();
             MessageBox.Show("Category Deleted");
-            
+
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string MainCategory = guna2DataGridView1.CurrentRow.Cells[1].Value.ToString();
+            textBox1.Text = MainCategory;
+            string SubCategory = guna2DataGridView1.CurrentRow.Cells[2].Value.ToString();
+            textBox2.Text = SubCategory;
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string id = guna2DataGridView1.CurrentRow.Cells[0].Value.ToString();
+
+            Global.Get.UpdateProductCategory(id, textBox1.Text, textBox2.Text);
+            BindGridView();
+            MessageBox.Show("Category Updated");
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+            
+           
         }
     }
 }

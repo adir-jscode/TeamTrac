@@ -109,6 +109,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(310, 22);
             textBox1.TabIndex = 24;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
             // 
@@ -141,6 +142,7 @@
             button2.TabIndex = 31;
             button2.Text = "Update";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -173,7 +175,7 @@
             // 
             guna2DataGridView1.AllowUserToAddRows = false;
             guna2DataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.BackColor = Color.RosyBrown;
             guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             guna2DataGridView1.BackgroundColor = Color.FromArgb(22, 28, 36);
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;

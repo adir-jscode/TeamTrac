@@ -252,6 +252,24 @@ namespace TeamTrac
                 }
             }
 
+            //Update Product Category by ID
+            public static void UpdateProductCategory(string ProductCategoryID, string MainCategory, string SubCategory)
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "UPDATE ProductCategory SET MainCategory = @MainCategory, SubCategory = @SubCategory WHERE ProductCategoryID = @ProductCategoryID";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    cmd.Parameters.AddWithValue("@ProductCategoryID", ProductCategoryID);
+                    cmd.Parameters.AddWithValue("@MainCategory", MainCategory);
+                    cmd.Parameters.AddWithValue("@SubCategory", SubCategory);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
 
 
         }
