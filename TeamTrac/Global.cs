@@ -157,81 +157,107 @@ namespace TeamTrac
 
                 }
             }
-        }
 
-        //get all employee details
-        //public static List<Model.Employee> GetEmployeeDetails()
-        //{
-        //    using (SqlConnection con = new SqlConnection(Global.Connection_String()))
-        //    {
-        //        // MessageBox.Show("SELECT ProductName FROM Products WHERE ProductName like  '" + SearchString + "'");
-        //        using (SqlCommand cmd = new SqlCommand("SELECT  * FROM [TeamTrac].[dbo].[EmployeeDetails]", con))
-        //        {
-        //            con.Open();
+            //Add Shop
 
-        //            SqlDataReader sdr = cmd.ExecuteReader();
-
-        //            if (sdr.Read())
-        //            {
-        //                con.Close();
-        //                con.Open();
-
-        //                SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //                DataSet ds = new DataSet();
-        //                da.Fill(ds, "DataTable1");
-        //                con.Close();
-
-        //                DataTable dt = ds.Tables["DataTable1"];
-
-        //                List<Model.Employee> employees = new List<Model.Employee>();
-        //                return employees = (from DataRow dr in dt.Rows
-        //                                         select new Model.Employee()
-        //                                         {
-
-
-
-
-
-
-
-        //                                             EID = dr["EID"]?.ToString(),
-        //                                             EmployeeName = dr["EmployeeName"]?.ToString(),
-        //                                             Position = dr["Position"]?.ToString(),
-        //                                             Status = dr["Status"]?.ToString()
-
-
-
-
-
-        //                                         }).ToList();
-        //            }
-        //            else
-        //            {
-        //                return new List<Model.Employee>();
-        //            }
-
-        //        }
-        //    }
-        //}
-
-        //get all employee details
-        public static DataTable EmployeeDetails()
-        {
-            using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+            public static void AddCategory(string MainCategory,string SubCategory)
             {
-                string strQuery = "SELECT *  FROM EmployeeDetails";
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
 
-                SqlCommand cmd = new SqlCommand(strQuery, conn);
-                conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("InsertNewProductCategory", connec))
+                    {
 
-                DataTable dt = new DataTable();
-                
-                SqlDataReader sdr = cmd.ExecuteReader();
-                dt.Load(sdr);
+                        connec.Open();
 
-                return dt;
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+
+
+                        cmd.Parameters.AddWithValue("@ProductCategoryID", DateTime.Now.ToString("ddMMyyyyhhmmssfff"));
+                        cmd.Parameters.AddWithValue("@MainCategory", MainCategory);
+                        cmd.Parameters.AddWithValue("@SubCategory", SubCategory);
+                        cmd.Parameters.AddWithValue("@Status", "1");
+                        
+
+
+
+
+                        cmd.ExecuteNonQuery();
+                        // ID = cmd.ExecuteScalar().ToString();
+
+                        connec.Close();
+
+                    }
+
+                }
             }
+
+
+
+
+
+            public static DataTable EmployeeDetails()
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT *  FROM EmployeeDetails";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    DataTable dt = new DataTable();
+
+                    SqlDataReader sdr = cmd.ExecuteReader();
+                    dt.Load(sdr);
+
+                    return dt;
+                }
+            }
+
+
+            public static DataTable ProductCategory()
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT *  FROM ProductCategory";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    DataTable dt = new DataTable();
+
+                    SqlDataReader sdr = cmd.ExecuteReader();
+                    dt.Load(sdr);
+
+                    return dt;
+                }
+            }
+
+            //delete product category by id
+            public static void DeleteProductCategory(string ProductCategoryID)
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "DELETE FROM ProductCategory WHERE ProductCategoryID = @ProductCategoryID";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    cmd.Parameters.AddWithValue("@ProductCategoryID", ProductCategoryID);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+
+
         }
+
+        
+        
 
 
 

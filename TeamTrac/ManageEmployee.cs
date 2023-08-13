@@ -24,7 +24,7 @@ namespace TeamTrac
         void BindGridView()
         {
 
-            DataTable employeeTable = Global.EmployeeDetails();
+            DataTable employeeTable = Global.Get.EmployeeDetails();
             guna2DataGridView1.DataSource = employeeTable;
 
             // Manipulate the "status" column
@@ -35,6 +35,10 @@ namespace TeamTrac
                 {
                     // You can update the value of the "status" column
                     row["status"] = "Active";
+                }
+                else
+                {
+                    row["status"] = "Inactive";
                 }
             }
 

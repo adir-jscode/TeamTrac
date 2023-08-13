@@ -45,10 +45,6 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            ProductCategoryID = new DataGridViewTextBoxColumn();
-            MainCategory = new DataGridViewTextBoxColumn();
-            SubCategory = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
@@ -132,6 +128,7 @@
             button1.TabIndex = 30;
             button1.Text = "Add";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -156,6 +153,7 @@
             button3.TabIndex = 32;
             button3.Text = "Delete";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // panel4
             // 
@@ -177,6 +175,7 @@
             guna2DataGridView1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            guna2DataGridView1.BackgroundColor = Color.FromArgb(22, 28, 36);
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
             dataGridViewCellStyle2.Font = new Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -187,7 +186,6 @@
             guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             guna2DataGridView1.ColumnHeadersHeight = 17;
             guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView1.Columns.AddRange(new DataGridViewColumn[] { ProductCategoryID, MainCategory, SubCategory, Status });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -209,7 +207,7 @@
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.BackColor = Color.White;
+            guna2DataGridView1.ThemeStyle.BackColor = Color.FromArgb(22, 28, 36);
             guna2DataGridView1.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
             guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -225,30 +223,7 @@
             guna2DataGridView1.ThemeStyle.RowsStyle.Height = 25;
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            // 
-            // ProductCategoryID
-            // 
-            ProductCategoryID.HeaderText = "ProductCategoryID";
-            ProductCategoryID.Name = "ProductCategoryID";
-            ProductCategoryID.ReadOnly = true;
-            // 
-            // MainCategory
-            // 
-            MainCategory.HeaderText = "Main Category";
-            MainCategory.Name = "MainCategory";
-            MainCategory.ReadOnly = true;
-            // 
-            // SubCategory
-            // 
-            SubCategory.HeaderText = "SubCategory";
-            SubCategory.Name = "SubCategory";
-            SubCategory.ReadOnly = true;
-            // 
-            // Status
-            // 
-            Status.HeaderText = "Status";
-            Status.Name = "Status";
-            Status.ReadOnly = true;
+            guna2DataGridView1.CellContentClick += guna2DataGridView1_CellContentClick;
             // 
             // AddCategory
             // 
@@ -289,9 +264,5 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private DataGridViewTextBoxColumn ProductCategoryID;
-        private DataGridViewTextBoxColumn MainCategory;
-        private DataGridViewTextBoxColumn SubCategory;
-        private DataGridViewTextBoxColumn Status;
     }
 }
