@@ -23,5 +23,20 @@ namespace TeamTrac
             AddCategory category = new AddCategory();
             category.Show();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OnBoardDelegate onBoard = new OnBoardDelegate();
+            onBoard.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ManageEmployee employee = new ManageEmployee(); 
+            employee.Show();
+
+        }
     }
 }

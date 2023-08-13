@@ -44,6 +44,7 @@
             label4 = new Label();
             errorProvider1 = new ErrorProvider(components);
             errorProvider2 = new ErrorProvider(components);
+            guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -204,6 +205,15 @@
             // 
             errorProvider2.ContainerControl = this;
             // 
+            // guna2MessageDialog1
+            // 
+            guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            guna2MessageDialog1.Caption = null;
+            guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            guna2MessageDialog1.Parent = null;
+            guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            guna2MessageDialog1.Text = null;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -242,5 +252,6 @@
         private Button button2;
         private ErrorProvider errorProvider1;
         private ErrorProvider errorProvider2;
+        private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
     }
 }

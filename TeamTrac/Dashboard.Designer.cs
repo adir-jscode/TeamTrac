@@ -40,6 +40,7 @@
             button1 = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            label2 = new Label();
             panel3 = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -82,6 +83,7 @@
             button8.TabIndex = 8;
             button8.Text = "OnBoard Delegates";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button7
             // 
@@ -146,6 +148,7 @@
             button1.TabIndex = 1;
             button1.Text = "Add Employee";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -159,6 +162,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(label2);
             panel2.Controls.Add(panel3);
             panel2.Dock = DockStyle.Top;
             panel2.Font = new Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -167,6 +171,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(986, 75);
             panel2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(803, 31);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(60, 14);
+            label2.TabIndex = 3;
+            label2.Text = "Username";
             // 
             // panel3
             // 
@@ -190,6 +204,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -208,5 +223,6 @@
         private Button button4;
         private Button button3;
         private Button button2;
+        private Label label2;
     }
 }
