@@ -16,5 +16,10 @@ namespace TeamTrac
         {
             InitializeComponent();
         }
+
+        private void AddCategory_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -32,8 +32,8 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            label1 = new Label();
             label2 = new Label();
+            label1 = new Label();
             label8 = new Label();
             label3 = new Label();
             textBox1 = new TextBox();
@@ -60,21 +60,10 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(1188, 88);
             panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Cambria", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(28, 29);
-            label1.Name = "label1";
-            label1.Size = new Size(283, 32);
-            label1.TabIndex = 1;
-            label1.Text = "Add Product Category";
             // 
             // label2
             // 
@@ -86,6 +75,17 @@
             label2.Size = new Size(69, 15);
             label2.TabIndex = 2;
             label2.Text = "Username";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Cambria", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(28, 29);
+            label1.Name = "label1";
+            label1.Size = new Size(283, 32);
+            label1.TabIndex = 1;
+            label1.Text = "Add Product Category";
             // 
             // label8
             // 
@@ -264,6 +264,7 @@
             Margin = new Padding(2, 3, 2, 3);
             Name = "AddCategory";
             Text = "AddCategory";
+            Load += AddCategory_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel4.ResumeLayout(false);

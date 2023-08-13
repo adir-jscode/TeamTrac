@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace TeamTrac
 {
@@ -157,6 +158,82 @@ namespace TeamTrac
                 }
             }
         }
+
+        //get all employee details
+        //public static List<Model.Employee> GetEmployeeDetails()
+        //{
+        //    using (SqlConnection con = new SqlConnection(Global.Connection_String()))
+        //    {
+        //        // MessageBox.Show("SELECT ProductName FROM Products WHERE ProductName like  '" + SearchString + "'");
+        //        using (SqlCommand cmd = new SqlCommand("SELECT  * FROM [TeamTrac].[dbo].[EmployeeDetails]", con))
+        //        {
+        //            con.Open();
+
+        //            SqlDataReader sdr = cmd.ExecuteReader();
+
+        //            if (sdr.Read())
+        //            {
+        //                con.Close();
+        //                con.Open();
+
+        //                SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //                DataSet ds = new DataSet();
+        //                da.Fill(ds, "DataTable1");
+        //                con.Close();
+
+        //                DataTable dt = ds.Tables["DataTable1"];
+
+        //                List<Model.Employee> employees = new List<Model.Employee>();
+        //                return employees = (from DataRow dr in dt.Rows
+        //                                         select new Model.Employee()
+        //                                         {
+
+
+
+
+
+
+
+        //                                             EID = dr["EID"]?.ToString(),
+        //                                             EmployeeName = dr["EmployeeName"]?.ToString(),
+        //                                             Position = dr["Position"]?.ToString(),
+        //                                             Status = dr["Status"]?.ToString()
+
+
+
+
+
+        //                                         }).ToList();
+        //            }
+        //            else
+        //            {
+        //                return new List<Model.Employee>();
+        //            }
+
+        //        }
+        //    }
+        //}
+
+        //get all employee details
+        public static DataTable EmployeeDetails()
+        {
+            using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+            {
+                string strQuery = "SELECT *  FROM EmployeeDetails";
+
+                SqlCommand cmd = new SqlCommand(strQuery, conn);
+                conn.Open();
+
+                DataTable dt = new DataTable();
+                
+                SqlDataReader sdr = cmd.ExecuteReader();
+                dt.Load(sdr);
+
+                return dt;
+            }
+        }
+
+
 
     }
 }

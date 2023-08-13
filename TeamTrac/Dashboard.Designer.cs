@@ -40,8 +40,11 @@
             button1 = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            General = new Panel();
             label2 = new Label();
             panel3 = new Panel();
+            panel4 = new Panel();
+            panel5 = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -121,6 +124,7 @@
             button4.TabIndex = 4;
             button4.Text = "Shops";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -139,6 +143,7 @@
             button2.TabIndex = 2;
             button2.Text = "Products";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -162,6 +167,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(General);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(panel3);
             panel2.Dock = DockStyle.Top;
@@ -171,6 +177,13 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(986, 75);
             panel2.TabIndex = 1;
+            // 
+            // General
+            // 
+            General.Location = new Point(3, 79);
+            General.Name = "General";
+            General.Size = new Size(980, 585);
+            General.TabIndex = 2;
             // 
             // label2
             // 
@@ -190,11 +203,29 @@
             panel3.Size = new Size(980, 546);
             panel3.TabIndex = 2;
             // 
+            // panel4
+            // 
+            panel4.BackColor = SystemColors.ControlDarkDark;
+            panel4.Location = new Point(203, 79);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(983, 585);
+            panel4.TabIndex = 2;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.White;
+            panel5.Location = new Point(203, 79);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(983, 585);
+            panel5.TabIndex = 0;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1186, 664);
+            Controls.Add(panel5);
+            Controls.Add(panel4);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Font = new Font("Cambria", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
@@ -224,5 +255,8 @@
         private Button button3;
         private Button button2;
         private Label label2;
+        private Panel General;
+        private Panel panel4;
+        private Panel panel5;
     }
 }

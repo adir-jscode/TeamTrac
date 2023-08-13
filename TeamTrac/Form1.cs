@@ -55,8 +55,8 @@ namespace TeamTrac
                 {
                     if (Global.Get.LoginAuth(UserName, Password))
                     {
-                        //MessageBox.Show("Login Successful");
-                        guna2MessageDialog1.Show("Login");
+                        MessageBox.Show("Login Successful");
+                        ///guna2MessageDialog1.Show("Login");
                         this.Hide();
                         Dashboard dashboard = new Dashboard();
                         dashboard.Show();
