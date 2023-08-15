@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TeamTrac
 {
-    public partial class Sample : Form
+    public partial class AssignProduct : Form
     {
-        public Sample()
+        public AssignProduct()
         {
             InitializeComponent();
         }
