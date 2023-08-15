@@ -28,12 +28,30 @@ namespace TeamTrac
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                textBox1.Focus();
+                errorProvider1.Icon = Properties.Resources.error;
+                errorProvider1.SetError(this.textBox1, "Enter Username");
+            }
+            else
+            {
+                errorProvider1.Icon = Properties.Resources.check;
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                textBox2.Focus();
+                errorProvider2.Icon = Properties.Resources.error;
+                errorProvider2.SetError(this.textBox2, "Enter Password");
+            }
+            else
+            {
+                errorProvider2.Icon = Properties.Resources.check;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
