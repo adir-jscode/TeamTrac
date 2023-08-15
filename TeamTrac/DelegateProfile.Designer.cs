@@ -262,7 +262,7 @@
             guna2Button2.FillColor = Color.FromArgb(192, 64, 0);
             guna2Button2.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(439, 515);
+            guna2Button2.Location = new Point(448, 515);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button2.Size = new Size(126, 46);
