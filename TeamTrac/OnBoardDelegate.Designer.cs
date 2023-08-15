@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OnBoardDelegate));
-            pictureBox1 = new PictureBox();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             button1 = new Button();
             dateTimePicker2 = new DateTimePicker();
@@ -46,22 +48,16 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 88);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(526, 550);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // panel1
             // 
+            panel1.Controls.Add(guna2Button1);
+            panel1.Controls.Add(guna2CirclePictureBox1);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(dateTimePicker2);
             panel1.Controls.Add(dateTimePicker1);
@@ -78,9 +74,9 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            panel1.Location = new Point(544, 52);
+            panel1.Location = new Point(2, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(618, 599);
+            panel1.Size = new Size(1179, 659);
             panel1.TabIndex = 1;
             // 
             // button1
@@ -88,7 +84,7 @@
             button1.BackColor = Color.FromArgb(35, 112, 248);
             button1.FlatStyle = FlatStyle.Popup;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(237, 465);
+            button1.Location = new Point(476, 595);
             button1.Name = "button1";
             button1.Size = new Size(136, 46);
             button1.TabIndex = 17;
@@ -97,42 +93,42 @@
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(156, 395);
+            dateTimePicker2.Location = new Point(615, 282);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(310, 30);
             dateTimePicker2.TabIndex = 15;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(156, 336);
+            dateTimePicker1.Location = new Point(615, 234);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(310, 30);
             dateTimePicker1.TabIndex = 14;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(156, 269);
+            textBox4.Location = new Point(156, 380);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(310, 30);
             textBox4.TabIndex = 13;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(156, 213);
+            textBox3.Location = new Point(156, 334);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(310, 30);
             textBox3.TabIndex = 12;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(156, 155);
+            textBox2.Location = new Point(156, 282);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(310, 30);
             textBox2.TabIndex = 11;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(156, 93);
+            textBox1.Location = new Point(156, 232);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(310, 30);
             textBox1.TabIndex = 10;
@@ -149,7 +145,7 @@
             // 
             label7.AutoSize = true;
             label7.ForeColor = Color.White;
-            label7.Location = new Point(20, 403);
+            label7.Location = new Point(504, 290);
             label7.Name = "label7";
             label7.Size = new Size(108, 22);
             label7.TabIndex = 6;
@@ -159,7 +155,7 @@
             // 
             label6.AutoSize = true;
             label6.ForeColor = Color.White;
-            label6.Location = new Point(20, 342);
+            label6.Location = new Point(504, 240);
             label6.Name = "label6";
             label6.Size = new Size(47, 22);
             label6.TabIndex = 5;
@@ -169,7 +165,7 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = Color.White;
-            label5.Location = new Point(20, 277);
+            label5.Location = new Point(20, 388);
             label5.Name = "label5";
             label5.Size = new Size(42, 22);
             label5.TabIndex = 4;
@@ -179,27 +175,29 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.White;
-            label4.Location = new Point(20, 213);
+            label4.Location = new Point(20, 342);
             label4.Name = "label4";
             label4.Size = new Size(56, 22);
             label4.TabIndex = 3;
             label4.Text = "Email";
+            label4.Click += label4_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.White;
-            label3.Location = new Point(20, 155);
+            label3.Location = new Point(18, 290);
             label3.Name = "label3";
             label3.Size = new Size(132, 22);
             label3.TabIndex = 2;
             label3.Text = "Phone Number";
+            label3.Click += label3_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(20, 93);
+            label2.Location = new Point(20, 240);
             label2.Name = "label2";
             label2.Size = new Size(130, 22);
             label2.TabIndex = 1;
@@ -210,11 +208,41 @@
             label1.AutoSize = true;
             label1.Font = new Font("Cambria", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(193, 12);
+            label1.Location = new Point(402, 8);
             label1.Name = "label1";
             label1.Size = new Size(234, 32);
             label1.TabIndex = 0;
             label1.Text = "OnBoard Delegates";
+            // 
+            // guna2CirclePictureBox1
+            // 
+            guna2CirclePictureBox1.Image = (Image)resources.GetObject("guna2CirclePictureBox1.Image");
+            guna2CirclePictureBox1.ImageRotate = 0F;
+            guna2CirclePictureBox1.Location = new Point(449, 43);
+            guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            guna2CirclePictureBox1.Size = new Size(124, 117);
+            guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            guna2CirclePictureBox1.TabIndex = 18;
+            guna2CirclePictureBox1.TabStop = false;
+            // 
+            // guna2Button1
+            // 
+            guna2Button1.CustomizableEdges = customizableEdges1;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.FromArgb(255, 128, 0);
+            guna2Button1.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(447, 166);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button1.Size = new Size(126, 46);
+            guna2Button1.TabIndex = 19;
+            guna2Button1.Text = "Upload";
             // 
             // OnBoardDelegate
             // 
@@ -223,19 +251,16 @@
             BackColor = Color.FromArgb(22, 28, 36);
             ClientSize = new Size(1184, 663);
             Controls.Add(panel1);
-            Controls.Add(pictureBox1);
             Name = "OnBoardDelegate";
             Text = "OnBoardDelegate";
             Load += OnBoardDelegate_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private Panel panel1;
         private Label label1;
         private Label label9;
@@ -252,5 +277,7 @@
         private TextBox textBox3;
         private TextBox textBox2;
         private Button button1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
     }
 }

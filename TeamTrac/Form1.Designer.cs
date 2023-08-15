@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
-            button2 = new Button();
             checkBox1 = new CheckBox();
             button1 = new Button();
             textBox2 = new TextBox();
@@ -54,7 +53,6 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(button2);
             panel1.Controls.Add(checkBox1);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(textBox2);
@@ -68,19 +66,6 @@
             panel1.Size = new Size(365, 426);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(35, 112, 248);
-            button2.FlatStyle = FlatStyle.Popup;
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(64, 341);
-            button2.Name = "button2";
-            button2.Size = new Size(216, 49);
-            button2.TabIndex = 7;
-            button2.Text = "On Board Delegates";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
             // 
             // checkBox1
             // 
@@ -100,7 +85,7 @@
             button1.BackColor = Color.FromArgb(35, 112, 248);
             button1.FlatStyle = FlatStyle.Popup;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(125, 274);
+            button1.Location = new Point(125, 299);
             button1.Name = "button1";
             button1.Size = new Size(109, 49);
             button1.TabIndex = 5;
@@ -250,7 +235,6 @@
         private Label label4;
         private CheckBox checkBox1;
         private Button button1;
-        private Button button2;
         private ErrorProvider errorProvider1;
         private ErrorProvider errorProvider2;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
