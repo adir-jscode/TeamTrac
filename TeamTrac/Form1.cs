@@ -2,10 +2,14 @@ namespace TeamTrac
 {
     public partial class Form1 : Form
     {
+
+        public static string UserName;
         public Form1()
         {
             InitializeComponent();
         }
+
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -62,7 +66,7 @@ namespace TeamTrac
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string UserName = textBox1.Text;
+            UserName = textBox1.Text;
             string Password = textBox2.Text;
 
             //Login as company

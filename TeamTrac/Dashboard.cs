@@ -15,6 +15,7 @@ namespace TeamTrac
         public Dashboard()
         {
             InitializeComponent();
+            label2.Text = Form1.UserName;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -52,6 +53,21 @@ namespace TeamTrac
             panel4.Hide();
             panel5.BringToFront();
             panel5.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

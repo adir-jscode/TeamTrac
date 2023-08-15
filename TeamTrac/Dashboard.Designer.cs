@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             button9 = new Button();
@@ -76,6 +76,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 664);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
             // guna2Button1
             // 
@@ -87,7 +88,7 @@
             guna2Button1.CheckedState.FillColor = Color.FromArgb(35, 112, 248);
             guna2Button1.CustomBorderColor = Color.FromArgb(35, 112, 248);
             guna2Button1.CustomBorderThickness = new Padding(2, 0, 0, 0);
-            guna2Button1.CustomizableEdges = customizableEdges1;
+            guna2Button1.CustomizableEdges = customizableEdges5;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -96,7 +97,7 @@
             guna2Button1.ForeColor = Color.White;
             guna2Button1.Location = new Point(17, 372);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Button1.Size = new Size(180, 45);
             guna2Button1.TabIndex = 10;
             guna2Button1.Text = "guna2Button1";
@@ -227,6 +228,7 @@
             label2.Size = new Size(60, 14);
             label2.TabIndex = 3;
             label2.Text = "Username";
+            label2.Click += label2_Click;
             // 
             // panel3
             // 
@@ -252,6 +254,7 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(983, 585);
             panel5.TabIndex = 0;
+            panel5.Paint += panel5_Paint;
             // 
             // guna2Button2
             // 
@@ -263,7 +266,7 @@
             guna2Button2.CheckedState.FillColor = Color.FromArgb(35, 112, 248);
             guna2Button2.CustomBorderColor = Color.FromArgb(35, 112, 248);
             guna2Button2.CustomBorderThickness = new Padding(2, 0, 0, 0);
-            guna2Button2.CustomizableEdges = customizableEdges3;
+            guna2Button2.CustomizableEdges = customizableEdges7;
             guna2Button2.DisabledState.BorderColor = Color.DarkGray;
             guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -272,7 +275,7 @@
             guna2Button2.ForeColor = Color.White;
             guna2Button2.Location = new Point(200, 142);
             guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2Button2.Size = new Size(180, 45);
             guna2Button2.TabIndex = 11;
             guna2Button2.Text = "Test";
