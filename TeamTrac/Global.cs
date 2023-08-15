@@ -158,7 +158,7 @@ namespace TeamTrac
                 }
             }
 
-            //Add Shop
+            //Add Category
 
             public static void AddCategory(string MainCategory,string SubCategory)
             {
@@ -181,6 +181,51 @@ namespace TeamTrac
                         cmd.Parameters.AddWithValue("@SubCategory", SubCategory);
                         cmd.Parameters.AddWithValue("@Status", "1");
                         
+
+
+
+
+                        cmd.ExecuteNonQuery();
+                        // ID = cmd.ExecuteScalar().ToString();
+
+                        connec.Close();
+
+                    }
+
+                }
+            }
+
+
+            public static void OnboardDelegate(string Name,string Phone,string Email,string NID,string DOB,string JoiningDate,string Username,string Password,string DelegatingArea,string DelegatingDistrict,string Image)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("InsertNewDelegateDetails", connec))
+                    {
+
+                        connec.Open();
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+
+
+                        cmd.Parameters.AddWithValue("@DelegateID","DEL" + DateTime.Now.ToString("ddMMyyyyhhmmssfff"));
+                        cmd.Parameters.AddWithValue("@DelegateName", Name);
+                        cmd.Parameters.AddWithValue("@PhoneNo", Phone);
+                        cmd.Parameters.AddWithValue("@Email", Email);
+                        cmd.Parameters.AddWithValue("@NID", NID);
+                        cmd.Parameters.AddWithValue("@DOB", DOB);
+                        cmd.Parameters.AddWithValue("@OnBoardDateTime", JoiningDate);
+                        cmd.Parameters.AddWithValue("@Username", Username);
+                        cmd.Parameters.AddWithValue("@passsword", Password);
+                        cmd.Parameters.AddWithValue("@DelegatingArea", DelegatingArea);
+                        cmd.Parameters.AddWithValue("@DelegatingDistrict", DelegatingDistrict);
+                        cmd.Parameters.AddWithValue("@Image", Image);
+                        cmd.Parameters.AddWithValue("@Status", "1");
+
 
 
 
