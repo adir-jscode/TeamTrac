@@ -83,7 +83,7 @@ namespace TeamTrac
             }
             else
             {
-               Global.Get.OnboardDelegate(Name, Phone, Email, NID, DOB, JoiningDate, Username, Password, DelegatingArea, DelegatingDistrict, Image);    
+                Global.Get.OnboardDelegate(Name, Phone, Email, NID, DOB, JoiningDate, Username, Password, DelegatingArea, DelegatingDistrict, Image);
                 MessageBox.Show("Delegate Onboarded Successfully");
             }
 
