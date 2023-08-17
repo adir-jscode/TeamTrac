@@ -20,21 +20,21 @@ namespace TeamTrac
 
         private void button7_Click(object sender, EventArgs e)
         {
-            this.Hide();
+
             AddCategory category = new AddCategory();
             category.Show();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            this.Hide();
+
             OnBoardDelegate onBoard = new OnBoardDelegate();
             onBoard.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+
             ManageEmployee employee = new ManageEmployee();
             employee.Show();
 
@@ -42,17 +42,17 @@ namespace TeamTrac
 
         private void button2_Click(object sender, EventArgs e)
         {
-            panel5.Hide();
-            panel4.BringToFront();
-            panel4.Show();
+
+            AddProduct product = new AddProduct();
+            product.Show();
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            panel4.Hide();
-            panel5.BringToFront();
-            panel5.Show();
+
+            AddShop shop = new AddShop();
+            shop.Show();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -68,6 +68,25 @@ namespace TeamTrac
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            ProductRequest request = new ProductRequest();
+            request.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            SupportTickets tickets = new SupportTickets();
+            tickets.Show();
         }
     }
 }

@@ -20,6 +20,7 @@ namespace TeamTrac
 
         public static string GenarateHash(int length = 20)
         {
+
             const string valid = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
             StringBuilder res = new StringBuilder();
             using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())

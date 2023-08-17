@@ -58,7 +58,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1188, 88);
+            panel1.Size = new Size(1189, 88);
             panel1.TabIndex = 0;
             // 
             // label2
@@ -232,7 +232,7 @@
             AutoScaleDimensions = new SizeF(7F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 28, 36);
-            ClientSize = new Size(1188, 620);
+            ClientSize = new Size(1189, 640);
             Controls.Add(guna2DataGridView1);
             Controls.Add(panel4);
             Controls.Add(panel1);

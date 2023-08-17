@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DelegateProfile));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            label1 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            label3 = new Label();
-            textBox4 = new TextBox();
-            label4 = new Label();
-            textBox5 = new TextBox();
-            label5 = new Label();
-            textBox6 = new TextBox();
-            label6 = new Label();
-            textBox7 = new TextBox();
-            label7 = new Label();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             textBox8 = new TextBox();
             label8 = new Label();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            textBox7 = new TextBox();
+            label7 = new Label();
+            textBox6 = new TextBox();
+            label6 = new Label();
+            textBox5 = new TextBox();
+            label5 = new Label();
+            textBox4 = new TextBox();
+            label4 = new Label();
+            textBox3 = new TextBox();
+            label3 = new Label();
+            textBox2 = new TextBox();
+            label1 = new Label();
+            textBox1 = new TextBox();
+            label2 = new Label();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             SuspendLayout();
@@ -86,6 +86,159 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
+            // guna2Button2
+            // 
+            guna2Button2.CustomizableEdges = customizableEdges1;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.FromArgb(192, 64, 0);
+            guna2Button2.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button2.ForeColor = Color.White;
+            guna2Button2.Location = new Point(448, 515);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button2.Size = new Size(126, 46);
+            guna2Button2.TabIndex = 38;
+            guna2Button2.Text = "Update";
+            // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(689, 358);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(310, 30);
+            textBox8.TabIndex = 37;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(537, 363);
+            label8.Name = "label8";
+            label8.Size = new Size(90, 22);
+            label8.TabIndex = 36;
+            label8.Text = "Password";
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(689, 290);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(310, 30);
+            textBox7.TabIndex = 35;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(537, 293);
+            label7.Name = "label7";
+            label7.Size = new Size(92, 22);
+            label7.TabIndex = 34;
+            label7.Text = "Username";
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(689, 226);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(310, 30);
+            textBox6.TabIndex = 33;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(537, 229);
+            label6.Name = "label6";
+            label6.Size = new Size(47, 22);
+            label6.TabIndex = 32;
+            label6.Text = "DOB";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(689, 431);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(310, 30);
+            textBox5.TabIndex = 31;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(525, 436);
+            label5.Name = "label5";
+            label5.Size = new Size(158, 22);
+            label5.TabIndex = 30;
+            label5.Text = "Delegating District";
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(178, 428);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(310, 30);
+            textBox4.TabIndex = 29;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(26, 431);
+            label4.Name = "label4";
+            label4.Size = new Size(137, 22);
+            label4.TabIndex = 28;
+            label4.Text = "Delegating Area";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(178, 355);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(310, 30);
+            textBox3.TabIndex = 27;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(26, 358);
+            label3.Name = "label3";
+            label3.Size = new Size(42, 22);
+            label3.TabIndex = 26;
+            label3.Text = "NID";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(178, 290);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(310, 30);
+            textBox2.TabIndex = 25;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(26, 293);
+            label1.Name = "label1";
+            label1.Size = new Size(56, 22);
+            label1.TabIndex = 24;
+            label1.Text = "Email";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(178, 226);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(310, 30);
+            textBox1.TabIndex = 23;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(26, 229);
+            label2.Name = "label2";
+            label2.Size = new Size(57, 22);
+            label2.TabIndex = 22;
+            label2.Text = "Name";
+            // 
             // guna2Button1
             // 
             guna2Button1.CustomizableEdges = customizableEdges3;
@@ -116,165 +269,12 @@
             guna2CirclePictureBox1.TabIndex = 20;
             guna2CirclePictureBox1.TabStop = false;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(26, 229);
-            label2.Name = "label2";
-            label2.Size = new Size(57, 22);
-            label2.TabIndex = 22;
-            label2.Text = "Name";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(178, 226);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(310, 30);
-            textBox1.TabIndex = 23;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(26, 293);
-            label1.Name = "label1";
-            label1.Size = new Size(56, 22);
-            label1.TabIndex = 24;
-            label1.Text = "Email";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(178, 290);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(310, 30);
-            textBox2.TabIndex = 25;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(178, 355);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(310, 30);
-            textBox3.TabIndex = 27;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(26, 358);
-            label3.Name = "label3";
-            label3.Size = new Size(42, 22);
-            label3.TabIndex = 26;
-            label3.Text = "NID";
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(178, 428);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(310, 30);
-            textBox4.TabIndex = 29;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(26, 431);
-            label4.Name = "label4";
-            label4.Size = new Size(137, 22);
-            label4.TabIndex = 28;
-            label4.Text = "Delegating Area";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(689, 431);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(310, 30);
-            textBox5.TabIndex = 31;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(525, 436);
-            label5.Name = "label5";
-            label5.Size = new Size(158, 22);
-            label5.TabIndex = 30;
-            label5.Text = "Delegating District";
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(689, 226);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(310, 30);
-            textBox6.TabIndex = 33;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(537, 229);
-            label6.Name = "label6";
-            label6.Size = new Size(47, 22);
-            label6.TabIndex = 32;
-            label6.Text = "DOB";
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(689, 290);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(310, 30);
-            textBox7.TabIndex = 35;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(537, 293);
-            label7.Name = "label7";
-            label7.Size = new Size(92, 22);
-            label7.TabIndex = 34;
-            label7.Text = "Username";
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(689, 358);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(310, 30);
-            textBox8.TabIndex = 37;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(537, 363);
-            label8.Name = "label8";
-            label8.Size = new Size(90, 22);
-            label8.TabIndex = 36;
-            label8.Text = "Password";
-            // 
-            // guna2Button2
-            // 
-            guna2Button2.CustomizableEdges = customizableEdges1;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.FromArgb(192, 64, 0);
-            guna2Button2.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(448, 515);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button2.Size = new Size(126, 46);
-            guna2Button2.TabIndex = 38;
-            guna2Button2.Text = "Update";
-            // 
             // DelegateProfile
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 28, 36);
-            ClientSize = new Size(1186, 643);
+            ClientSize = new Size(1189, 640);
             Controls.Add(panel1);
             Name = "DelegateProfile";
             Text = "DelegateProfile";

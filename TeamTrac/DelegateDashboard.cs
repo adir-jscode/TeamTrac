@@ -27,5 +27,23 @@ namespace TeamTrac
         {
 
         }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            CreateSupportTicket CreateSupportTicket = new CreateSupportTicket();
+            CreateSupportTicket.Show();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            AddShop shop = new AddShop();
+            shop.Show();
+        }
+
+        private void guna2Button7_Click(object sender, EventArgs e)
+        {
+            ProductRequest request = new ProductRequest();
+            request.Show();
+        }
     }
 }

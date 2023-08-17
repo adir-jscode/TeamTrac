@@ -16,5 +16,10 @@ namespace TeamTrac
         {
             InitializeComponent();
         }
+
+        private void CreateSupportTicket_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

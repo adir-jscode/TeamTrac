@@ -209,6 +209,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Leave += textBox1_TextChanged;
             panel1.ResumeLayout(false);

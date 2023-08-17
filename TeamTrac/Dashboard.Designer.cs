@@ -28,12 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             button9 = new Button();
             button8 = new Button();
             button7 = new Button();
@@ -49,16 +44,13 @@
             panel3 = new Panel();
             panel4 = new Panel();
             panel5 = new Panel();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(22, 28, 36);
-            panel1.Controls.Add(guna2Button1);
             panel1.Controls.Add(button9);
             panel1.Controls.Add(button8);
             panel1.Controls.Add(button7);
@@ -74,33 +66,9 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(200, 664);
+            panel1.Size = new Size(200, 640);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
-            // 
-            // guna2Button1
-            // 
-            guna2Button1.BackColor = Color.FromArgb(35, 112, 248);
-            guna2Button1.BorderColor = Color.Transparent;
-            guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            guna2Button1.Checked = true;
-            guna2Button1.CheckedState.CustomBorderColor = Color.FromArgb(255, 128, 0);
-            guna2Button1.CheckedState.FillColor = Color.FromArgb(35, 112, 248);
-            guna2Button1.CustomBorderColor = Color.FromArgb(35, 112, 248);
-            guna2Button1.CustomBorderThickness = new Padding(2, 0, 0, 0);
-            guna2Button1.CustomizableEdges = customizableEdges5;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(17, 372);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Button1.Size = new Size(180, 45);
-            guna2Button1.TabIndex = 10;
-            guna2Button1.Text = "guna2Button1";
             // 
             // button9
             // 
@@ -111,6 +79,7 @@
             button9.TabIndex = 9;
             button9.Text = "Access Control";
             button9.UseVisualStyleBackColor = false;
+            button9.Click += button9_Click;
             // 
             // button8
             // 
@@ -137,27 +106,29 @@
             // button6
             // 
             button6.BackColor = Color.FromArgb(35, 112, 248);
-            button6.Location = new Point(25, 582);
+            button6.Location = new Point(25, 512);
             button6.Name = "button6";
             button6.Size = new Size(152, 47);
             button6.TabIndex = 6;
             button6.Text = "Support Tickets";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
             button5.BackColor = Color.FromArgb(35, 112, 248);
-            button5.Location = new Point(25, 512);
+            button5.Location = new Point(24, 439);
             button5.Name = "button5";
             button5.Size = new Size(152, 47);
             button5.TabIndex = 5;
             button5.Text = "Stock Request";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
             button4.BackColor = Color.FromArgb(35, 112, 248);
-            button4.Location = new Point(24, 439);
+            button4.Location = new Point(25, 374);
             button4.Name = "button4";
             button4.Size = new Size(152, 47);
             button4.TabIndex = 4;
@@ -209,7 +180,7 @@
             panel2.Location = new Point(200, 0);
             panel2.Margin = new Padding(4, 3, 4, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(986, 75);
+            panel2.Size = new Size(989, 75);
             panel2.TabIndex = 1;
             // 
             // General
@@ -249,42 +220,17 @@
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(22, 28, 36);
-            panel5.Controls.Add(guna2Button2);
             panel5.Location = new Point(200, 76);
             panel5.Name = "panel5";
-            panel5.Size = new Size(983, 585);
+            panel5.Size = new Size(986, 564);
             panel5.TabIndex = 0;
             panel5.Paint += panel5_Paint;
-            // 
-            // guna2Button2
-            // 
-            guna2Button2.BackColor = Color.FromArgb(35, 112, 248);
-            guna2Button2.BorderColor = Color.Transparent;
-            guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            guna2Button2.Checked = true;
-            guna2Button2.CheckedState.CustomBorderColor = Color.FromArgb(255, 128, 0);
-            guna2Button2.CheckedState.FillColor = Color.FromArgb(35, 112, 248);
-            guna2Button2.CustomBorderColor = Color.FromArgb(35, 112, 248);
-            guna2Button2.CustomBorderThickness = new Padding(2, 0, 0, 0);
-            guna2Button2.CustomizableEdges = customizableEdges7;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(200, 142);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Button2.Size = new Size(180, 45);
-            guna2Button2.TabIndex = 11;
-            guna2Button2.Text = "Test";
             // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1186, 664);
+            ClientSize = new Size(1189, 640);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel2);
@@ -297,7 +243,6 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            panel5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -319,7 +264,5 @@
         private Panel General;
         private Panel panel4;
         private Panel panel5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }

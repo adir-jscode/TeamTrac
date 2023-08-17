@@ -34,14 +34,14 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            label1 = new Label();
-            label2 = new Label();
-            comboBox1 = new ComboBox();
-            label3 = new Label();
-            comboBox2 = new ComboBox();
-            label4 = new Label();
-            textBox1 = new TextBox();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            textBox1 = new TextBox();
+            label4 = new Label();
+            comboBox2 = new ComboBox();
+            label3 = new Label();
+            comboBox1 = new ComboBox();
+            label2 = new Label();
+            label1 = new Label();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
@@ -63,70 +63,6 @@
             panel1.Size = new Size(881, 247);
             panel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Cambria", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(325, 15);
-            label1.Name = "label1";
-            label1.Size = new Size(199, 32);
-            label1.TabIndex = 0;
-            label1.Text = "Assign Product";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(17, 77);
-            label2.Name = "label2";
-            label2.Size = new Size(126, 22);
-            label2.TabIndex = 1;
-            label2.Text = "Product Name";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(17, 115);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(169, 30);
-            comboBox1.TabIndex = 2;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(346, 77);
-            label3.Name = "label3";
-            label3.Size = new Size(130, 22);
-            label3.TabIndex = 3;
-            label3.Text = "Delegate Name";
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(346, 115);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(169, 30);
-            comboBox2.TabIndex = 4;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(625, 77);
-            label4.Name = "label4";
-            label4.Size = new Size(80, 22);
-            label4.TabIndex = 5;
-            label4.Text = "Quantity";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(625, 115);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(162, 30);
-            textBox1.TabIndex = 6;
-            // 
             // guna2Button1
             // 
             guna2Button1.CustomizableEdges = customizableEdges1;
@@ -144,6 +80,70 @@
             guna2Button1.TabIndex = 7;
             guna2Button1.Text = "Assign";
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(625, 115);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(162, 30);
+            textBox1.TabIndex = 6;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(625, 77);
+            label4.Name = "label4";
+            label4.Size = new Size(80, 22);
+            label4.TabIndex = 5;
+            label4.Text = "Quantity";
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(346, 115);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(169, 30);
+            comboBox2.TabIndex = 4;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(346, 77);
+            label3.Name = "label3";
+            label3.Size = new Size(130, 22);
+            label3.TabIndex = 3;
+            label3.Text = "Delegate Name";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(17, 115);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(169, 30);
+            comboBox1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(17, 77);
+            label2.Name = "label2";
+            label2.Size = new Size(126, 22);
+            label2.TabIndex = 1;
+            label2.Text = "Product Name";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Cambria", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(325, 15);
+            label1.Name = "label1";
+            label1.Size = new Size(199, 32);
+            label1.TabIndex = 0;
+            label1.Text = "Assign Product";
+            // 
             // guna2DataGridView1
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
@@ -156,7 +156,8 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            guna2DataGridView1.ColumnHeadersHeight = 4;
+            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -183,7 +184,7 @@
             guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
             guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
             guna2DataGridView1.ThemeStyle.ReadOnly = false;
             guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
@@ -199,7 +200,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 28, 36);
-            ClientSize = new Size(1188, 642);
+            ClientSize = new Size(1189, 640);
             Controls.Add(guna2DataGridView1);
             Controls.Add(panel1);
             ForeColor = Color.Coral;

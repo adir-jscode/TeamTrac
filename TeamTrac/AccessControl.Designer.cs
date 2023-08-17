@@ -34,8 +34,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1189, 641);
+            ClientSize = new Size(1189, 640);
             Name = "AccessControl";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AccessControl";
             ResumeLayout(false);
         }

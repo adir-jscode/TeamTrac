@@ -43,30 +43,30 @@
             label4 = new Label();
             label3 = new Label();
             panel1 = new Panel();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            groupBox1 = new GroupBox();
+            textBox11 = new TextBox();
+            textBox10 = new TextBox();
+            textBox9 = new TextBox();
+            textBox8 = new TextBox();
+            label12 = new Label();
+            label11 = new Label();
+            label10 = new Label();
+            label1 = new Label();
             panel2 = new Panel();
+            textBox7 = new TextBox();
+            textBox6 = new TextBox();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
             label6 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            groupBox1 = new GroupBox();
-            label1 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            textBox11 = new TextBox();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             groupBox1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // label8
@@ -169,6 +169,109 @@
             panel1.Size = new Size(1164, 634);
             panel1.TabIndex = 2;
             // 
+            // guna2Button2
+            // 
+            guna2Button2.CustomizableEdges = customizableEdges4;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.Purple;
+            guna2Button2.Font = new Font("Cambria", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button2.ForeColor = Color.White;
+            guna2Button2.Location = new Point(963, 557);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            guna2Button2.Size = new Size(126, 46);
+            guna2Button2.TabIndex = 30;
+            guna2Button2.Text = "Update";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(textBox11);
+            groupBox1.Controls.Add(textBox10);
+            groupBox1.Controls.Add(textBox9);
+            groupBox1.Controls.Add(textBox8);
+            groupBox1.Controls.Add(label12);
+            groupBox1.Controls.Add(label11);
+            groupBox1.Controls.Add(label10);
+            groupBox1.Controls.Add(label1);
+            groupBox1.ForeColor = Color.White;
+            groupBox1.Location = new Point(590, 111);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(499, 348);
+            groupBox1.TabIndex = 29;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Owner Details";
+            // 
+            // textBox11
+            // 
+            textBox11.Location = new Point(148, 270);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(310, 30);
+            textBox11.TabIndex = 25;
+            // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(148, 206);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(310, 30);
+            textBox10.TabIndex = 24;
+            // 
+            // textBox9
+            // 
+            textBox9.Location = new Point(148, 148);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(310, 30);
+            textBox9.TabIndex = 23;
+            // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(148, 94);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(310, 30);
+            textBox8.TabIndex = 22;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(29, 273);
+            label12.Name = "label12";
+            label12.Size = new Size(61, 22);
+            label12.TabIndex = 15;
+            label12.Text = "Phone";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(29, 213);
+            label11.Name = "label11";
+            label11.Size = new Size(42, 22);
+            label11.TabIndex = 14;
+            label11.Text = "NID";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(29, 154);
+            label10.Name = "label10";
+            label10.Size = new Size(56, 22);
+            label10.TabIndex = 13;
+            label10.Text = "Email";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(29, 102);
+            label1.Name = "label1";
+            label1.Size = new Size(92, 22);
+            label1.TabIndex = 12;
+            label1.Text = "Full Name";
+            // 
             // panel2
             // 
             panel2.Controls.Add(textBox7);
@@ -192,6 +295,55 @@
             panel2.Size = new Size(498, 520);
             panel2.TabIndex = 28;
             // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(145, 479);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(310, 30);
+            textBox7.TabIndex = 27;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(145, 429);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(310, 30);
+            textBox6.TabIndex = 26;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(145, 379);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(310, 30);
+            textBox5.TabIndex = 25;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(145, 329);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(310, 30);
+            textBox4.TabIndex = 24;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(145, 283);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(310, 30);
+            textBox3.TabIndex = 23;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(145, 233);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(310, 30);
+            textBox2.TabIndex = 22;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(145, 189);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(310, 30);
+            textBox1.TabIndex = 21;
+            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -213,174 +365,22 @@
             label2.Text = "Company Name";
             label2.Click += label2_Click;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(145, 189);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(310, 30);
-            textBox1.TabIndex = 21;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(145, 233);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(310, 30);
-            textBox2.TabIndex = 22;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(145, 283);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(310, 30);
-            textBox3.TabIndex = 23;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(145, 329);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(310, 30);
-            textBox4.TabIndex = 24;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(145, 379);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(310, 30);
-            textBox5.TabIndex = 25;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(145, 429);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(310, 30);
-            textBox6.TabIndex = 26;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(145, 479);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(310, 30);
-            textBox7.TabIndex = 27;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(textBox11);
-            groupBox1.Controls.Add(textBox10);
-            groupBox1.Controls.Add(textBox9);
-            groupBox1.Controls.Add(textBox8);
-            groupBox1.Controls.Add(label12);
-            groupBox1.Controls.Add(label11);
-            groupBox1.Controls.Add(label10);
-            groupBox1.Controls.Add(label1);
-            groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(590, 111);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(499, 348);
-            groupBox1.TabIndex = 29;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Owner Details";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(29, 102);
-            label1.Name = "label1";
-            label1.Size = new Size(92, 22);
-            label1.TabIndex = 12;
-            label1.Text = "Full Name";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(29, 154);
-            label10.Name = "label10";
-            label10.Size = new Size(56, 22);
-            label10.TabIndex = 13;
-            label10.Text = "Email";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(29, 213);
-            label11.Name = "label11";
-            label11.Size = new Size(42, 22);
-            label11.TabIndex = 14;
-            label11.Text = "NID";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.ForeColor = Color.White;
-            label12.Location = new Point(29, 273);
-            label12.Name = "label12";
-            label12.Size = new Size(61, 22);
-            label12.TabIndex = 15;
-            label12.Text = "Phone";
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(148, 94);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(310, 30);
-            textBox8.TabIndex = 22;
-            // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(148, 148);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(310, 30);
-            textBox9.TabIndex = 23;
-            // 
-            // textBox10
-            // 
-            textBox10.Location = new Point(148, 206);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(310, 30);
-            textBox10.TabIndex = 24;
-            // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(148, 270);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(310, 30);
-            textBox11.TabIndex = 25;
-            // 
-            // guna2Button2
-            // 
-            guna2Button2.CustomizableEdges = customizableEdges4;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.Purple;
-            guna2Button2.Font = new Font("Cambria", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(963, 557);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            guna2Button2.Size = new Size(126, 46);
-            guna2Button2.TabIndex = 30;
-            guna2Button2.Text = "Update";
-            // 
             // CompanyProfile
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 28, 36);
-            ClientSize = new Size(1165, 637);
+            ClientSize = new Size(1189, 640);
             Controls.Add(panel1);
             Name = "CompanyProfile";
             Text = "CompanyProfile";
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
