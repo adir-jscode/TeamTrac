@@ -92,7 +92,7 @@
             panel1.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             panel1.Location = new Point(2, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1179, 659);
+            panel1.Size = new Size(1179, 633);
             panel1.TabIndex = 1;
             // 
             // textBox8
@@ -341,6 +341,7 @@
             ClientSize = new Size(1184, 663);
             Controls.Add(panel1);
             Name = "OnBoardDelegate";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "OnBoardDelegate";
             Load += OnBoardDelegate_Load;
             panel1.ResumeLayout(false);

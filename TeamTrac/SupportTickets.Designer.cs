@@ -35,10 +35,12 @@
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupportTickets));
             panel1 = new Panel();
+            label1 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             pictureBox1 = new PictureBox();
-            label1 = new Label();
+            comboBox1 = new ComboBox();
+            label2 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -46,6 +48,8 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(guna2Button1);
             panel1.Controls.Add(guna2DataGridView1);
@@ -54,6 +58,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1072, 607);
             panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Cambria", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(414, 28);
+            label1.Name = "label1";
+            label1.Size = new Size(196, 32);
+            label1.TabIndex = 10;
+            label1.Text = "Support Tickets";
             // 
             // guna2Button1
             // 
@@ -133,16 +148,24 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // label1
+            // comboBox1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Cambria", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(414, 28);
-            label1.Name = "label1";
-            label1.Size = new Size(196, 32);
-            label1.TabIndex = 10;
-            label1.Text = "Support Tickets";
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(658, 546);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(169, 23);
+            comboBox1.TabIndex = 11;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(532, 547);
+            label2.Name = "label2";
+            label2.Size = new Size(59, 22);
+            label2.TabIndex = 12;
+            label2.Text = "Status";
             // 
             // SupportTickets
             // 
@@ -152,6 +175,7 @@
             ClientSize = new Size(1182, 640);
             Controls.Add(panel1);
             Name = "SupportTickets";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "SupportTickets";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -167,5 +191,7 @@
         private PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Label label1;
+        private Label label2;
+        private ComboBox comboBox1;
     }
 }

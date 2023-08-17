@@ -296,6 +296,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "ManageEmployee";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ManageEmployee";
             Load += ManageEmployee_Load;
             panel1.ResumeLayout(false);

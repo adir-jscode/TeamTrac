@@ -214,6 +214,7 @@
             Controls.Add(panel1);
             Margin = new Padding(4, 3, 4, 3);
             Name = "EmployeeProfile";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EmployeeProfile";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

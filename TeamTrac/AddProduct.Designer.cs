@@ -196,6 +196,7 @@
             ClientSize = new Size(1189, 640);
             Controls.Add(groupBox1);
             Name = "AddProduct";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddProduct";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

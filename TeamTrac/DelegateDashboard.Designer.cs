@@ -191,6 +191,7 @@
             ForeColor = Color.White;
             Margin = new Padding(4);
             Name = "DelegateDashboard";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "DelegateDashboard";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

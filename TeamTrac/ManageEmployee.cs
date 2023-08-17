@@ -15,7 +15,7 @@ namespace TeamTrac
 {
     public partial class ManageEmployee : Form
     {
-        
+
         public ManageEmployee()
         {
             InitializeComponent();
@@ -42,8 +42,8 @@ namespace TeamTrac
                 }
             }
 
-           // After manipulation, update the DataGridView
-           //((BindingSource) guna2DataGridView1.DataSource).ResetBindings(false);
+            // After manipulation, update the DataGridView
+            //((BindingSource) guna2DataGridView1.DataSource).ResetBindings(false);
 
 
 
@@ -60,7 +60,7 @@ namespace TeamTrac
         {
             BindGridView();
         }
-       
+
 
         private void button1_Click(object sender, EventArgs e)
         {

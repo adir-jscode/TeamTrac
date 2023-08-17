@@ -88,5 +88,10 @@ namespace TeamTrac
             SupportTickets tickets = new SupportTickets();
             tickets.Show();
         }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

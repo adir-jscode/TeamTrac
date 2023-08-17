@@ -139,6 +139,7 @@
             ClientSize = new Size(1189, 640);
             Controls.Add(panel1);
             Name = "CreateSupportTicket";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CreateSupportTicket";
             Load += CreateSupportTicket_Load;
             panel1.ResumeLayout(false);

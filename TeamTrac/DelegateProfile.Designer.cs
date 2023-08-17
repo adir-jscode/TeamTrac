@@ -277,6 +277,7 @@
             ClientSize = new Size(1189, 640);
             Controls.Add(panel1);
             Name = "DelegateProfile";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "DelegateProfile";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

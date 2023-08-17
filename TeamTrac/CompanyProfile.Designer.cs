@@ -373,6 +373,7 @@
             ClientSize = new Size(1189, 640);
             Controls.Add(panel1);
             Name = "CompanyProfile";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CompanyProfile";
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             panel1.ResumeLayout(false);

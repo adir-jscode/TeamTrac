@@ -256,6 +256,7 @@
             ClientSize = new Size(1189, 640);
             Controls.Add(panel1);
             Name = "AddShop";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddShop";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

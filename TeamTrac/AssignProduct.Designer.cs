@@ -205,6 +205,7 @@
             Controls.Add(panel1);
             ForeColor = Color.Coral;
             Name = "AssignProduct";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AssignProduct";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
