@@ -39,6 +39,8 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             groupBox1 = new GroupBox();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -55,6 +57,7 @@
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             panel1 = new Panel();
             label5 = new Label();
+            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
@@ -287,12 +290,31 @@
             label5.TabIndex = 32;
             label5.Text = "Search";
             // 
+            // guna2Button4
+            // 
+            guna2Button4.CustomizableEdges = customizableEdges8;
+            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button4.FillColor = Color.RosyBrown;
+            guna2Button4.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button4.ForeColor = Color.White;
+            guna2Button4.Location = new Point(28, 18);
+            guna2Button4.Name = "guna2Button4";
+            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            guna2Button4.Size = new Size(180, 44);
+            guna2Button4.TabIndex = 30;
+            guna2Button4.Text = "Home";
+            guna2Button4.Click += guna2Button4_Click;
+            // 
             // Inventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 28, 36);
             ClientSize = new Size(1185, 643);
+            Controls.Add(guna2Button4);
             Controls.Add(panel1);
             Controls.Add(guna2DataGridView1);
             Controls.Add(groupBox1);
@@ -326,5 +348,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Panel panel1;
         private Label label5;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
     }
 }

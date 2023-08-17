@@ -16,5 +16,12 @@ namespace TeamTrac
         {
             InitializeComponent();
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DelegateDashboard dashboard = new DelegateDashboard();  
+            dashboard.Show();
+        }
     }
 }

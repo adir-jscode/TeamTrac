@@ -89,5 +89,12 @@ namespace TeamTrac
 
 
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+        }
     }
 }

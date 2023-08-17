@@ -39,11 +39,19 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             textBox7 = new TextBox();
             label11 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             panel2 = new Panel();
+            textBox8 = new TextBox();
+            label12 = new Label();
+            dateTimePicker2 = new DateTimePicker();
+            dateTimePicker1 = new DateTimePicker();
+            label7 = new Label();
+            label6 = new Label();
             textBox4 = new TextBox();
             textBox3 = new TextBox();
             textBox2 = new TextBox();
@@ -53,16 +61,11 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            textBox8 = new TextBox();
-            label12 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
-            label7 = new Label();
-            label6 = new Label();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             label1 = new Label();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
@@ -143,6 +146,57 @@
             panel2.Size = new Size(522, 626);
             panel2.TabIndex = 2;
             // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(180, 594);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(310, 26);
+            textBox8.TabIndex = 39;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(7, 602);
+            label12.Name = "label12";
+            label12.Size = new Size(136, 19);
+            label12.TabIndex = 38;
+            label12.Text = "Delegating District";
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Location = new Point(180, 533);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(310, 26);
+            dateTimePicker2.TabIndex = 37;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(180, 483);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(310, 26);
+            dateTimePicker1.TabIndex = 36;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(10, 539);
+            label7.Name = "label7";
+            label7.Size = new Size(93, 19);
+            label7.TabIndex = 35;
+            label7.Text = "Joining Date";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(10, 489);
+            label6.Name = "label6";
+            label6.Size = new Size(40, 19);
+            label6.TabIndex = 34;
+            label6.Text = "DOB";
+            // 
             // textBox4
             // 
             textBox4.Location = new Point(180, 385);
@@ -219,57 +273,6 @@
             label2.TabIndex = 1;
             label2.Text = "Delegate Name";
             // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(180, 594);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(310, 26);
-            textBox8.TabIndex = 39;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.ForeColor = Color.White;
-            label12.Location = new Point(7, 602);
-            label12.Name = "label12";
-            label12.Size = new Size(136, 19);
-            label12.TabIndex = 38;
-            label12.Text = "Delegating District";
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Location = new Point(180, 533);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(310, 26);
-            dateTimePicker2.TabIndex = 37;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(180, 483);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(310, 26);
-            dateTimePicker1.TabIndex = 36;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(10, 539);
-            label7.Name = "label7";
-            label7.Size = new Size(93, 19);
-            label7.TabIndex = 35;
-            label7.Text = "Joining Date";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(10, 489);
-            label6.Name = "label6";
-            label6.Size = new Size(40, 19);
-            label6.TabIndex = 34;
-            label6.Text = "DOB";
-            // 
             // guna2DataGridView1
             // 
             dataGridViewCellStyle4.BackColor = Color.White;
@@ -282,7 +285,8 @@
             dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
             guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            guna2DataGridView1.ColumnHeadersHeight = 4;
+            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = Color.White;
             dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -309,7 +313,7 @@
             guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
             guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
             guna2DataGridView1.ThemeStyle.ReadOnly = false;
             guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
@@ -365,12 +369,31 @@
             label1.TabIndex = 23;
             label1.Text = "Manage Delegates";
             // 
+            // guna2Button2
+            // 
+            guna2Button2.CustomizableEdges = customizableEdges15;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.RosyBrown;
+            guna2Button2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button2.ForeColor = Color.White;
+            guna2Button2.Location = new Point(1053, 38);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2Button2.Size = new Size(97, 38);
+            guna2Button2.TabIndex = 24;
+            guna2Button2.Text = "Home";
+            guna2Button2.Click += guna2Button2_Click;
+            // 
             // ManageDelegates
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 28, 36);
             ClientSize = new Size(1189, 640);
+            Controls.Add(guna2Button2);
             Controls.Add(label1);
             Controls.Add(guna2Button4);
             Controls.Add(guna2Button3);
@@ -413,5 +436,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Label label1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }

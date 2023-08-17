@@ -45,5 +45,55 @@ namespace TeamTrac
             ProductRequest request = new ProductRequest();
             request.Show();
         }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddShop shop = new AddShop();
+            shop.Show();
+
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DelegateProfile profile = new DelegateProfile();
+            profile.Show();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MyProducts myProducts = new MyProducts();
+            myProducts.Show();
+        }
+
+        private void guna2Button5_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            SalesReportDelegate salesReportDelegate = new SalesReportDelegate();
+            salesReportDelegate.Show();
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ProductRequest productRequest = new ProductRequest();
+            productRequest.Show();
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            CreateSupportTicket createSupportTicket = new CreateSupportTicket();
+            createSupportTicket.Show();
+        }
+
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.Show();
+        }
     }
 }
