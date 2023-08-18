@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             label1 = new Label();
             panel2 = new Panel();
             button3 = new Button();
@@ -60,31 +57,12 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(guna2Button2);
             panel1.Controls.Add(label1);
             panel1.Font = new Font("Cambria", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
             panel1.Location = new Point(2, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(1184, 121);
             panel1.TabIndex = 0;
-            // 
-            // guna2Button2
-            // 
-            guna2Button2.CustomizableEdges = customizableEdges1;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.RosyBrown;
-            guna2Button2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(31, 31);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button2.Size = new Size(180, 44);
-            guna2Button2.TabIndex = 29;
-            guna2Button2.Text = "Home";
-            guna2Button2.Click += guna2Button2_Click;
             // 
             // label1
             // 
@@ -115,7 +93,7 @@
             panel2.Controls.Add(label2);
             panel2.Location = new Point(2, 129);
             panel2.Name = "panel2";
-            panel2.Size = new Size(569, 533);
+            panel2.Size = new Size(569, 481);
             panel2.TabIndex = 1;
             // 
             // button3
@@ -281,11 +259,11 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.Location = new Point(577, 136);
+            guna2DataGridView1.Location = new Point(596, 130);
             guna2DataGridView1.Name = "guna2DataGridView1";
             guna2DataGridView1.RowHeadersVisible = false;
             guna2DataGridView1.RowTemplate.Height = 25;
-            guna2DataGridView1.Size = new Size(581, 516);
+            guna2DataGridView1.Size = new Size(581, 474);
             guna2DataGridView1.TabIndex = 2;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -314,10 +292,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 28, 36);
-            ClientSize = new Size(1187, 664);
+            ClientSize = new Size(1189, 640);
             Controls.Add(guna2DataGridView1);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "ManageEmployee";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ManageEmployee";
@@ -351,6 +330,5 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }

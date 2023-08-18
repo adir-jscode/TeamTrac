@@ -33,8 +33,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             textBox1 = new TextBox();
@@ -45,7 +43,6 @@
             label2 = new Label();
             label1 = new Label();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             SuspendLayout();
@@ -198,34 +195,16 @@
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // guna2Button3
-            // 
-            guna2Button3.CustomizableEdges = customizableEdges3;
-            guna2Button3.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button3.FillColor = Color.RosyBrown;
-            guna2Button3.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2Button3.ForeColor = Color.White;
-            guna2Button3.Location = new Point(12, 562);
-            guna2Button3.Name = "guna2Button3";
-            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Button3.Size = new Size(104, 44);
-            guna2Button3.TabIndex = 12;
-            guna2Button3.Text = "Home";
-            guna2Button3.Click += guna2Button3_Click;
-            // 
             // AssignProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 28, 36);
             ClientSize = new Size(1189, 640);
-            Controls.Add(guna2Button3);
             Controls.Add(guna2DataGridView1);
             Controls.Add(panel1);
             ForeColor = Color.Coral;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "AssignProduct";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AssignProduct";
@@ -247,6 +226,5 @@
         private ComboBox comboBox1;
         private Label label2;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
     }
 }

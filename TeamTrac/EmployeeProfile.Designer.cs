@@ -212,6 +212,7 @@
             BackColor = Color.FromArgb(22, 28, 36);
             ClientSize = new Size(1189, 640);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
             Name = "EmployeeProfile";
             StartPosition = FormStartPosition.CenterScreen;

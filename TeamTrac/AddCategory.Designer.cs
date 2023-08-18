@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             label1 = new Label();
             label8 = new Label();
             label3 = new Label();
@@ -54,39 +51,20 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(guna2Button2);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1189, 94);
+            panel1.Size = new Size(1205, 94);
             panel1.TabIndex = 0;
-            // 
-            // guna2Button2
-            // 
-            guna2Button2.CustomizableEdges = customizableEdges1;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.RosyBrown;
-            guna2Button2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(876, 31);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button2.Size = new Size(180, 44);
-            guna2Button2.TabIndex = 29;
-            guna2Button2.Text = "Home";
-            guna2Button2.Click += guna2Button2_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Cambria", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(28, 31);
+            label1.Location = new Point(428, 28);
             label1.Name = "label1";
             label1.Size = new Size(283, 32);
             label1.TabIndex = 1;
@@ -206,7 +184,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.Location = new Point(576, 100);
+            guna2DataGridView1.Location = new Point(561, 109);
             guna2DataGridView1.Name = "guna2DataGridView1";
             guna2DataGridView1.ReadOnly = true;
             guna2DataGridView1.RowHeadersVisible = false;
@@ -241,12 +219,13 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 28, 36);
-            ClientSize = new Size(1189, 640);
+            ClientSize = new Size(1205, 679);
             Controls.Add(guna2DataGridView1);
             Controls.Add(panel4);
             Controls.Add(panel1);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = Color.White;
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2, 3, 2, 3);
             Name = "AddCategory";
             StartPosition = FormStartPosition.CenterScreen;
@@ -275,6 +254,5 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }
