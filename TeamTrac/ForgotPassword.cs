@@ -16,5 +16,12 @@ namespace TeamTrac
         {
             InitializeComponent();
         }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 f1 = new Form1();
+            f1.Show();
+        }
     }
 }

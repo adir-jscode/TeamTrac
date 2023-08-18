@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            label6 = new Label();
             checkBox1 = new CheckBox();
             button1 = new Button();
             textBox2 = new TextBox();
@@ -44,7 +45,6 @@
             errorProvider1 = new ErrorProvider(components);
             errorProvider2 = new ErrorProvider(components);
             guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
-            label6 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -68,6 +68,19 @@
             panel1.Size = new Size(365, 426);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Cursor = Cursors.Hand;
+            label6.Font = new Font("Cambria", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(193, 209);
+            label6.Name = "label6";
+            label6.Size = new Size(106, 14);
+            label6.TabIndex = 7;
+            label6.Text = "Forgot Password?";
+            label6.Click += label6_Click;
             // 
             // checkBox1
             // 
@@ -200,18 +213,6 @@
             guna2MessageDialog1.Parent = null;
             guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             guna2MessageDialog1.Text = null;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Cambria", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(193, 209);
-            label6.Name = "label6";
-            label6.Size = new Size(106, 14);
-            label6.TabIndex = 7;
-            label6.Text = "Forgot Password?";
-            label6.Click += label6_Click;
             // 
             // Form1
             // 
