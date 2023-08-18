@@ -32,7 +32,7 @@ namespace TeamTrac
         {
             //CreateSupportTicket CreateSupportTicket = new CreateSupportTicket();
             //CreateSupportTicket.Show();
-           
+
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -49,38 +49,41 @@ namespace TeamTrac
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AddShop shop = new AddShop();
-            shop.Show();
+
+            AddControlsToPanel(new AddShop());
 
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            DelegateProfile profile = new DelegateProfile();
-            profile.Show();
+            //this.Hide();
+            //DelegateProfile profile = new DelegateProfile();
+            //profile.Show();
+            AddControlsToPanel(new DelegateProfile());
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MyProducts myProducts = new MyProducts();
-            myProducts.Show();
+            //this.Hide();
+            //MyProducts myProducts = new MyProducts();
+            //myProducts.Show();
+            AddControlsToPanel(new MyProducts());
         }
 
         private void guna2Button5_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            SalesReportDelegate salesReportDelegate = new SalesReportDelegate();
-            salesReportDelegate.Show();
+            //this.Hide();
+            //SalesReportDelegate salesReportDelegate = new SalesReportDelegate();
+            //salesReportDelegate.Show();
+            AddControlsToPanel(new SalesReportDelegate());
         }
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ProductRequest productRequest = new ProductRequest();
-            productRequest.Show();
+            //this.Hide();
+            //ProductRequest productRequest = new ProductRequest();
+            //productRequest.Show();
+            AddControlsToPanel(new ProductRequest());
         }
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
@@ -102,6 +105,21 @@ namespace TeamTrac
             panel4.Controls.Add(F);
             F.Show();
 
+        }
+
+        private void guna2Button8_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.Show();
+            Form1.UserName = "";
+        }
+
+        private void guna2Button7_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            DelegateDashboard delegateDashboard = new DelegateDashboard();
+            delegateDashboard.Show();
         }
     }
 }
