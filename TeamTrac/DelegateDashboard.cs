@@ -30,8 +30,9 @@ namespace TeamTrac
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-            CreateSupportTicket CreateSupportTicket = new CreateSupportTicket();
-            CreateSupportTicket.Show();
+            //CreateSupportTicket CreateSupportTicket = new CreateSupportTicket();
+            //CreateSupportTicket.Show();
+           
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -84,9 +85,7 @@ namespace TeamTrac
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            CreateSupportTicket createSupportTicket = new CreateSupportTicket();
-            createSupportTicket.Show();
+            AddControlsToPanel(new CreateSupportTicket());
         }
 
         private void guna2Button8_Click(object sender, EventArgs e)
@@ -94,6 +93,15 @@ namespace TeamTrac
             this.Hide();
             Form1 form1 = new Form1();
             form1.Show();
+        }
+        private void AddControlsToPanel(Form F)
+        {
+            panel4.Controls.Clear();
+            F.TopLevel = false;
+            F.Dock = DockStyle.Fill;
+            panel4.Controls.Add(F);
+            F.Show();
+
         }
     }
 }
