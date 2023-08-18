@@ -211,6 +211,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += Form1_Load;
             Leave += textBox1_TextChanged;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

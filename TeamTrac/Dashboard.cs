@@ -114,77 +114,112 @@ namespace TeamTrac
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AccessControl access = new AccessControl();
-            access.Show();
+            //this.Hide();
+            //AccessControl access = new AccessControl();
+            //access.Show();
+            AddControlsToPanel(new AccessControl());
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AddProduct product = new AddProduct();
-            product.Show();
+            //this.Hide();
+            //AddProduct product = new AddProduct();
+            //product.Show();
+            AddControlsToPanel(new AddProduct());
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            OnBoardDelegate onBoard = new OnBoardDelegate();
-            onBoard.Show();
+            //this.Hide();
+            //OnBoardDelegate onBoard = new OnBoardDelegate();
+            //onBoard.Show();
+            AddControlsToPanel(new OnBoardDelegate());
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ManageEmployee manageEmployee = new ManageEmployee();
-            manageEmployee.Show();
+            //this.Hide();
+            //ManageEmployee manageEmployee = new ManageEmployee();
+            //manageEmployee.Show();
+            AddControlsToPanel(new ManageEmployee());
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AddCategory category = new AddCategory();
-            category.Show();
+            //this.Hide();
+            //AddCategory category = new AddCategory();
+            //category.Show();
+            AddControlsToPanel(new AddCategory());
         }
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            SupportTickets support = new SupportTickets();
-            support.Show();
+            //this.Hide();
+            //SupportTickets support = new SupportTickets();
+            //support.Show();
+            AddControlsToPanel(new SupportTickets());
         }
 
         private void guna2Button7_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            CompanyProfile profile = new CompanyProfile();
-            profile.Show();
+            //this.Hide();
+            //CompanyProfile profile = new CompanyProfile();
+            //profile.Show();
+            AddControlsToPanel(new CompanyProfile());
         }
 
         private void guna2Button9_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Inventory inventory = new Inventory();
-            inventory.Show();
+            //this.Hide();
+            //Inventory inventory = new Inventory();
+            //inventory.Show();
+            AddControlsToPanel(new Inventory());
         }
 
         private void guna2Button10_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AssignProduct assign = new AssignProduct();
-            assign.Show();
+            //this.Hide();
+            //AssignProduct assign = new AssignProduct();
+            //assign.Show();
+            AddControlsToPanel(new AssignProduct());
         }
 
         private void guna2Button12_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ManageDelegates manageDelegates = new ManageDelegates();
-            manageDelegates.Show();
+            //this.Hide();
+            //ManageDelegates manageDelegates = new ManageDelegates();
+            //manageDelegates.Show();
+            AddControlsToPanel(new ManageDelegates());
         }
 
         private void label2_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void AddControlsToPanel(Form F)
+        {
+            panel1.Controls.Clear();
+            F.TopLevel = false;
+            F.Dock = DockStyle.Fill;
+            panel1.Controls.Add(F);
+            F.Show();
+
+        }
+
+        private void guna2Button11_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+        }
+
+        private void guna2Button8_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form = new Form1();
+            form.Show();
+            Form1.UserName = "";
         }
     }
 }

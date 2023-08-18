@@ -23,5 +23,10 @@ namespace TeamTrac
             Dashboard dashboard = new Dashboard();
             dashboard.Show();
         }
+
+        private void AccessControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

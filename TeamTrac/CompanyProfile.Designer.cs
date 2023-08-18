@@ -32,10 +32,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyProfile));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label8 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -45,6 +45,7 @@
             label4 = new Label();
             label3 = new Label();
             panel1 = new Panel();
+            guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             groupBox1 = new GroupBox();
             textBox11 = new TextBox();
@@ -65,7 +66,6 @@
             textBox1 = new TextBox();
             label6 = new Label();
             label2 = new Label();
-            guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -172,6 +172,24 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1164, 634);
             panel1.TabIndex = 2;
+            // 
+            // guna2Button3
+            // 
+            guna2Button3.CustomizableEdges = customizableEdges4;
+            guna2Button3.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button3.FillColor = Color.RosyBrown;
+            guna2Button3.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button3.ForeColor = Color.White;
+            guna2Button3.Location = new Point(939, 19);
+            guna2Button3.Name = "guna2Button3";
+            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            guna2Button3.Size = new Size(180, 44);
+            guna2Button3.TabIndex = 29;
+            guna2Button3.Text = "Home";
+            guna2Button3.Click += guna2Button3_Click;
             // 
             // guna2Button2
             // 
@@ -369,31 +387,14 @@
             label2.Text = "Company Name";
             label2.Click += label2_Click;
             // 
-            // guna2Button3
-            // 
-            guna2Button3.CustomizableEdges = customizableEdges4;
-            guna2Button3.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button3.FillColor = Color.RosyBrown;
-            guna2Button3.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2Button3.ForeColor = Color.White;
-            guna2Button3.Location = new Point(939, 19);
-            guna2Button3.Name = "guna2Button3";
-            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            guna2Button3.Size = new Size(180, 44);
-            guna2Button3.TabIndex = 29;
-            guna2Button3.Text = "Home";
-            guna2Button3.Click += guna2Button3_Click;
-            // 
             // CompanyProfile
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 28, 36);
-            ClientSize = new Size(1189, 640);
+            ClientSize = new Size(1205, 679);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "CompanyProfile";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CompanyProfile";
