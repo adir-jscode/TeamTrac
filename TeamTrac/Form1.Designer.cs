@@ -44,6 +44,7 @@
             errorProvider1 = new ErrorProvider(components);
             errorProvider2 = new ErrorProvider(components);
             guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            label6 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -53,6 +54,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(label6);
             panel1.Controls.Add(checkBox1);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(textBox2);
@@ -72,7 +74,7 @@
             checkBox1.AutoSize = true;
             checkBox1.Font = new Font("Cambria", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox1.ForeColor = SystemColors.ActiveCaption;
-            checkBox1.Location = new Point(186, 224);
+            checkBox1.Location = new Point(186, 243);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(113, 19);
             checkBox1.TabIndex = 6;
@@ -199,6 +201,18 @@
             guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             guna2MessageDialog1.Text = null;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Cambria", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(193, 209);
+            label6.Name = "label6";
+            label6.Size = new Size(106, 14);
+            label6.TabIndex = 7;
+            label6.Text = "Forgot Password?";
+            label6.Click += label6_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -240,5 +254,6 @@
         private ErrorProvider errorProvider1;
         private ErrorProvider errorProvider2;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
+        private Label label6;
     }
 }

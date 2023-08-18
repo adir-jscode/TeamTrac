@@ -155,5 +155,12 @@ namespace TeamTrac
         {
 
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ForgotPassword forgotPassword = new ForgotPassword();
+            forgotPassword.Show();
+        }
     }
 }
