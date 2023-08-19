@@ -372,13 +372,14 @@ namespace TeamTrac
 
             //User Exists
 
-            public static bool UserExist(string Email)
+            public static bool UserExist(string Value)
             {
                 using (SqlConnection con = new SqlConnection(Global.Connection_String()))
                 {
-                    using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM [TeamTrac].[dbo].[CompanyDetails] where [CompanyEmail]='" + Email + "'", con))
+                    using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM [TeamTrac].[dbo].[CompanyDetails] where [CompanyEmail]='" + Value + "' OR [Username]='" + Value + "'", con))
                     {
-                        cmd.Parameters.AddWithValue("@CompnayEmail", Email);
+                        cmd.Parameters.AddWithValue("@CompnayEmail", Value);
+                        cmd.Parameters.AddWithValue("@Username", Value);
 
                         con.Open();
 
@@ -388,6 +389,8 @@ namespace TeamTrac
                     }
                 }
             }
+
+
 
             public static void UpdatePassword(
             string Email,

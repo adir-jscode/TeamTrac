@@ -32,11 +32,12 @@ namespace TeamTrac
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox1.Text))
+            bool exists = Global.Get.UserExist(textBox1.Text);
+            if (string.IsNullOrEmpty(textBox1.Text) || !exists)
             {
                 textBox1.Focus();
                 errorProvider1.Icon = Properties.Resources.error;
-                errorProvider1.SetError(this.textBox1, "Enter Username");
+                errorProvider1.SetError(this.textBox1, "Enter Valid Username");
             }
             else
             {
