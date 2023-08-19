@@ -316,12 +316,113 @@ namespace TeamTrac
                 }
             }
 
+            //new login auth
 
+            //Function start
+            //public static List<Model.User> LoginAuth(string phone, string password)
+            //{
+            //    using (SqlConnection con = new SqlConnection(db.ConnectionString()))
+            //    {
+            //        // MessageBox.Show("SELECT ProductName FROM Products WHERE ProductName like  '" + SearchString + "'");
+            //        using (SqlCommand cmd = new SqlCommand("SELECT * FROM [GoruKhasi].[dbo].[UserDetails] where [PhoneNumber]='" + phone + "' and [Password]='" + password + "'", con))
+            //        {
+            //            con.Open();
+
+            //            SqlDataReader sdr = cmd.ExecuteReader();
+
+            //            if (sdr.Read())
+            //            {
+            //                con.Close();
+            //                con.Open();
+
+            //                SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //                DataSet ds = new DataSet();
+            //                da.Fill(ds, "DataTable1");
+            //                con.Close();
+
+            //                DataTable dt = ds.Tables["DataTable1"];
+
+
+            //                List<Model.User> user = new List<Model.User>();
+
+            //                return user = (from DataRow dr in dt.Rows
+            //                               select new Model.User()
+            //                               {
+            //                                   UserID = dr["ID"].ToString(),
+            //                                   FullName = dr["FullName"].ToString(),
+            //                                   Email = dr["Email"].ToString(),
+            //                                   PhoneNumber = dr["PhoneNumber"].ToString(),
+            //                                   Password = dr["Password"].ToString(),
+
+
+
+            //                               }).ToList();
+            //            }
+            //            else
+            //            {
+            //                return new List<Model.User>();
+            //            }
+
+            //        }
+            //    }
+
+            //}
+            //Function END
+
+
+            //User Exists
+
+            public static bool UserExist(string Email)
+            {
+                using (SqlConnection con = new SqlConnection(Global.Connection_String()))
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM [TeamTrac].[dbo].[CompanyDetails] where [CompanyEmail]='" + Email + "'", con))
+                    {
+                        cmd.Parameters.AddWithValue("@CompnayEmail", Email);
+
+                        con.Open();
+
+                        int count = (int)cmd.ExecuteScalar();
+
+                        return count > 0;
+                    }
+                }
+            }
+
+            public static void UpdatePassword(
+            string Email,
+            string Password
+
+
+       )
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+
+
+                    using (SqlCommand cmd = new SqlCommand("UPDATE [TeamTrac].[dbo].[CompanyDetails] SET [Password] = '" + Password + "' WHERE [CompanyEmail] ='" + Email + "'", connec))
+                    {
+
+
+
+                        connec.Open();
+
+
+                        cmd.Parameters.AddWithValue("@Password", Password);
+
+
+                        cmd.ExecuteNonQuery();
+                        connec.Close();
+
+
+                    }
+                }
+            }//Func End
 
         }
 
-        
-        
+
+
 
 
 

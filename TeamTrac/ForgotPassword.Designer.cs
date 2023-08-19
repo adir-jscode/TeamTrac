@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -43,8 +44,14 @@
             label3 = new Label();
             label2 = new Label();
             pictureBox1 = new PictureBox();
+            errorProvider1 = new ErrorProvider(components);
+            errorProvider2 = new ErrorProvider(components);
+            errorProvider3 = new ErrorProvider(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -97,27 +104,34 @@
             guna2Button3.Size = new Size(126, 46);
             guna2Button3.TabIndex = 22;
             guna2Button3.Text = "Update";
+            guna2Button3.Click += guna2Button3_Click;
             // 
             // textBox3
             // 
             textBox3.Location = new Point(146, 212);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(310, 26);
-            textBox3.TabIndex = 18;
+            textBox3.TabIndex = 3;
+            textBox3.UseSystemPasswordChar = true;
+            textBox3.Leave += textBox3_Leave;
             // 
             // textBox2
             // 
             textBox2.Location = new Point(146, 160);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(310, 26);
-            textBox2.TabIndex = 17;
+            textBox2.TabIndex = 2;
+            textBox2.UseSystemPasswordChar = true;
+            textBox2.Leave += textBox2_Leave;
             // 
             // textBox1
             // 
             textBox1.Location = new Point(146, 105);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(310, 26);
-            textBox1.TabIndex = 16;
+            textBox1.TabIndex = 1;
+            textBox1.TextChanged += textBox1_TextChanged;
+            textBox1.Leave += textBox1_Leave;
             // 
             // label4
             // 
@@ -158,6 +172,18 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            errorProvider3.ContainerControl = this;
+            // 
             // ForgotPassword
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -171,9 +197,13 @@
             Name = "ForgotPassword";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ForgotPassword";
+            Leave += ForgotPassword_Leave;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();
             ResumeLayout(false);
         }
 
@@ -189,5 +219,8 @@
         private Label label2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private ErrorProvider errorProvider1;
+        private ErrorProvider errorProvider2;
+        private ErrorProvider errorProvider3;
     }
 }
