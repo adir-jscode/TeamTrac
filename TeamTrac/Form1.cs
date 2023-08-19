@@ -4,6 +4,8 @@ namespace TeamTrac
     {
 
         public static string UserName;
+        public static string Password;
+        public static string ID;
         public Form1()
         {
             InitializeComponent();
@@ -68,7 +70,7 @@ namespace TeamTrac
         private void button1_Click(object sender, EventArgs e)
         {
             UserName = textBox1.Text;
-            string Password = textBox2.Text;
+             Password = textBox2.Text;
 
             //Login as company
 
@@ -80,6 +82,7 @@ namespace TeamTrac
                     {
                         MessageBox.Show("Login Successful");
                         ///guna2MessageDialog1.Show("Login");
+                        ID = Global.Get.GetID(UserName);
                         this.Hide();
                         Dashboard dashboard = new Dashboard();
                         dashboard.Show();

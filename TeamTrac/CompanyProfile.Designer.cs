@@ -185,6 +185,7 @@
             guna2Button2.Size = new Size(126, 46);
             guna2Button2.TabIndex = 30;
             guna2Button2.Text = "Update";
+            guna2Button2.Click += guna2Button2_Click;
             // 
             // groupBox1
             // 

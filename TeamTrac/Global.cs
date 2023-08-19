@@ -319,54 +319,62 @@ namespace TeamTrac
             //new login auth
 
             //Function start
-            //public static List<Model.User> LoginAuth(string phone, string password)
-            //{
-            //    using (SqlConnection con = new SqlConnection(db.ConnectionString()))
-            //    {
-            //        // MessageBox.Show("SELECT ProductName FROM Products WHERE ProductName like  '" + SearchString + "'");
-            //        using (SqlCommand cmd = new SqlCommand("SELECT * FROM [GoruKhasi].[dbo].[UserDetails] where [PhoneNumber]='" + phone + "' and [Password]='" + password + "'", con))
-            //        {
-            //            con.Open();
+            public static List<Model.CompanyDetails> LoginCompany(string Username, string password)
+            {
+                using (SqlConnection con = new SqlConnection(Global.Connection_String()))
+                {
+                    // MessageBox.Show("SELECT ProductName FROM Products WHERE ProductName like  '" + SearchString + "'");
+                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM [TeamTrac].[dbo].[CompanyDetails] where [Username]='" + Username + "' and [Password]='" + password + "'", con))
+                    {
+                        con.Open();
 
-            //            SqlDataReader sdr = cmd.ExecuteReader();
+                        SqlDataReader sdr = cmd.ExecuteReader();
 
-            //            if (sdr.Read())
-            //            {
-            //                con.Close();
-            //                con.Open();
+                        if (sdr.Read())
+                        {
+                            con.Close();
+                            con.Open();
 
-            //                SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //                DataSet ds = new DataSet();
-            //                da.Fill(ds, "DataTable1");
-            //                con.Close();
+                            SqlDataAdapter da = new SqlDataAdapter(cmd);
+                            DataSet ds = new DataSet();
+                            da.Fill(ds, "DataTable1");
+                            con.Close();
 
-            //                DataTable dt = ds.Tables["DataTable1"];
-
-
-            //                List<Model.User> user = new List<Model.User>();
-
-            //                return user = (from DataRow dr in dt.Rows
-            //                               select new Model.User()
-            //                               {
-            //                                   UserID = dr["ID"].ToString(),
-            //                                   FullName = dr["FullName"].ToString(),
-            //                                   Email = dr["Email"].ToString(),
-            //                                   PhoneNumber = dr["PhoneNumber"].ToString(),
-            //                                   Password = dr["Password"].ToString(),
+                            DataTable dt = ds.Tables["DataTable1"];
 
 
+                            List<Model.CompanyDetails> compnay = new List<Model.CompanyDetails>();
 
-            //                               }).ToList();
-            //            }
-            //            else
-            //            {
-            //                return new List<Model.User>();
-            //            }
+                            return compnay = (from DataRow dr in dt.Rows
+                                           select new Model.CompanyDetails()
+                                           {
+                                               ID = dr["ID"].ToString(),
+                                               CompanyName = dr["CompanyName"].ToString(),
+                                               CompanyAddress = dr["CompanyAddress"].ToString(),
+                                               CompnayBin = dr["CompnayBin"].ToString(),
+                                               TradeLicenceNo = dr["TradeLicenceNo"].ToString(),
+                                               ContactNo = dr["ContactNo"].ToString(),
+                                                OwnerFullName = dr["OwnerFullName"].ToString(),
+                                                CompanyEmail = dr["CompanyEmail"].ToString(),
+                                                OwnerEmail = dr["OwnerEmail"].ToString(),
+                                                NID = dr["NID"].ToString(),
+                                                PhoneNo = dr["PhoneNo"].ToString(),
+                                                Username = dr["Username"].ToString(),
+                                                Password = dr["Password"].ToString(),
+                                                Status = dr["Status"].ToString(),
+                                                Logo = dr["Logo"].ToString()
 
-            //        }
-            //    }
+        }).ToList();
+                        }
+                        else
+                        {
+                            return new List<Model.CompanyDetails>();
+                        }
 
-            //}
+                    }
+                }
+
+            }
             //Function END
 
 
@@ -392,12 +400,7 @@ namespace TeamTrac
 
 
 
-            public static void UpdatePassword(
-            string Email,
-            string Password
-
-
-       )
+            public static void UpdatePassword(string Email,string Password)
             {
                 using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
                 {
@@ -421,6 +424,35 @@ namespace TeamTrac
                     }
                 }
             }//Func End
+
+            public static string GetID(string Username)
+            {
+
+                using (SqlConnection con = new SqlConnection(Global.Connection_String()))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("SELECT ID FROM [TeamTrac].[dbo].[CompanyDetails] where [Username]='" + Username + "'", con))
+                    {
+                        con.Open();
+
+                        SqlDataReader sdr = cmd.ExecuteReader();
+                        if (sdr.Read())
+                        {
+                            string ID = sdr.GetValue(0).ToString();
+
+                            return ID;
+                        }
+                        else
+                        {
+                            string ID = "";
+
+                            return ID;
+                        }
+
+                    }
+                }
+
+            }
 
         }
 
