@@ -33,6 +33,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OnBoardDelegate));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            textBox9 = new TextBox();
+            label13 = new Label();
             textBox8 = new TextBox();
             textBox7 = new TextBox();
             label12 = new Label();
@@ -58,12 +60,18 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            textBox10 = new TextBox();
+            label14 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(textBox10);
+            panel1.Controls.Add(label14);
+            panel1.Controls.Add(textBox9);
+            panel1.Controls.Add(label13);
             panel1.Controls.Add(textBox8);
             panel1.Controls.Add(textBox7);
             panel1.Controls.Add(label12);
@@ -95,6 +103,23 @@
             panel1.Size = new Size(1055, 633);
             panel1.TabIndex = 1;
             // 
+            // textBox9
+            // 
+            textBox9.Location = new Point(156, 388);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(310, 30);
+            textBox9.TabIndex = 29;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.ForeColor = Color.White;
+            label13.Location = new Point(10, 396);
+            label13.Name = "label13";
+            label13.Size = new Size(77, 22);
+            label13.TabIndex = 28;
+            label13.Text = "Address";
+            // 
             // textBox8
             // 
             textBox8.Location = new Point(679, 434);
@@ -104,7 +129,7 @@
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(156, 439);
+            textBox7.Location = new Point(156, 503);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(310, 30);
             textBox7.TabIndex = 26;
@@ -123,7 +148,7 @@
             // 
             label11.AutoSize = true;
             label11.ForeColor = Color.White;
-            label11.Location = new Point(10, 447);
+            label11.Location = new Point(10, 506);
             label11.Name = "label11";
             label11.Size = new Size(137, 22);
             label11.TabIndex = 24;
@@ -199,7 +224,7 @@
             button1.BackColor = Color.FromArgb(35, 112, 248);
             button1.FlatStyle = FlatStyle.Popup;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(449, 511);
+            button1.Location = new Point(449, 566);
             button1.Name = "button1";
             button1.Size = new Size(136, 46);
             button1.TabIndex = 17;
@@ -223,7 +248,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(156, 380);
+            textBox4.Location = new Point(156, 439);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(310, 30);
             textBox4.TabIndex = 13;
@@ -282,7 +307,7 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = Color.White;
-            label5.Location = new Point(10, 388);
+            label5.Location = new Point(10, 442);
             label5.Name = "label5";
             label5.Size = new Size(42, 22);
             label5.TabIndex = 4;
@@ -333,6 +358,23 @@
             label1.TabIndex = 0;
             label1.Text = "OnBoard Delegates";
             // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(679, 503);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(310, 30);
+            textBox10.TabIndex = 31;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.ForeColor = Color.White;
+            label14.Location = new Point(504, 511);
+            label14.Name = "label14";
+            label14.Size = new Size(81, 22);
+            label14.TabIndex = 30;
+            label14.Text = "Zip Code";
+            // 
             // OnBoardDelegate
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -378,5 +420,9 @@
         private Label label8;
         private TextBox textBox7;
         private TextBox textBox8;
+        private TextBox textBox9;
+        private Label label13;
+        private TextBox textBox10;
+        private Label label14;
     }
 }

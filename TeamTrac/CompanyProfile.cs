@@ -22,7 +22,7 @@ namespace TeamTrac
 
         private void CompnayInfo()
         {
-            List<Model.CompanyDetails> userList = Global.Get.LoginCompany(Form1.UserName,Form1.Password);
+            List<Model.CompanyDetails> userList = Global.Get.LoginCompany(Form1.UserName, Form1.Password);
             foreach (var user in userList)
             {
                 textBox1.Text = user.CompanyName;
@@ -36,6 +36,7 @@ namespace TeamTrac
                 textBox9.Text = user.OwnerEmail;
                 textBox10.Text = user.NID;
                 textBox11.Text = user.PhoneNo;
+                //guna2CirclePictureBox1 = user.Logo;
                 //textBox12.Text = user.Password;
                 //textBox13.Text = user.Status;
                 //textBox14.Text = user.Logo;
@@ -79,13 +80,32 @@ namespace TeamTrac
             string OwnerEmail = textBox9.Text;
             string NID = textBox10.Text;
             string PhoneNo = textBox11.Text;
-
-            Global.Get.UpdateCompnayDetails(ID,CompanyName, CompanyAddress, CompnayBin, TradeLicenceNo, ContactNo, CompanyEmail, Username, OwnerFullName, OwnerEmail, NID, PhoneNo);
+            //string Logo = SavePhoto().ToString();
+            Global.Get.UpdateCompnayDetails(ID, CompanyName, CompanyAddress, CompnayBin, TradeLicenceNo, ContactNo, CompanyEmail, Username, OwnerFullName, OwnerEmail, NID, PhoneNo);
             MessageBox.Show("Company Details Updated Successfully");
-            
 
 
 
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select Image";
+            //ofd.Filter = "PNG FILE (*.PNG) | *.PNG";
+            ofd.Filter = "ALL IMAGE FILE (*.*) | *.*";
+            //ofd.ShowDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                guna2CirclePictureBox1.Image = new Bitmap(ofd.FileName);
+            }
+        }
+        private byte[] SavePhoto()
+        {
+            MemoryStream ms = new MemoryStream();
+            guna2CirclePictureBox1.Image.Save(ms, guna2CirclePictureBox1.Image.RawFormat);
+            return ms.GetBuffer();
         }
     }
 }

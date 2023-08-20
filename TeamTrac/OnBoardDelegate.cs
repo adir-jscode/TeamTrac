@@ -74,16 +74,18 @@ namespace TeamTrac
             string Password = textBox6.Text;
             string DelegatingArea = textBox7.Text;
             string DelegatingDistrict = textBox8.Text;
+            string DelegateAddress = textBox9.Text;
+            string ZipCode = textBox10.Text;
             string Image = SavePhoto().ToString();
 
 
-            if (Name == "" || Phone == "" || Email == "" || NID == "" || DOB == "" || JoiningDate == "" || Username == "" || Password == "" || DelegatingArea == "" || DelegatingDistrict == "" || Image == "")
+            if (Name == "" || Phone == "" || Email == "" || DelegateAddress == "" || NID == "" || DOB == "" || JoiningDate == "" || Username == "" || Password == "" || DelegatingArea == "" || DelegatingDistrict == "" || Image == "" || ZipCode == "")
             {
                 MessageBox.Show("Please Fill All The Fields");
             }
             else
             {
-                Global.Get.OnboardDelegate(Name, Phone, Email, NID, DOB, JoiningDate, Username, Password, DelegatingArea, DelegatingDistrict, Image);
+                Global.Get.OnboardDelegate(Name, Phone, Email, DelegateAddress, NID, DOB, JoiningDate, Username, Password, DelegatingArea, DelegatingDistrict, Image, ZipCode);
                 MessageBox.Show("Delegate Onboarded Successfully");
             }
 

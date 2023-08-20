@@ -197,7 +197,7 @@ namespace TeamTrac
             }
 
 
-            public static void OnboardDelegate(string Name,string Phone,string Email,string NID,string DOB,string JoiningDate,string Username,string Password,string DelegatingArea,string DelegatingDistrict,string Image)
+            public static void OnboardDelegate(string Name,string Phone,string Email,string DelegateAddress,string NID,string DOB,string JoiningDate,string Username,string Password,string DelegatingArea,string DelegatingDistrict,string Image,string ZipCode)
             {
                 using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
                 {
@@ -213,17 +213,19 @@ namespace TeamTrac
 
 
 
-                        cmd.Parameters.AddWithValue("@DelegateID","DEL" + DateTime.Now.ToString("ddMMyyyyhhmmssfff"));
+                        cmd.Parameters.AddWithValue("@DelegateID", "DEL" + DateTime.Now.ToString("ddMMyyyyhhmmssfff"));
                         cmd.Parameters.AddWithValue("@DelegateName", Name);
                         cmd.Parameters.AddWithValue("@PhoneNo", Phone);
                         cmd.Parameters.AddWithValue("@Email", Email);
+                        cmd.Parameters.AddWithValue("@DelegateAddress", DelegateAddress);
                         cmd.Parameters.AddWithValue("@NID", NID);
                         cmd.Parameters.AddWithValue("@DOB", DOB);
                         cmd.Parameters.AddWithValue("@OnBoardDateTime", JoiningDate);
                         cmd.Parameters.AddWithValue("@Username", Username);
-                        cmd.Parameters.AddWithValue("@passsword", Password);
-                        cmd.Parameters.AddWithValue("@DelegatingArea", DelegatingArea);
-                        cmd.Parameters.AddWithValue("@DelegatingDistrict", DelegatingDistrict);
+                        cmd.Parameters.AddWithValue("@Password", Password);
+                        cmd.Parameters.AddWithValue("@DelegateArea", DelegatingArea);
+                        cmd.Parameters.AddWithValue("@DelegateDistrict", DelegatingDistrict);
+                        cmd.Parameters.AddWithValue("@DelegateZipCode", ZipCode);
                         cmd.Parameters.AddWithValue("@Image", Image);
                         cmd.Parameters.AddWithValue("@Status", "1");
 
@@ -479,6 +481,7 @@ namespace TeamTrac
                         cmd.Parameters.AddWithValue("@OwnerEmail", OwnerEmail);
                         cmd.Parameters.AddWithValue("@NID", NID);
                         cmd.Parameters.AddWithValue("@PhoneNo", PhoneNo);
+                        //cmd.Parameters.AddWithValue("@Logo", Logo);
 
                         
 
@@ -489,9 +492,10 @@ namespace TeamTrac
                 }
             }
 
-
-
-
+            internal static void UpdateCompnayDetails(string iD, string companyName, string companyAddress, string compnayBin, string tradeLicenceNo, string contactNo, string companyEmail, string username, string ownerFullName, string ownerEmail, string nID, string phoneNo, byte[] bytes)
+            {
+                throw new NotImplementedException();
+            }
         }
 
 
