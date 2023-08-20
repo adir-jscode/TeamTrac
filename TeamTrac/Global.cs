@@ -454,6 +454,44 @@ namespace TeamTrac
 
             }
 
+            //string CompanyName = textBox1.Text;
+            //string CompanyAddress = textBox2.Text;
+            //string CompnayBin = textBox3.Text;
+            //
+
+            public static void UpdateCompnayDetails(string ID, string CompanyName,string CompanyAddress,string CompnayBin, string TradeLicenceNo, string ContactNo, string CompanyEmail,string Username,string OwnerFullName,string OwnerEmail,string NID,string PhoneNo)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+                    using (SqlCommand cmd = new SqlCommand("UPDATE [TeamTrac].[dbo].[CompanyDetails] SET ID = @ID,CompanyName=@CompanyName,CompanyAddress=@CompanyAddress,CompnayBin=@CompnayBin,TradeLicenceNo=@TradeLicenceNo,ContactNo=@ContactNo,CompanyEmail=@CompanyEmail,Username=@Username,OwnerFullName=@OwnerFullName,OwnerEmail=@OwnerEmail,NID=@NID,PhoneNo=@PhoneNo WHERE ID = @ID", connec))
+                    {
+                        connec.Open();
+
+                        cmd.Parameters.AddWithValue("@ID", ID);
+                        cmd.Parameters.AddWithValue("@CompanyName", CompanyName);
+                        cmd.Parameters.AddWithValue("@CompanyAddress", CompanyAddress);
+                        cmd.Parameters.AddWithValue("@CompnayBin", CompnayBin);
+                        cmd.Parameters.AddWithValue("@TradeLicenceNo", TradeLicenceNo);
+                        cmd.Parameters.AddWithValue("@ContactNo", ContactNo);
+                        cmd.Parameters.AddWithValue("@CompanyEmail", CompanyEmail);
+                        cmd.Parameters.AddWithValue("@Username", Username);
+                        cmd.Parameters.AddWithValue("@OwnerFullName", OwnerFullName);
+                        cmd.Parameters.AddWithValue("@OwnerEmail", OwnerEmail);
+                        cmd.Parameters.AddWithValue("@NID", NID);
+                        cmd.Parameters.AddWithValue("@PhoneNo", PhoneNo);
+
+                        
+
+
+                        cmd.ExecuteNonQuery();
+                        connec.Close();
+                    }
+                }
+            }
+
+
+
+
         }
 
 

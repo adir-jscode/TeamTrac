@@ -30,12 +30,12 @@ namespace TeamTrac
                 textBox3.Text = user.CompnayBin;
                 textBox4.Text = user.TradeLicenceNo;
                 textBox5.Text = user.ContactNo;
-                textBox6.Text = user.OwnerFullName;
-                textBox7.Text = user.CompanyEmail;
-                textBox8.Text = user.OwnerEmail;
-                textBox9.Text = user.NID;
-                textBox10.Text = user.PhoneNo;
-                textBox11.Text = user.Username;
+                textBox6.Text = user.CompanyEmail;
+                textBox7.Text = user.Username;
+                textBox8.Text = user.OwnerFullName;
+                textBox9.Text = user.OwnerEmail;
+                textBox10.Text = user.NID;
+                textBox11.Text = user.PhoneNo;
                 //textBox12.Text = user.Password;
                 //textBox13.Text = user.Status;
                 //textBox14.Text = user.Logo;
@@ -67,6 +67,24 @@ namespace TeamTrac
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+            string ID = Form1.ID;
+            string CompanyName = textBox1.Text;
+            string CompanyAddress = textBox2.Text;
+            string CompnayBin = textBox3.Text;
+            string TradeLicenceNo = textBox4.Text;
+            string ContactNo = textBox5.Text;
+            string CompanyEmail = textBox6.Text;
+            string Username = textBox7.Text;
+            string OwnerFullName = textBox8.Text;
+            string OwnerEmail = textBox9.Text;
+            string NID = textBox10.Text;
+            string PhoneNo = textBox11.Text;
+
+            Global.Get.UpdateCompnayDetails(ID,CompanyName, CompanyAddress, CompnayBin, TradeLicenceNo, ContactNo, CompanyEmail, Username, OwnerFullName, OwnerEmail, NID, PhoneNo);
+            MessageBox.Show("Company Details Updated Successfully");
+            
+
+
 
         }
     }
