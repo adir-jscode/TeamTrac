@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace TeamTrac
 {
@@ -19,7 +21,21 @@ namespace TeamTrac
             //textBox1.Text = Form1.ID;
 
         }
+        private Image GetPhoto(byte[] photo)
+        {
+            MemoryStream ms = new MemoryStream(photo);
+            return Image.FromStream(ms);
+        }
 
+       
+
+        void ResetControl()
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            //numericUpDown1.Value = 0;
+            //pictureBox1.Image = Properties.Resources.no_image_avaiable;
+        }
         private void CompnayInfo()
         {
             List<Model.CompanyDetails> userList = Global.Get.LoginCompany(Form1.UserName, Form1.Password);
@@ -36,10 +52,8 @@ namespace TeamTrac
                 textBox9.Text = user.OwnerEmail;
                 textBox10.Text = user.NID;
                 textBox11.Text = user.PhoneNo;
-                //guna2CirclePictureBox1 = user.Logo;
-                //textBox12.Text = user.Password;
-                //textBox13.Text = user.Status;
-                //textBox14.Text = user.Logo;
+                guna2CirclePictureBox1.Image = GetPhoto((byte[])user.Image);
+                
             }
         }
 
@@ -66,6 +80,13 @@ namespace TeamTrac
             dashboard.Show();
         }
 
+        private byte[] SavePhoto()
+        {
+            MemoryStream ms = new MemoryStream();
+            guna2CirclePictureBox1.Image.Save(ms, guna2CirclePictureBox1.Image.RawFormat);
+            return ms.GetBuffer();
+        }
+
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             string ID = Form1.ID;
@@ -80,8 +101,9 @@ namespace TeamTrac
             string OwnerEmail = textBox9.Text;
             string NID = textBox10.Text;
             string PhoneNo = textBox11.Text;
-            //string Logo = SavePhoto().ToString();
-            Global.Get.UpdateCompnayDetails(ID, CompanyName, CompanyAddress, CompnayBin, TradeLicenceNo, ContactNo, CompanyEmail, Username, OwnerFullName, OwnerEmail, NID, PhoneNo);
+            byte[] Logo = SavePhoto();
+           
+            Global.Get.UpdateCompnayDetails(ID, CompanyName, CompanyAddress, CompnayBin, TradeLicenceNo, ContactNo, CompanyEmail, Username, OwnerFullName, OwnerEmail, NID, PhoneNo, Logo);
             MessageBox.Show("Company Details Updated Successfully");
 
 
@@ -101,11 +123,6 @@ namespace TeamTrac
                 guna2CirclePictureBox1.Image = new Bitmap(ofd.FileName);
             }
         }
-        private byte[] SavePhoto()
-        {
-            MemoryStream ms = new MemoryStream();
-            guna2CirclePictureBox1.Image.Save(ms, guna2CirclePictureBox1.Image.RawFormat);
-            return ms.GetBuffer();
-        }
+        
     }
 }

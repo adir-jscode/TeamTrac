@@ -197,7 +197,7 @@ namespace TeamTrac
             }
 
 
-            public static void OnboardDelegate(string Name,string Phone,string Email,string DelegateAddress,string NID,string DOB,string JoiningDate,string Username,string Password,string DelegatingArea,string DelegatingDistrict,string Image,string ZipCode)
+            public static void OnboardDelegate(string Name,string Phone,string Email,string DelegateAddress,string NID,string DOB,string JoiningDate,string Username,string Password,string DelegatingArea,string DelegatingDistrict,byte[] Image,string ZipCode)
             {
                 using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
                 {
@@ -226,7 +226,7 @@ namespace TeamTrac
                         cmd.Parameters.AddWithValue("@DelegateArea", DelegatingArea);
                         cmd.Parameters.AddWithValue("@DelegateDistrict", DelegatingDistrict);
                         cmd.Parameters.AddWithValue("@DelegateZipCode", ZipCode);
-                        cmd.Parameters.AddWithValue("@Image", Image);
+                        cmd.Parameters.AddWithValue("@Logo", Image);
                         cmd.Parameters.AddWithValue("@Status", "1");
 
 
@@ -350,6 +350,7 @@ namespace TeamTrac
                             return compnay = (from DataRow dr in dt.Rows
                                            select new Model.CompanyDetails()
                                            {
+
                                                ID = dr["ID"].ToString(),
                                                CompanyName = dr["CompanyName"].ToString(),
                                                CompanyAddress = dr["CompanyAddress"].ToString(),
@@ -364,7 +365,10 @@ namespace TeamTrac
                                                 Username = dr["Username"].ToString(),
                                                 Password = dr["Password"].ToString(),
                                                 Status = dr["Status"].ToString(),
-                                                Logo = dr["Logo"].ToString()
+                                                Image = (byte[])dr["Image"],
+
+
+
 
         }).ToList();
                         }
@@ -461,11 +465,11 @@ namespace TeamTrac
             //string CompnayBin = textBox3.Text;
             //
 
-            public static void UpdateCompnayDetails(string ID, string CompanyName,string CompanyAddress,string CompnayBin, string TradeLicenceNo, string ContactNo, string CompanyEmail,string Username,string OwnerFullName,string OwnerEmail,string NID,string PhoneNo)
+            public static void UpdateCompnayDetails(string ID, string CompanyName,string CompanyAddress,string CompnayBin, string TradeLicenceNo, string ContactNo, string CompanyEmail,string Username,string OwnerFullName,string OwnerEmail,string NID,string PhoneNo,byte[] Logo)
             {
                 using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
                 {
-                    using (SqlCommand cmd = new SqlCommand("UPDATE [TeamTrac].[dbo].[CompanyDetails] SET ID = @ID,CompanyName=@CompanyName,CompanyAddress=@CompanyAddress,CompnayBin=@CompnayBin,TradeLicenceNo=@TradeLicenceNo,ContactNo=@ContactNo,CompanyEmail=@CompanyEmail,Username=@Username,OwnerFullName=@OwnerFullName,OwnerEmail=@OwnerEmail,NID=@NID,PhoneNo=@PhoneNo WHERE ID = @ID", connec))
+                    using (SqlCommand cmd = new SqlCommand("UPDATE [TeamTrac].[dbo].[CompanyDetails] SET ID = @ID,CompanyName=@CompanyName,CompanyAddress=@CompanyAddress,CompnayBin=@CompnayBin,TradeLicenceNo=@TradeLicenceNo,ContactNo=@ContactNo,CompanyEmail=@CompanyEmail,Username=@Username,OwnerFullName=@OwnerFullName,OwnerEmail=@OwnerEmail,NID=@NID,PhoneNo=@PhoneNo,Logo=@Logo WHERE ID = @ID", connec))
                     {
                         connec.Open();
 
@@ -481,21 +485,114 @@ namespace TeamTrac
                         cmd.Parameters.AddWithValue("@OwnerEmail", OwnerEmail);
                         cmd.Parameters.AddWithValue("@NID", NID);
                         cmd.Parameters.AddWithValue("@PhoneNo", PhoneNo);
-                        //cmd.Parameters.AddWithValue("@Logo", Logo);
+                        cmd.Parameters.AddWithValue("@Image", Logo);
 
                         
 
 
-                        cmd.ExecuteNonQuery();
                         connec.Close();
                     }
                 }
             }
 
-            internal static void UpdateCompnayDetails(string iD, string companyName, string companyAddress, string compnayBin, string tradeLicenceNo, string contactNo, string companyEmail, string username, string ownerFullName, string ownerEmail, string nID, string phoneNo, byte[] bytes)
-            {
-                throw new NotImplementedException();
-            }
+
+
+
+            //public static List<Model.DelegateDetails> LoginDelegate(string Username, string password)
+            //{
+            //    using (SqlConnection con = new SqlConnection(Global.Connection_String()))
+            //    {
+            //        // MessageBox.Show("SELECT ProductName FROM Products WHERE ProductName like  '" + SearchString + "'");
+            //        using (SqlCommand cmd = new SqlCommand("SELECT * FROM [TeamTrac].[dbo].[DelegateDetails] where [Username]='" + Username + "' and [Password]='" + password + "'", con))
+            //        {
+            //            con.Open();
+
+            //            SqlDataReader sdr = cmd.ExecuteReader();
+
+            //            if (sdr.Read())
+            //            {
+            //                con.Close();
+            //                con.Open();
+
+            //                SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //                DataSet ds = new DataSet();
+            //                da.Fill(ds, "DataTable1");
+            //                con.Close();
+
+            //                DataTable dt = ds.Tables["DataTable1"];
+
+
+            //                List<Model.DelegateDetails> del = new List<Model.DelegateDetails>();
+
+            //                return del = (from DataRow dr in dt.Rows
+            //                                  select new Model.DelegateDetails()
+            //                                  {
+
+                                              
+            //                                      DelegateID = dr["DelegateID"].ToString(),
+            //                                      DelegateName = dr["DelegateName"].ToString(),
+            //                                      PhoneNo = dr["PhoneNo"].ToString(),
+            //                                      Email = dr["Email"].ToString(),
+            //                                      NID = dr["NID"].ToString(),
+            //                                      DOB = dr["DOB"].ToString(),
+            //                                      Image = (byte[])dr["Logo"],
+            //                                      OnBoardDateTime = dr["OnBoardDateTime"].ToString(),
+            //                                      DelegateAddress = dr["DelegateAddress"].ToString(),
+            //                                      DelegateDistrict = dr["DelegateDistrict"].ToString(),
+            //                                      DelegateArea = dr["DelegateArea"].ToString(),
+            //                                      DelegateZipCode = dr["DelegateZipCode"].ToString(),
+            //                                      Status = dr["Status"].ToString(),
+            //                                      Username = dr["Username"].ToString(),
+            //                                      Password = dr["Password"].ToString(),
+
+
+
+
+
+
+            //                                  }).ToList();
+            //            }
+            //            else
+            //            {
+            //                return new List<Model.DelegateDetails>();
+            //            }
+
+            //        }
+            //    }
+
+            //}
+
+
+
+            //public static void UpdateDelegateDetails(string ID, string DelegateName, string CompanyAddress, string CompnayBin, string TradeLicenceNo, string ContactNo, string CompanyEmail, string Username, string OwnerFullName, string OwnerEmail, string NID, string PhoneNo, byte[] Logo)
+            //{
+            //    using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+            //    {
+            //        using (SqlCommand cmd = new SqlCommand("UPDATE [TeamTrac].[dbo].[DelegateDetails] SET ID = @ID,CompanyName=@CompanyName,CompanyAddress=@CompanyAddress,CompnayBin=@CompnayBin,TradeLicenceNo=@TradeLicenceNo,ContactNo=@ContactNo,CompanyEmail=@CompanyEmail,Username=@Username,OwnerFullName=@OwnerFullName,OwnerEmail=@OwnerEmail,NID=@NID,PhoneNo=@PhoneNo,Logo=@Logo WHERE ID = @ID", connec))
+            //        {
+            //            connec.Open();
+
+            //            cmd.Parameters.AddWithValue("@ID", ID);
+            //            cmd.Parameters.AddWithValue("@CompanyName", CompanyName);
+            //            cmd.Parameters.AddWithValue("@CompanyAddress", CompanyAddress);
+            //            cmd.Parameters.AddWithValue("@CompnayBin", CompnayBin);
+            //            cmd.Parameters.AddWithValue("@TradeLicenceNo", TradeLicenceNo);
+            //            cmd.Parameters.AddWithValue("@ContactNo", ContactNo);
+            //            cmd.Parameters.AddWithValue("@CompanyEmail", CompanyEmail);
+            //            cmd.Parameters.AddWithValue("@Username", Username);
+            //            cmd.Parameters.AddWithValue("@OwnerFullName", OwnerFullName);
+            //            cmd.Parameters.AddWithValue("@OwnerEmail", OwnerEmail);
+            //            cmd.Parameters.AddWithValue("@NID", NID);
+            //            cmd.Parameters.AddWithValue("@PhoneNo", PhoneNo);
+            //            cmd.Parameters.AddWithValue("@Image", Logo);
+
+
+
+
+            //            connec.Close();
+            //        }
+            //    }
+            //}
         }
 
 

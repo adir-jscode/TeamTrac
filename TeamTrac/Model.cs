@@ -33,7 +33,7 @@ namespace TeamTrac
             public string Username { get; set; }
             public string Password { get; set; }
             public string Status { get; set; }
-            public string Logo { get; set; }
+            public byte[] Image { get; set; }
 
       
         }
@@ -46,7 +46,7 @@ namespace TeamTrac
             public string Email { get; set; }
             public string NID { get; set; }
             public string DOB { get; set; }
-            public string Image { get; set; }
+            public byte[] Image { get; set; }
             public string OnBoardDateTime { get; set; }
             public string DelegateAddress { get; set; }
             public string DelegateDistrict { get; set; }

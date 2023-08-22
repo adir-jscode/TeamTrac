@@ -36,8 +36,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            textBox8 = new TextBox();
-            label8 = new Label();
             textBox7 = new TextBox();
             label7 = new Label();
             textBox6 = new TextBox();
@@ -61,8 +59,6 @@
             // panel1
             // 
             panel1.Controls.Add(guna2Button2);
-            panel1.Controls.Add(textBox8);
-            panel1.Controls.Add(label8);
             panel1.Controls.Add(textBox7);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(textBox6);
@@ -102,23 +98,7 @@
             guna2Button2.Size = new Size(126, 46);
             guna2Button2.TabIndex = 38;
             guna2Button2.Text = "Update";
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(689, 358);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(310, 30);
-            textBox8.TabIndex = 37;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(537, 363);
-            label8.Name = "label8";
-            label8.Size = new Size(90, 22);
-            label8.TabIndex = 36;
-            label8.Text = "Password";
+            guna2Button2.Click += guna2Button2_Click;
             // 
             // textBox7
             // 
@@ -156,7 +136,7 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(689, 431);
+            textBox5.Location = new Point(689, 355);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(310, 30);
             textBox5.TabIndex = 31;
@@ -165,7 +145,7 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = Color.White;
-            label5.Location = new Point(525, 436);
+            label5.Location = new Point(524, 358);
             label5.Name = "label5";
             label5.Size = new Size(158, 22);
             label5.TabIndex = 30;
@@ -302,8 +282,6 @@
         private Label label3;
         private TextBox textBox2;
         private Label label1;
-        private TextBox textBox8;
-        private Label label8;
         private TextBox textBox7;
         private Label label7;
         private TextBox textBox6;
