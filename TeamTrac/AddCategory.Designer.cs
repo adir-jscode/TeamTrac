@@ -31,6 +31,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label1 = new Label();
             label8 = new Label();
@@ -162,7 +163,7 @@
             // 
             guna2DataGridView1.AllowUserToAddRows = false;
             guna2DataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = Color.RosyBrown;
+            dataGridViewCellStyle1.BackColor = Color.IndianRed;
             guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             guna2DataGridView1.BackgroundColor = Color.FromArgb(22, 28, 36);
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -178,7 +179,7 @@
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
@@ -188,6 +189,8 @@
             guna2DataGridView1.Name = "guna2DataGridView1";
             guna2DataGridView1.ReadOnly = true;
             guna2DataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(22, 33, 22);
+            guna2DataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             guna2DataGridView1.RowTemplate.Height = 25;
             guna2DataGridView1.Size = new Size(612, 464);
             guna2DataGridView1.TabIndex = 33;
@@ -198,7 +201,7 @@
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
             guna2DataGridView1.ThemeStyle.BackColor = Color.FromArgb(22, 28, 36);
             guna2DataGridView1.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(22, 28, 36);
+            guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
             guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
             guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;

@@ -15,6 +15,7 @@ namespace TeamTrac
         public AddProduct()
         {
             InitializeComponent();
+            
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
@@ -24,9 +25,22 @@ namespace TeamTrac
             dashboard.Show();
         }
 
+        private void LoadCategory()
+        {
+            DataTable CategoryTable = Global.Get.ProductCategory();
+            comboBox1.DataSource = CategoryTable;
+            comboBox1.DisplayMember = CategoryTable.Columns[1].ToString();
+            comboBox1.ValueMember = CategoryTable.Columns[0].ToString();
+        }
+
         private void groupBox1_Enter(object sender, EventArgs e)
         {
+            DataTable CategoryTable = Global.Get.ProductCategory();
 
+            comboBox1.DisplayMember = CategoryTable.Columns[1].ToString();
+            comboBox1.ValueMember = CategoryTable.Columns[0].ToString();
+
+            comboBox1.DataSource = CategoryTable;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -71,6 +85,16 @@ namespace TeamTrac
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void AddProduct_Load(object sender, EventArgs e)
+        {
+            DataTable CategoryTable = Global.Get.ProductCategory();
+           
+            comboBox1.DisplayMember = CategoryTable.Columns[1].ToString();
+            comboBox1.ValueMember = CategoryTable.Columns[0].ToString();
+
+            comboBox1.DataSource = CategoryTable;
         }
     }
 }
