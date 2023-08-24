@@ -196,6 +196,45 @@ namespace TeamTrac
                 }
             }
 
+            public static void AddNewProduct(string ProductName, string Category,int Price,int Quantity,byte[] Image)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("InsertNewProduct", connec))
+                    {
+
+                        connec.Open();
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+
+
+                        cmd.Parameters.AddWithValue("@ProductID","PRO" + DateTime.Now.ToString("ddMMyyyyhhmmssfff"));
+                        cmd.Parameters.AddWithValue("@ProductName", ProductName);
+                        cmd.Parameters.AddWithValue("@Category", Category);
+                        cmd.Parameters.AddWithValue("@Price", Price);
+                        cmd.Parameters.AddWithValue("@Quantity", Quantity);
+                        cmd.Parameters.AddWithValue("@Image", Image);
+                        cmd.Parameters.AddWithValue("@IsAvailableStock", "1");
+                        cmd.Parameters.AddWithValue("@Status", "1");
+
+
+
+
+
+                        cmd.ExecuteNonQuery();
+                        // ID = cmd.ExecuteScalar().ToString();
+
+                        connec.Close();
+
+                    }
+
+                }
+            }
+
 
             public static void OnboardDelegate(string Name,string Phone,string Email,string DelegateAddress,string NID,string DOB,string JoiningDate,string Username,string Password,string DelegatingArea,string DelegatingDistrict,byte[] Image,string ZipCode)
             {
@@ -498,69 +537,69 @@ namespace TeamTrac
 
 
 
-            //public static List<Model.DelegateDetails> LoginDelegate(string Username, string password)
-            //{
-            //    using (SqlConnection con = new SqlConnection(Global.Connection_String()))
-            //    {
-            //        // MessageBox.Show("SELECT ProductName FROM Products WHERE ProductName like  '" + SearchString + "'");
-            //        using (SqlCommand cmd = new SqlCommand("SELECT * FROM [TeamTrac].[dbo].[DelegateDetails] where [Username]='" + Username + "' and [Password]='" + password + "'", con))
-            //        {
-            //            con.Open();
+            public static List<Model.DelegateDetails> LoginDelegate(string Username, string password)
+            {
+                using (SqlConnection con = new SqlConnection(Global.Connection_String()))
+                {
+                   
+                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM [TeamTrac].[dbo].[DelegateDetails] where [Username]='" + Username + "' and [Password]='" + password + "'", con))
+                    {
+                        con.Open();
 
-            //            SqlDataReader sdr = cmd.ExecuteReader();
+                        SqlDataReader sdr = cmd.ExecuteReader();
 
-            //            if (sdr.Read())
-            //            {
-            //                con.Close();
-            //                con.Open();
+                        if (sdr.Read())
+                        {
+                            con.Close();
+                            con.Open();
 
-            //                SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //                DataSet ds = new DataSet();
-            //                da.Fill(ds, "DataTable1");
-            //                con.Close();
+                            SqlDataAdapter da = new SqlDataAdapter(cmd);
+                            DataSet ds = new DataSet();
+                            da.Fill(ds, "DataTable1");
+                            con.Close();
 
-            //                DataTable dt = ds.Tables["DataTable1"];
-
-
-            //                List<Model.DelegateDetails> del = new List<Model.DelegateDetails>();
-
-            //                return del = (from DataRow dr in dt.Rows
-            //                                  select new Model.DelegateDetails()
-            //                                  {
-
-                                              
-            //                                      DelegateID = dr["DelegateID"].ToString(),
-            //                                      DelegateName = dr["DelegateName"].ToString(),
-            //                                      PhoneNo = dr["PhoneNo"].ToString(),
-            //                                      Email = dr["Email"].ToString(),
-            //                                      NID = dr["NID"].ToString(),
-            //                                      DOB = dr["DOB"].ToString(),
-            //                                      Image = (byte[])dr["Logo"],
-            //                                      OnBoardDateTime = dr["OnBoardDateTime"].ToString(),
-            //                                      DelegateAddress = dr["DelegateAddress"].ToString(),
-            //                                      DelegateDistrict = dr["DelegateDistrict"].ToString(),
-            //                                      DelegateArea = dr["DelegateArea"].ToString(),
-            //                                      DelegateZipCode = dr["DelegateZipCode"].ToString(),
-            //                                      Status = dr["Status"].ToString(),
-            //                                      Username = dr["Username"].ToString(),
-            //                                      Password = dr["Password"].ToString(),
+                            DataTable dt = ds.Tables["DataTable1"];
 
 
+                            List<Model.DelegateDetails> del = new List<Model.DelegateDetails>();
+
+                            return del = (from DataRow dr in dt.Rows
+                                          select new Model.DelegateDetails()
+                                          {
+
+
+                                              DelegateID = dr["DelegateID"].ToString(),
+                                              DelegateName = dr["DelegateName"].ToString(),
+                                              PhoneNo = dr["PhoneNo"].ToString(),
+                                              Email = dr["Email"].ToString(),
+                                              NID = dr["NID"].ToString(),
+                                              DOB = dr["DOB"].ToString(),
+                                              Image = (byte[])dr["Logo"],
+                                              OnBoardDateTime = dr["OnBoardDateTime"].ToString(),
+                                              DelegateAddress = dr["DelegateAddress"].ToString(),
+                                              DelegateDistrict = dr["DelegateDistrict"].ToString(),
+                                              DelegateArea = dr["DelegateArea"].ToString(),
+                                              DelegateZipCode = dr["DelegateZipCode"].ToString(),
+                                              Status = dr["Status"].ToString(),
+                                              Username = dr["Username"].ToString(),
+                                              Password = dr["Password"].ToString(),
 
 
 
 
-            //                                  }).ToList();
-            //            }
-            //            else
-            //            {
-            //                return new List<Model.DelegateDetails>();
-            //            }
 
-            //        }
-            //    }
 
-            //}
+                                          }).ToList();
+                        }
+                        else
+                        {
+                            return new List<Model.DelegateDetails>();
+                        }
+
+                    }
+                }
+
+            }
 
 
 

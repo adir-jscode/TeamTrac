@@ -28,36 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProduct));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             groupBox1 = new GroupBox();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             textBox3 = new TextBox();
             label4 = new Label();
             textBox2 = new TextBox();
             label3 = new Label();
-            comboBox1 = new ComboBox();
             label1 = new Label();
             textBox1 = new TextBox();
             label2 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            textBox4 = new TextBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(textBox4);
             groupBox1.Controls.Add(guna2Button2);
             groupBox1.Controls.Add(textBox3);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(textBox2);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(comboBox1);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(label2);
@@ -75,7 +75,7 @@
             // 
             // guna2Button2
             // 
-            guna2Button2.CustomizableEdges = customizableEdges6;
+            guna2Button2.CustomizableEdges = customizableEdges1;
             guna2Button2.DisabledState.BorderColor = Color.DarkGray;
             guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -85,7 +85,7 @@
             guna2Button2.ForeColor = Color.White;
             guna2Button2.Location = new Point(510, 482);
             guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button2.Size = new Size(208, 46);
             guna2Button2.TabIndex = 30;
             guna2Button2.Text = "Add New Product";
@@ -129,16 +129,6 @@
             label3.Text = "Price";
             label3.Click += label3_Click;
             // 
-            // comboBox1
-            // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(480, 262);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(310, 30);
-            comboBox1.TabIndex = 25;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -171,7 +161,7 @@
             // 
             // guna2Button1
             // 
-            guna2Button1.CustomizableEdges = customizableEdges8;
+            guna2Button1.CustomizableEdges = customizableEdges3;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -181,7 +171,7 @@
             guna2Button1.ForeColor = Color.White;
             guna2Button1.Location = new Point(120, 429);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Button1.Size = new Size(126, 46);
             guna2Button1.TabIndex = 21;
             guna2Button1.Text = "Upload";
@@ -193,13 +183,20 @@
             guna2CirclePictureBox1.ImageRotate = 0F;
             guna2CirclePictureBox1.Location = new Point(30, 116);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges5;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox1.Size = new Size(336, 307);
             guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             guna2CirclePictureBox1.TabIndex = 20;
             guna2CirclePictureBox1.TabStop = false;
             guna2CirclePictureBox1.Click += guna2CirclePictureBox1_Click;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(480, 265);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(310, 30);
+            textBox4.TabIndex = 31;
             // 
             // AddProduct
             // 
@@ -227,11 +224,11 @@
         private Label label4;
         private TextBox textBox2;
         private Label label3;
-        private ComboBox comboBox1;
         private Label label1;
         private TextBox textBox1;
         private Label label2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private TextBox textBox4;
     }
 }
