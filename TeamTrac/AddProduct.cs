@@ -28,7 +28,7 @@ namespace TeamTrac
         private void LoadCategory()
         {
             DataTable CategoryTable = Global.Get.ProductCategory();
-            
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -84,6 +84,17 @@ namespace TeamTrac
             guna2CirclePictureBox1.Image.Save(ms, guna2CirclePictureBox1.Image.RawFormat);
             return ms.GetBuffer();
         }
+        void ResetControl()
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+          
+
+            //numericUpDown1.Value = 0;
+            //guna2CirclePictureBox1.Image = Properties.Resources.login_teamtrac;
+        }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
@@ -94,7 +105,11 @@ namespace TeamTrac
             byte[] imageBytes = SavePhoto();
             Global.Get.AddNewProduct(ProductName, ProductCategory, Price, Quantity, imageBytes);
             MessageBox.Show("Product Added Successfully");
+            ResetControl();
+           
         }
+
+
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -108,7 +123,7 @@ namespace TeamTrac
         {
             DataTable CategoryTable = Global.Get.ProductCategory();
 
-           
+
         }
     }
 }

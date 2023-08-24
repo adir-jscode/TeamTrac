@@ -40,21 +40,24 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             textBox3 = new TextBox();
             label4 = new Label();
             textBox2 = new TextBox();
             label3 = new Label();
-            comboBox1 = new ComboBox();
             label1 = new Label();
             label2 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            textBox1 = new TextBox();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             panel1 = new Panel();
             label5 = new Label();
+            textBox1 = new TextBox();
+            label6 = new Label();
+            comboBox1 = new ComboBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
@@ -63,25 +66,42 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(textBox5);
+            groupBox1.Controls.Add(textBox4);
             groupBox1.Controls.Add(guna2Button3);
             groupBox1.Controls.Add(guna2Button2);
             groupBox1.Controls.Add(textBox3);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(textBox2);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(comboBox1);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(guna2Button1);
             groupBox1.Controls.Add(guna2CirclePictureBox1);
             groupBox1.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(12, 96);
+            groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(516, 535);
+            groupBox1.Size = new Size(516, 655);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Product Details";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(180, 292);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(310, 30);
+            textBox5.TabIndex = 33;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(180, 223);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(310, 30);
+            textBox4.TabIndex = 32;
             // 
             // guna2Button3
             // 
@@ -93,12 +113,13 @@
             guna2Button3.FillColor = Color.IndianRed;
             guna2Button3.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             guna2Button3.ForeColor = Color.White;
-            guna2Button3.Location = new Point(353, 471);
+            guna2Button3.Location = new Point(353, 573);
             guna2Button3.Name = "guna2Button3";
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button3.Size = new Size(137, 46);
             guna2Button3.TabIndex = 31;
             guna2Button3.Text = "Delete";
+            guna2Button3.Click += guna2Button3_Click;
             // 
             // guna2Button2
             // 
@@ -110,7 +131,7 @@
             guna2Button2.FillColor = Color.Fuchsia;
             guna2Button2.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(180, 471);
+            guna2Button2.Location = new Point(180, 573);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Button2.Size = new Size(137, 46);
@@ -150,14 +171,6 @@
             label3.Size = new Size(51, 22);
             label3.TabIndex = 26;
             label3.Text = "Price";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(180, 295);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(310, 30);
-            comboBox1.TabIndex = 25;
             // 
             // label1
             // 
@@ -209,13 +222,6 @@
             guna2CirclePictureBox1.TabIndex = 20;
             guna2CirclePictureBox1.TabStop = false;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(107, 27);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(216, 23);
-            textBox1.TabIndex = 23;
-            // 
             // guna2DataGridView1
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
@@ -266,6 +272,8 @@
             guna2DataGridView1.ThemeStyle.RowsStyle.Height = 25;
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            guna2DataGridView1.CellContentClick += guna2DataGridView1_CellContentClick;
+            guna2DataGridView1.CellMouseClick += guna2DataGridView1_CellMouseClick;
             // 
             // panel1
             // 
@@ -287,6 +295,31 @@
             label5.TabIndex = 32;
             label5.Text = "Search";
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(107, 27);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(216, 23);
+            textBox1.TabIndex = 23;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(29, 495);
+            label6.Name = "label6";
+            label6.Size = new Size(59, 22);
+            label6.TabIndex = 34;
+            label6.Text = "Status";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(180, 498);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(310, 30);
+            comboBox1.TabIndex = 35;
+            // 
             // Inventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -300,6 +333,7 @@
             Name = "Inventory";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inventory";
+            Load += Inventory_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
@@ -317,15 +351,18 @@
         private Label label4;
         private TextBox textBox2;
         private Label label3;
-        private ComboBox comboBox1;
         private Label label1;
-        private TextBox textBox1;
         private Label label2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Panel panel1;
+        private TextBox textBox5;
+        private TextBox textBox4;
         private Label label5;
+        private TextBox textBox1;
+        private ComboBox comboBox1;
+        private Label label6;
     }
 }

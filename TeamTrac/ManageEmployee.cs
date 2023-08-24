@@ -73,5 +73,10 @@ namespace TeamTrac
             Dashboard dashboard = new Dashboard();
             dashboard.Show();
         }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

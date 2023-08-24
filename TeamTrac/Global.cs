@@ -305,6 +305,25 @@ namespace TeamTrac
             }
 
 
+            public static DataTable ProductDetails()
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT *  FROM Product";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    DataTable dt = new DataTable();
+
+                    SqlDataReader sdr = cmd.ExecuteReader();
+                    dt.Load(sdr);
+
+                    return dt;
+                }
+            }
+
+
             public static DataTable ProductCategory()
             {
                 using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
@@ -334,6 +353,21 @@ namespace TeamTrac
                     conn.Open();
 
                     cmd.Parameters.AddWithValue("@ProductCategoryID", ProductCategoryID);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            public static void DeleteProduct(string ProductID)
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "DELETE FROM Product WHERE ProductID = @ProductID";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    cmd.Parameters.AddWithValue("@ProductID", ProductID);
 
                     cmd.ExecuteNonQuery();
                 }

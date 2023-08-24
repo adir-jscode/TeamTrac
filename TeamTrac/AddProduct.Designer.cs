@@ -35,6 +35,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProduct));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             groupBox1 = new GroupBox();
+            textBox4 = new TextBox();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             textBox3 = new TextBox();
             label4 = new Label();
@@ -45,7 +46,6 @@
             label2 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            textBox4 = new TextBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             SuspendLayout();
@@ -72,6 +72,13 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Add New Product";
             groupBox1.Enter += groupBox1_Enter;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(480, 265);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(310, 30);
+            textBox4.TabIndex = 31;
             // 
             // guna2Button2
             // 
@@ -190,13 +197,6 @@
             guna2CirclePictureBox1.TabIndex = 20;
             guna2CirclePictureBox1.TabStop = false;
             guna2CirclePictureBox1.Click += guna2CirclePictureBox1_Click;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(480, 265);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(310, 30);
-            textBox4.TabIndex = 31;
             // 
             // AddProduct
             // 
