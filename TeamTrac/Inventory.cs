@@ -75,15 +75,21 @@ namespace TeamTrac
             string ProductQuantity = guna2DataGridView1.CurrentRow.Cells[4].Value.ToString();
             textBox3.Text = ProductQuantity;
             string Status = guna2DataGridView1.CurrentRow.Cells[5].Value.ToString();
+            comboBox1.Items.Clear(); // Clear existing items before adding new ones
+
             if (Status == "1")
             {
-                comboBox1.Items.Add(guna2DataGridView1.CurrentRow.Cells[5].Value.ToString());
+                comboBox1.Items.Add("Active");
+                comboBox1.Items.Add("Inactive");
             }
             else
             {
-               comboBox1.Items.Add("Inactive");
+                comboBox1.Items.Add("Inactive");
+                comboBox1.Items.Add("Active");
             }
-            
+
+            comboBox1.SelectedIndex = 0; // Set the default selection
+
         }
     }
 }
