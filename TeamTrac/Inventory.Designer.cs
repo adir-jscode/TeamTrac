@@ -40,6 +40,8 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
+            comboBox1 = new ComboBox();
+            label6 = new Label();
             textBox5 = new TextBox();
             textBox4 = new TextBox();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -56,8 +58,6 @@
             panel1 = new Panel();
             label5 = new Label();
             textBox1 = new TextBox();
-            label6 = new Label();
-            comboBox1 = new ComboBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
@@ -88,6 +88,24 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Product Details";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(180, 498);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(310, 30);
+            comboBox1.TabIndex = 35;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(29, 495);
+            label6.Name = "label6";
+            label6.Size = new Size(59, 22);
+            label6.TabIndex = 34;
+            label6.Text = "Status";
             // 
             // textBox5
             // 
@@ -137,6 +155,7 @@
             guna2Button2.Size = new Size(137, 46);
             guna2Button2.TabIndex = 30;
             guna2Button2.Text = "Update";
+            guna2Button2.Click += guna2Button2_Click;
             // 
             // textBox3
             // 
@@ -208,6 +227,7 @@
             guna2Button1.Size = new Size(126, 46);
             guna2Button1.TabIndex = 21;
             guna2Button1.Text = "Upload";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // guna2CirclePictureBox1
             // 
@@ -301,24 +321,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(216, 23);
             textBox1.TabIndex = 23;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(29, 495);
-            label6.Name = "label6";
-            label6.Size = new Size(59, 22);
-            label6.TabIndex = 34;
-            label6.Text = "Status";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(180, 498);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(310, 30);
-            comboBox1.TabIndex = 35;
             // 
             // Inventory
             // 

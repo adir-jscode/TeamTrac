@@ -159,6 +159,42 @@ namespace TeamTrac
                 }
             }
 
+
+            public static void AssignProduct(string ProductID, string DelegateID)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("InsertNewDelegateProductAssignment", connec))
+                    {
+
+                        connec.Open();
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+
+
+                        cmd.Parameters.AddWithValue("@AssignmentID", "ASSIGN" + DateTime.Now.ToString("ddMMyyyyhhmmssfff"));
+                        cmd.Parameters.AddWithValue("@DelegateID", DelegateID);
+                        cmd.Parameters.AddWithValue("@ProductID", ProductID);
+                        cmd.Parameters.AddWithValue("@AssignmentDate", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@Status", "1");
+
+
+
+
+                        cmd.ExecuteNonQuery();
+                        // ID = cmd.ExecuteScalar().ToString();
+
+                        connec.Close();
+
+                    }
+
+                }
+            }
+
             //Add Category
 
             public static void AddCategory(string MainCategory,string SubCategory)
@@ -324,11 +360,49 @@ namespace TeamTrac
             }
 
 
+            public static DataTable DelegateDetails()
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT *  FROM DelegateDetails";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    DataTable dt = new DataTable();
+
+                    SqlDataReader sdr = cmd.ExecuteReader();
+                    dt.Load(sdr);
+
+                    return dt;
+                }
+            }
+
+
             public static DataTable ProductCategory()
             {
                 using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
                 {
                     string strQuery = "SELECT *  FROM ProductCategory";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    DataTable dt = new DataTable();
+
+                    SqlDataReader sdr = cmd.ExecuteReader();
+                    dt.Load(sdr);
+
+                    return dt;
+                }
+            }
+
+
+            public static DataTable DelegateProductView()
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT *  FROM DelegateProductView";
 
                     SqlCommand cmd = new SqlCommand(strQuery, conn);
                     conn.Open();
@@ -533,6 +607,92 @@ namespace TeamTrac
 
             }
 
+
+            public static string GetProductID(string ProductName)
+            {
+
+                using (SqlConnection con = new SqlConnection(Global.Connection_String()))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("SELECT ProductID FROM [TeamTrac].[dbo].[Product] where [ProductName]='" + ProductName + "'", con))
+                    {
+                        con.Open();
+
+                        SqlDataReader sdr = cmd.ExecuteReader();
+                        if (sdr.Read())
+                        {
+                            string ProductID = sdr.GetValue(0).ToString();
+
+                            return ProductID;
+                        }
+                        else
+                        {
+                            string ProductID = "";
+
+                            return ProductID;
+                        }
+
+                    }
+                }
+
+            }
+
+            public static string GetDelegateID(string DelegateName)
+            {
+
+                using (SqlConnection con = new SqlConnection(Global.Connection_String()))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("SELECT DelegateID FROM [TeamTrac].[dbo].[DelegateDetails] where [DelegateName]='" + DelegateName + "'", con))
+                    {
+                        con.Open();
+
+                        SqlDataReader sdr = cmd.ExecuteReader();
+                        if (sdr.Read())
+                        {
+                            string DelegateID = sdr.GetValue(0).ToString();
+
+                            return DelegateID;
+                        }
+                        else
+                        {
+                            string DelegateID = "";
+
+                            return DelegateID;
+                        }
+
+                    }
+                }
+
+            }
+
+
+            public static int GetProductQuantity(string productName)
+            {
+                int quantity = 0;
+
+                using (SqlConnection con = new SqlConnection(Global.Connection_String()))
+                {
+                    string query = "SELECT Quantity FROM [TeamTrac].[dbo].[Product] WHERE ProductName = @ProductName";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductName", productName);
+                        con.Open();
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            quantity = Convert.ToInt32(reader["Quantity"]);
+                        }
+                    }
+                }
+
+                return quantity;
+            }
+
+
+
             //string CompanyName = textBox1.Text;
             //string CompanyAddress = textBox2.Text;
             //string CompnayBin = textBox3.Text;
@@ -563,6 +723,33 @@ namespace TeamTrac
                         
 
 
+                        connec.Close();
+                    }
+                }
+            }
+
+
+            public static void UpdateProductDetails(string ProductID, string ProductName, string Category, int Price, int Quantity, string Status,  byte[] Image)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+                    using (SqlCommand cmd = new SqlCommand("UPDATE [TeamTrac].[dbo].[Product] SET ProductID = @ProductID,ProductName=@ProductName,Category=@Category,Price=@Price,Quantity=@Quantity,Status=@Status,Image=@Image WHERE ProductID = @ProductID", connec))
+                    {
+                        connec.Open();
+
+                        cmd.Parameters.AddWithValue("@ProductID", ProductID);
+                        cmd.Parameters.AddWithValue("@ProductName", ProductName);
+                        cmd.Parameters.AddWithValue("@Category", Category);
+                        cmd.Parameters.AddWithValue("@Price", Price);
+                        cmd.Parameters.AddWithValue("@Quantity", Quantity);
+                        cmd.Parameters.AddWithValue("@Status", Status);
+                        cmd.Parameters.AddWithValue("@Image", Image);
+
+
+
+
+
+                        cmd.ExecuteNonQuery();
                         connec.Close();
                     }
                 }

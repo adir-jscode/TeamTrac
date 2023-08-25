@@ -79,6 +79,7 @@
             guna2Button1.Size = new Size(180, 45);
             guna2Button1.TabIndex = 7;
             guna2Button1.Text = "Assign";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // textBox1
             // 

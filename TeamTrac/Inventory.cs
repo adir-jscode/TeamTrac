@@ -15,6 +15,9 @@ namespace TeamTrac
         public Inventory()
         {
             InitializeComponent();
+            BindGridView();
+            
+
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
@@ -29,6 +32,14 @@ namespace TeamTrac
 
             DataTable ProductTable = Global.Get.ProductDetails();
             guna2DataGridView1.DataSource = ProductTable;
+
+            DataGridViewImageColumn dgv = new DataGridViewImageColumn();
+            dgv = (DataGridViewImageColumn)guna2DataGridView1.Columns[7];
+            dgv.ImageLayout = DataGridViewImageCellLayout.Stretch;
+
+            guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            guna2DataGridView1.RowTemplate.Height = 80;
 
             // Manipulate the "status" column
             foreach (DataRow row in ProductTable.Rows)
@@ -64,6 +75,12 @@ namespace TeamTrac
             MessageBox.Show("Product Deleted");
         }
 
+        private Image GetPhoto(byte[] photo)
+        {
+            MemoryStream ms = new MemoryStream(photo);
+            return Image.FromStream(ms);
+        }
+
         private void guna2DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             string ProductName = guna2DataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -89,7 +106,58 @@ namespace TeamTrac
             }
 
             comboBox1.SelectedIndex = 0; // Set the default selection
+            guna2CirclePictureBox1.Image = GetPhoto((byte[])guna2DataGridView1.CurrentRow.Cells[7].Value);
 
+        }
+
+        private byte[] SavePhoto()
+        {
+            MemoryStream ms = new MemoryStream();
+            guna2CirclePictureBox1.Image.Save(ms, guna2CirclePictureBox1.Image.RawFormat);
+            return ms.GetBuffer();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            string ProductID = guna2DataGridView1.CurrentRow.Cells[0].Value.ToString();
+            string ProductName = textBox4.Text;
+            string ProductCategory = textBox5.Text;
+            //convert product price to int
+            int ProductPrice = Convert.ToInt32(textBox2.Text);
+            //convert product quantity to int
+            int ProductQuantity = Convert.ToInt32(textBox3.Text);
+            string Status = comboBox1.SelectedIndex.ToString();
+            if(comboBox1.SelectedIndex == 0)
+            {
+                Status = "1";
+            }
+            else
+            {
+                Status = "0";
+            }
+            //get image
+            byte[] img = SavePhoto();
+            guna2CirclePictureBox1.Image = GetPhoto((byte[])guna2DataGridView1.CurrentRow.Cells[7].Value);
+
+
+            Global.Get.UpdateProductDetails(ProductID, ProductName, ProductCategory, ProductPrice, ProductQuantity, Status, img);
+            BindGridView();
+            MessageBox.Show("Product Updated");
+
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select Image";
+            //ofd.Filter = "PNG FILE (*.PNG) | *.PNG";
+            ofd.Filter = "ALL IMAGE FILE (*.*) | *.*";
+            //ofd.ShowDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                guna2CirclePictureBox1.Image = new Bitmap(ofd.FileName);
+            }
         }
     }
 }
