@@ -35,8 +35,6 @@
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             textBox2 = new TextBox();
             label3 = new Label();
-            textBox1 = new TextBox();
-            label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
@@ -48,8 +46,6 @@
             panel1.Controls.Add(guna2Button1);
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
             panel1.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -74,6 +70,7 @@
             guna2Button1.Size = new Size(180, 45);
             guna2Button1.TabIndex = 8;
             guna2Button1.Text = "Submit";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // textBox2
             // 
@@ -92,23 +89,6 @@
             label3.Size = new Size(104, 22);
             label3.TabIndex = 4;
             label3.Text = "Description";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(507, 99);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(412, 30);
-            textBox1.TabIndex = 3;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(396, 107);
-            label2.Name = "label2";
-            label2.Size = new Size(46, 22);
-            label2.TabIndex = 2;
-            label2.Text = "Title";
             // 
             // label1
             // 
@@ -156,8 +136,6 @@
         private PictureBox pictureBox1;
         private TextBox textBox2;
         private Label label3;
-        private TextBox textBox1;
-        private Label label2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

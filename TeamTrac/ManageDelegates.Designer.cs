@@ -44,12 +44,10 @@
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             panel2 = new Panel();
+            textBox5 = new TextBox();
+            label6 = new Label();
             textBox8 = new TextBox();
             label12 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
-            label7 = new Label();
-            label6 = new Label();
             textBox4 = new TextBox();
             textBox3 = new TextBox();
             textBox2 = new TextBox();
@@ -118,12 +116,10 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(textBox5);
+            panel2.Controls.Add(label6);
             panel2.Controls.Add(textBox8);
             panel2.Controls.Add(label12);
-            panel2.Controls.Add(dateTimePicker2);
-            panel2.Controls.Add(dateTimePicker1);
-            panel2.Controls.Add(label7);
-            panel2.Controls.Add(label6);
             panel2.Controls.Add(textBox7);
             panel2.Controls.Add(label11);
             panel2.Controls.Add(guna2Button1);
@@ -143,9 +139,26 @@
             panel2.Size = new Size(522, 626);
             panel2.TabIndex = 2;
             // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(183, 561);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(310, 26);
+            textBox5.TabIndex = 41;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(13, 564);
+            label6.Name = "label6";
+            label6.Size = new Size(79, 19);
+            label6.TabIndex = 40;
+            label6.Text = "Username";
+            // 
             // textBox8
             // 
-            textBox8.Location = new Point(180, 594);
+            textBox8.Location = new Point(180, 498);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(310, 26);
             textBox8.TabIndex = 39;
@@ -154,45 +167,11 @@
             // 
             label12.AutoSize = true;
             label12.ForeColor = Color.White;
-            label12.Location = new Point(7, 602);
+            label12.Location = new Point(10, 501);
             label12.Name = "label12";
             label12.Size = new Size(136, 19);
             label12.TabIndex = 38;
             label12.Text = "Delegating District";
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Location = new Point(180, 533);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(310, 26);
-            dateTimePicker2.TabIndex = 37;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(180, 483);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(310, 26);
-            dateTimePicker1.TabIndex = 36;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(10, 539);
-            label7.Name = "label7";
-            label7.Size = new Size(93, 19);
-            label7.TabIndex = 35;
-            label7.Text = "Joining Date";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(10, 489);
-            label6.Name = "label6";
-            label6.Size = new Size(40, 19);
-            label6.TabIndex = 34;
-            label6.Text = "DOB";
             // 
             // textBox4
             // 
@@ -320,6 +299,7 @@
             guna2DataGridView1.ThemeStyle.RowsStyle.Height = 25;
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            guna2DataGridView1.CellMouseClick += guna2DataGridView1_CellMouseClick;
             // 
             // guna2Button3
             // 
@@ -337,6 +317,7 @@
             guna2Button3.Size = new Size(126, 46);
             guna2Button3.TabIndex = 21;
             guna2Button3.Text = "Update";
+            guna2Button3.Click += guna2Button3_Click;
             // 
             // guna2Button4
             // 
@@ -354,6 +335,7 @@
             guna2Button4.Size = new Size(126, 46);
             guna2Button4.TabIndex = 22;
             guna2Button4.Text = "Delete";
+            guna2Button4.Click += guna2Button4_Click;
             // 
             // label1
             // 
@@ -381,6 +363,7 @@
             Name = "ManageDelegates";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ManageDelegates";
+            Load += ManageDelegates_Load;
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -398,10 +381,6 @@
         private Panel panel2;
         private TextBox textBox8;
         private Label label12;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
-        private Label label7;
-        private Label label6;
         private TextBox textBox4;
         private TextBox textBox3;
         private TextBox textBox2;
@@ -415,5 +394,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Label label1;
+        private TextBox textBox5;
+        private Label label6;
     }
 }

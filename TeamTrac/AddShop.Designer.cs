@@ -234,6 +234,7 @@
             guna2Button1.Size = new Size(126, 46);
             guna2Button1.TabIndex = 23;
             guna2Button1.Text = "Upload";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // guna2CirclePictureBox1
             // 

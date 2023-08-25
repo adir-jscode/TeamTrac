@@ -349,6 +349,82 @@ namespace TeamTrac
                 }
             }
 
+            //create Support Ticket
+
+            public static void CreateSupportTicket(string DelegateID,string Description)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("InsertNewSupportTicket", connec))
+                    {
+
+                        connec.Open();
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+
+
+                        cmd.Parameters.AddWithValue("@TicketID", "SPT" + DateTime.Now.ToString("ddMMyyyyhhmmssfff"));
+                        cmd.Parameters.AddWithValue("@DelegateID", DelegateID);
+                        cmd.Parameters.AddWithValue("@DateTime", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@Description", Description);
+                        cmd.Parameters.AddWithValue("@Status", "1");
+
+
+
+
+
+                        cmd.ExecuteNonQuery();
+                        // ID = cmd.ExecuteScalar().ToString();
+
+                        connec.Close();
+
+                    }
+
+                }
+            }
+
+
+            public static void CreateStockRequest(string ProductID, string DelegateID, int Quantity)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("InsertNewStockRequest", connec))
+                    {
+
+                        connec.Open();
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+
+
+                        cmd.Parameters.AddWithValue("@StockReqID", "STOCK" + DateTime.Now.ToString("ddMMyyyyhhmmssfff"));
+                        cmd.Parameters.AddWithValue("@ProductID", ProductID);
+                        cmd.Parameters.AddWithValue("@Quantity", Quantity);
+                        cmd.Parameters.AddWithValue("@DelegateID", DelegateID);
+                        cmd.Parameters.AddWithValue("@DateTime", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@Status", "1");
+
+
+
+
+
+                        cmd.ExecuteNonQuery();
+                        // ID = cmd.ExecuteScalar().ToString();
+
+                        connec.Close();
+
+                    }
+
+                }
+            }
+
 
 
 
@@ -395,7 +471,7 @@ namespace TeamTrac
             {
                 using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
                 {
-                    string strQuery = "SELECT *  FROM DelegateDetails";
+                    string strQuery = "SELECT DelegateID,DelegateName,PhoneNo,Email,NID,DelegateArea,DelegateDistrict,Username,Logo  FROM DelegateDetails";
 
                     SqlCommand cmd = new SqlCommand(strQuery, conn);
                     conn.Open();
@@ -415,6 +491,43 @@ namespace TeamTrac
                 using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
                 {
                     string strQuery = "SELECT *  FROM ProductCategory";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    DataTable dt = new DataTable();
+
+                    SqlDataReader sdr = cmd.ExecuteReader();
+                    dt.Load(sdr);
+
+                    return dt;
+                }
+            }
+
+            public static DataTable SupportTickets()
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT *  FROM SupportTicket";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    DataTable dt = new DataTable();
+
+                    SqlDataReader sdr = cmd.ExecuteReader();
+                    dt.Load(sdr);
+
+                    return dt;
+                }
+            }
+
+
+            public static DataTable StockRequest(string ID)
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT  * FROM [TeamTrac].[dbo].[StockRequest] where [DelegateID]='" + ID + "'";
 
                     SqlCommand cmd = new SqlCommand(strQuery, conn);
                     conn.Open();
@@ -492,6 +605,21 @@ namespace TeamTrac
                     conn.Open();
 
                     cmd.Parameters.AddWithValue("@ProductID", ProductID);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            public static void DeleteDelegate(string DelegateID)
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "DELETE FROM DelegateDetails WHERE DelegateID = @DelegateID";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    cmd.Parameters.AddWithValue("@DelegateID", DelegateID);
 
                     cmd.ExecuteNonQuery();
                 }

@@ -28,5 +28,15 @@ namespace TeamTrac
             DelegateDashboard dashboard = new DelegateDashboard();
             dashboard.Show();
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            string DelegateID = Form1.ID;
+            string Description = textBox2.Text;
+            Global.Get.CreateSupportTicket(DelegateID, Description);
+            MessageBox.Show("Support Ticket Created");
+            textBox2.Clear();
+
+        }
     }
 }
