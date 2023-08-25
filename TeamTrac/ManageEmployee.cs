@@ -78,5 +78,34 @@ namespace TeamTrac
         {
 
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select Image";
+            //ofd.Filter = "PNG FILE (*.PNG) | *.PNG";
+            ofd.Filter = "ALL IMAGE FILE (*.*) | *.*";
+            //ofd.ShowDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                guna2CirclePictureBox1.Image = new Bitmap(ofd.FileName);
+            }
+        }
+
+        private byte[] SavePhoto()
+        {
+            MemoryStream ms = new MemoryStream();
+            guna2CirclePictureBox1.Image.Save(ms, guna2CirclePictureBox1.Image.RawFormat);
+            return ms.GetBuffer();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string EmployeeName = textBox1.Text;
+            string EmployeePhone = textBox2.Text;
+            string Address = textBox3.Text;
+            string Position = textBox4.Text;
+            DateTime JoinDate = dateTimePicker2.Value;
+        }
     }
 }
