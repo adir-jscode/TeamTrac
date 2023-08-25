@@ -221,5 +221,10 @@ namespace TeamTrac
             form.Show();
             Form1.UserName = "";
         }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

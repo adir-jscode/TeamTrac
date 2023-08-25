@@ -98,6 +98,7 @@ namespace TeamTrac
                     else if (Global.Get.LoginAuthDelegate(UserName, Password))
                     {
                         MessageBox.Show("Welcome to our Enviroment " + UserName);
+                        ID = Global.Get.GetDelID(UserName);
                         this.Hide();
                         DelegateDashboard dashboardDel = new DelegateDashboard();
                         dashboardDel.Show();

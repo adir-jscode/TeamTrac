@@ -97,6 +97,7 @@
             guna2Button2.Size = new Size(166, 46);
             guna2Button2.TabIndex = 38;
             guna2Button2.Text = "Add New Shop";
+            guna2Button2.Click += guna2Button2_Click;
             // 
             // textBox7
             // 

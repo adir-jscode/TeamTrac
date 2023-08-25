@@ -196,6 +196,7 @@
             label3.Size = new Size(99, 22);
             label3.TabIndex = 10;
             label3.Text = "Username";
+            label3.Click += label3_Click_1;
             // 
             // panel1
             // 

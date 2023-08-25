@@ -323,6 +323,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1215, 679);
             panel1.TabIndex = 39;
+            panel1.Paint += panel1_Paint_1;
             // 
             // panel6
             // 

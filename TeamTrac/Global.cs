@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace TeamTrac
 {
@@ -232,6 +233,36 @@ namespace TeamTrac
                 }
             }
 
+            //Add new Shop
+            public static void AddShop(string shopName, string address, string area, string zipCode, string ownerName, string nid, byte[] image, string tradeLicense)
+            {
+                using (SqlConnection connection = new SqlConnection(Global.Connection_String()))
+                {
+                    using (SqlCommand cmd = new SqlCommand("InsertNewShopDetails", connection))
+                    {
+                        connection.Open();
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@ShopID","SHP" +  DateTime.Now.ToString("ddMMyyyyhhmmssfff"));
+                        cmd.Parameters.AddWithValue("@DateTime", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@ShopName", shopName);
+                        cmd.Parameters.AddWithValue("@Address", address);
+                        cmd.Parameters.AddWithValue("@Area", area);
+                        cmd.Parameters.AddWithValue("@ZipCode", zipCode);
+                        cmd.Parameters.AddWithValue("@OwnerName", ownerName);
+                        cmd.Parameters.AddWithValue("@NID", nid);
+                        cmd.Parameters.AddWithValue("@Image", image);
+                        cmd.Parameters.AddWithValue("@TradeLicense", tradeLicense);
+                        cmd.Parameters.AddWithValue("@Status", "1");
+
+                        cmd.ExecuteNonQuery();
+
+                        connection.Close();
+                    }
+                }
+            }
+
+
             public static void AddNewProduct(string ProductName, string Category,int Price,int Quantity,byte[] Image)
             {
                 using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
@@ -403,6 +434,25 @@ namespace TeamTrac
                 using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
                 {
                     string strQuery = "SELECT *  FROM DelegateProductView";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    DataTable dt = new DataTable();
+
+                    SqlDataReader sdr = cmd.ExecuteReader();
+                    dt.Load(sdr);
+
+                    return dt;
+                }
+            }
+
+            //by id
+            public static DataTable AssignedProductDelegate(string ID)
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT  * FROM [TeamTrac].[dbo].[DelegateProductView] where [DelegateID]='" + ID + "'";
 
                     SqlCommand cmd = new SqlCommand(strQuery, conn);
                     conn.Open();
@@ -607,6 +657,35 @@ namespace TeamTrac
 
             }
 
+            public static string GetDelID(string Username)
+            {
+
+                using (SqlConnection con = new SqlConnection(Global.Connection_String()))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("SELECT DelegateID FROM [TeamTrac].[dbo].[DelegateDetails] where [Username]='" + Username + "'", con))
+                    {
+                        con.Open();
+
+                        SqlDataReader sdr = cmd.ExecuteReader();
+                        if (sdr.Read())
+                        {
+                            string ID = sdr.GetValue(0).ToString();
+
+                            return ID;
+                        }
+                        else
+                        {
+                            string ID = "";
+
+                            return ID;
+                        }
+
+                    }
+                }
+
+            }
+
 
             public static string GetProductID(string ProductName)
             {
@@ -723,6 +802,37 @@ namespace TeamTrac
                         
 
 
+                        connec.Close();
+                    }
+                }
+            }
+
+
+            public static void UpdateDelegateDetails(string DelegateID, string DelegateName, string Email, string NID, string DelegateArea, string Username, string DelegateDistrict, byte[] Image)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+                    using (SqlCommand cmd = new SqlCommand("UPDATE [TeamTrac].[dbo].[DelegateDetails] SET DelegateName=@DelegateName,Email=@Email,NID=@NID,DelegateArea=@DelegateArea,Username=@Username,DelegateDistrict=@DelegateDistrict,Logo=@Image WHERE DelegateID = @DelegateID", connec))
+                    {
+                        connec.Open();
+
+                        cmd.Parameters.AddWithValue("@DelegateID", DelegateID);
+                        cmd.Parameters.AddWithValue("@DelegateName", DelegateName);
+                        cmd.Parameters.AddWithValue("@Email", Email);
+                        cmd.Parameters.AddWithValue("@NID", NID);
+                        cmd.Parameters.AddWithValue("@DelegateArea", DelegateArea);
+                       
+                        cmd.Parameters.AddWithValue("@Username", Username);
+                        
+                        cmd.Parameters.AddWithValue("@DelegateDistrict", DelegateDistrict);
+                        cmd.Parameters.AddWithValue("@Image", Image);
+                        
+
+
+
+
+
+                        cmd.ExecuteNonQuery();
                         connec.Close();
                     }
                 }

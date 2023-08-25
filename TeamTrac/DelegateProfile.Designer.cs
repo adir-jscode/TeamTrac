@@ -38,8 +38,6 @@
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             textBox7 = new TextBox();
             label7 = new Label();
-            textBox6 = new TextBox();
-            label6 = new Label();
             textBox5 = new TextBox();
             label5 = new Label();
             textBox4 = new TextBox();
@@ -61,8 +59,6 @@
             panel1.Controls.Add(guna2Button2);
             panel1.Controls.Add(textBox7);
             panel1.Controls.Add(label7);
-            panel1.Controls.Add(textBox6);
-            panel1.Controls.Add(label6);
             panel1.Controls.Add(textBox5);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(textBox4);
@@ -102,7 +98,7 @@
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(689, 290);
+            textBox7.Location = new Point(689, 226);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(310, 30);
             textBox7.TabIndex = 35;
@@ -111,32 +107,15 @@
             // 
             label7.AutoSize = true;
             label7.ForeColor = Color.White;
-            label7.Location = new Point(537, 293);
+            label7.Location = new Point(524, 226);
             label7.Name = "label7";
             label7.Size = new Size(92, 22);
             label7.TabIndex = 34;
             label7.Text = "Username";
             // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(689, 226);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(310, 30);
-            textBox6.TabIndex = 33;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(537, 229);
-            label6.Name = "label6";
-            label6.Size = new Size(47, 22);
-            label6.TabIndex = 32;
-            label6.Text = "DOB";
-            // 
             // textBox5
             // 
-            textBox5.Location = new Point(689, 355);
+            textBox5.Location = new Point(688, 293);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(310, 30);
             textBox5.TabIndex = 31;
@@ -145,7 +124,7 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = Color.White;
-            label5.Location = new Point(524, 358);
+            label5.Location = new Point(524, 293);
             label5.Name = "label5";
             label5.Size = new Size(158, 22);
             label5.TabIndex = 30;
@@ -284,8 +263,6 @@
         private Label label1;
         private TextBox textBox7;
         private Label label7;
-        private TextBox textBox6;
-        private Label label6;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }
