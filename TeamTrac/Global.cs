@@ -1175,6 +1175,32 @@ namespace TeamTrac
             }//Func End
 
 
+            public static void UpdateTask(string ProductID)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+
+
+                    using (SqlCommand cmd = new SqlCommand("UPDATE [TeamTrac].[dbo].[DelegateProductAssignment] SET [Status] = '2' WHERE [ProductID] ='" + ProductID + "'", connec))
+                    {
+
+
+
+                        connec.Open();
+
+
+                        cmd.Parameters.AddWithValue("@Status", "2");
+
+
+                        cmd.ExecuteNonQuery();
+                        connec.Close();
+
+
+                    }
+                }
+            }//Func End
+
+
 
             //public static void UpdateDelegateDetails(string ID, string DelegateName, string CompanyAddress, string CompnayBin, string TradeLicenceNo, string ContactNo, string CompanyEmail, string Username, string OwnerFullName, string OwnerEmail, string NID, string PhoneNo, byte[] Logo)
             //{

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -84,6 +85,26 @@ namespace TeamTrac
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             //status update
+            string ProductID = guna2DataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+
+
+            Global.Get.UpdateTask(ProductID);
+            BindGridView();
+            MessageBox.Show("Marked as Completed");
+
+        }
+
+        private void guna2DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            string Status = guna2DataGridView1.SelectedRows[0].Cells[8].Value.ToString();
+            if (Status == "Pending")
+            {
+                guna2Button1.Enabled = true;
+            }
+            else
+            {
+                guna2Button1.Enabled = false;
+            }
         }
     }
 }
