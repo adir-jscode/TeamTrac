@@ -106,6 +106,14 @@ namespace TeamTrac
             string Address = textBox3.Text;
             string Position = textBox4.Text;
             DateTime JoinDate = dateTimePicker2.Value;
+            string Username = textBox5.Text;
+            string Password = textBox6.Text;
+            string Email = textBox7.Text;
+            byte[] imageBytes = SavePhoto();
+            Global.Get.AddNewEmployee(EmployeeName, EmployeePhone, Address, Position, JoinDate, Username, Password, Email, imageBytes);
+            MessageBox.Show("Employee Added Successfully");
+            BindGridView();
+
         }
     }
 }

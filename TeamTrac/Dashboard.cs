@@ -149,7 +149,7 @@ namespace TeamTrac
             //this.Hide();
             //AddCategory category = new AddCategory();
             //category.Show();
-            AddControlsToPanel(new AddCategory());
+            AddControlsToPanel(new OnBoardEmployee());
         }
 
         private void guna2Button6_Click(object sender, EventArgs e)

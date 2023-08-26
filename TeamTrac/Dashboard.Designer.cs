@@ -136,7 +136,7 @@
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Button3.Size = new Size(197, 46);
             guna2Button3.TabIndex = 29;
-            guna2Button3.Text = "Product Category";
+            guna2Button3.Text = "OnBoard Employee";
             guna2Button3.Click += guna2Button3_Click;
             // 
             // guna2Button4

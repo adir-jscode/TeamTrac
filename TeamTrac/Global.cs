@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static Guna.UI2.WinForms.Helpers.GraphicsHelper;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Net;
 
 namespace TeamTrac
 {
@@ -146,6 +149,47 @@ namespace TeamTrac
                         cmd.Parameters.AddWithValue("@Email", Email);
                         cmd.Parameters.AddWithValue("@Password", Password);
                         cmd.Parameters.AddWithValue("@Phone", Phone);
+
+
+
+
+                        cmd.ExecuteNonQuery();
+                        // ID = cmd.ExecuteScalar().ToString();
+
+                        connec.Close();
+                    }
+                }
+            }
+
+            //Add new Employee
+
+            public static void AddNewEmployee(string EmployeeName,string EmployeePhone,string Address,string Position, DateTime JoinDate, string Username, string Password, string Email, byte[] imageBytes)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("InsertNewEmployeeDetails", connec))
+                    {
+
+                        connec.Open();
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+
+
+                        cmd.Parameters.AddWithValue("@EID", "EMP"+ DateTime.Now.ToString("ddMMyyyyhhmmssfff"));
+                        cmd.Parameters.AddWithValue("@EmployeeName", EmployeeName);
+                        cmd.Parameters.AddWithValue("@Position", Position);
+                        cmd.Parameters.AddWithValue("@Username", Username);
+                        cmd.Parameters.AddWithValue("@Password", Password);
+                        cmd.Parameters.AddWithValue("@Status", "1");
+                        cmd.Parameters.AddWithValue("@Image", imageBytes);
+                        cmd.Parameters.AddWithValue("@OnBoardDate", JoinDate);
+                        cmd.Parameters.AddWithValue("@Address", Address);
+                        cmd.Parameters.AddWithValue("@Email", Email);
+                        cmd.Parameters.AddWithValue("@Phone", EmployeePhone);
 
 
 
@@ -900,10 +944,7 @@ namespace TeamTrac
 
 
 
-            //string CompanyName = textBox1.Text;
-            //string CompanyAddress = textBox2.Text;
-            //string CompnayBin = textBox3.Text;
-            //
+            
 
             public static void UpdateCompnayDetails(string ID, string CompanyName,string CompanyAddress,string CompnayBin, string TradeLicenceNo, string ContactNo, string CompanyEmail,string Username,string OwnerFullName,string OwnerEmail,string NID,string PhoneNo,byte[] Logo)
             {
