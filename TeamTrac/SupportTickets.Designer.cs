@@ -35,10 +35,9 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupportTickets));
             panel1 = new Panel();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             label2 = new Label();
-            comboBox1 = new ComboBox();
             label1 = new Label();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
@@ -48,10 +47,9 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(guna2Button2);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(guna2Button1);
             panel1.Controls.Add(guna2DataGridView1);
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(77, 12);
@@ -60,24 +58,34 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
+            // guna2Button2
+            // 
+            guna2Button2.CustomizableEdges = customizableEdges1;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.Purple;
+            guna2Button2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button2.ForeColor = Color.White;
+            guna2Button2.Location = new Point(866, 538);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button2.Size = new Size(180, 45);
+            guna2Button2.TabIndex = 13;
+            guna2Button2.Text = "Solved";
+            guna2Button2.Click += guna2Button2_Click_1;
+            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(532, 547);
+            label2.Location = new Point(762, 552);
             label2.Name = "label2";
             label2.Size = new Size(59, 22);
             label2.TabIndex = 12;
             label2.Text = "Status";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(658, 546);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(169, 23);
-            comboBox1.TabIndex = 11;
             // 
             // label1
             // 
@@ -89,23 +97,6 @@
             label1.Size = new Size(196, 32);
             label1.TabIndex = 10;
             label1.Text = "Support Tickets";
-            // 
-            // guna2Button1
-            // 
-            guna2Button1.CustomizableEdges = customizableEdges1;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.Teal;
-            guna2Button1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(866, 535);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button1.Size = new Size(180, 45);
-            guna2Button1.TabIndex = 9;
-            guna2Button1.Text = "Update";
             // 
             // guna2DataGridView1
             // 
@@ -160,6 +151,7 @@
             guna2DataGridView1.ThemeStyle.RowsStyle.Height = 25;
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            guna2DataGridView1.CellMouseClick += guna2DataGridView1_CellMouseClick;
             // 
             // pictureBox1
             // 
@@ -194,9 +186,8 @@
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Label label1;
         private Label label2;
-        private ComboBox comboBox1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }

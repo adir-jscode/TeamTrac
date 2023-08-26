@@ -477,7 +477,7 @@ namespace TeamTrac
             {
                 using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
                 {
-                    string strQuery = "SELECT *  FROM EmployeeDetails";
+                    string strQuery = "SELECT EID, EmployeeName,Email,Phone,Address,Position,Status,Image  FROM EmployeeDetails";
 
                     SqlCommand cmd = new SqlCommand(strQuery, conn);
                     conn.Open();
@@ -664,6 +664,21 @@ namespace TeamTrac
                     conn.Open();
 
                     cmd.Parameters.AddWithValue("@DelegateID", DelegateID);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            public static void DeleteEmployee(string EID)
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "DELETE FROM EmployeeDetails WHERE EID = @EID";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    cmd.Parameters.AddWithValue("@EID", EID);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -968,9 +983,9 @@ namespace TeamTrac
                         cmd.Parameters.AddWithValue("@PhoneNo", PhoneNo);
                         cmd.Parameters.AddWithValue("@Image", Logo);
 
-                        
 
 
+                        cmd.ExecuteNonQuery();
                         connec.Close();
                     }
                 }
@@ -1006,6 +1021,38 @@ namespace TeamTrac
                     }
                 }
             }
+
+
+            public static void UpdateEmployeeDetails(string EID, string EmployeeName, string Email, string Phone, string Address, string Position, byte[] Image)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+                    try
+                    {
+                        string strQuery = "UPDATE [TeamTrac].[dbo].[EmployeeDetails] SET EID=@EID, EmployeeName=@EmployeeName, Email=@Email, Phone=@Phone, Address=@Address, Position=@Position, Image=@Image WHERE EID=@EID";
+
+                        SqlCommand cmd = new SqlCommand(strQuery, connec);
+
+                        connec.Open();
+                        cmd.Parameters.AddWithValue("@EID", EID);
+                        cmd.Parameters.AddWithValue("@EmployeeName", EmployeeName);
+                        cmd.Parameters.AddWithValue("@Email", Email);
+                        cmd.Parameters.AddWithValue("@Phone", Phone);
+                        cmd.Parameters.AddWithValue("@Address", Address);
+                        cmd.Parameters.AddWithValue("@Position", Position);
+                        cmd.Parameters.AddWithValue("@Image", Image);
+
+                        
+                        cmd.ExecuteNonQuery();
+                        connec.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle the exception here (print/log the error, etc.)
+                    }
+                }
+            }
+
 
 
             public static void UpdateProductDetails(string ProductID, string ProductName, string Category, int Price, int Quantity, string Status,  byte[] Image)
@@ -1100,6 +1147,32 @@ namespace TeamTrac
                 }
 
             }
+
+
+            public static void UpdateTicket(string TicketID)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+
+
+                    using (SqlCommand cmd = new SqlCommand("UPDATE [TeamTrac].[dbo].[SupportTicket] SET [Status] = '2' WHERE [TicketID] ='" + TicketID + "'", connec))
+                    {
+
+
+
+                        connec.Open();
+
+
+                        cmd.Parameters.AddWithValue("@Status", "2");
+
+
+                        cmd.ExecuteNonQuery();
+                        connec.Close();
+
+
+                    }
+                }
+            }//Func End
 
 
 

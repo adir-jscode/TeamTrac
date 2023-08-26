@@ -16,6 +16,7 @@ namespace TeamTrac
         {
             InitializeComponent();
             BindGridView();
+
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -35,15 +36,17 @@ namespace TeamTrac
             // Manipulate the "status" column
             foreach (DataRow row in SupportTickets.Rows)
             {
-                // Access the "status" column by its name
+
                 if (row["status"].ToString() == "1")
                 {
-                    // You can update the value of the "status" column
+
                     row["status"] = "Requested";
+
                 }
                 else
                 {
                     row["status"] = "Done";
+
                 }
             }
 
@@ -51,6 +54,28 @@ namespace TeamTrac
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void guna2Button2_Click_1(object sender, EventArgs e)
+        {
+            string TicketID = guna2DataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+
+            Global.Get.UpdateTicket(TicketID);
+            BindGridView();
+            MessageBox.Show("Ticket has been marked as done");
+        }
+
+        private void guna2DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            string Status = guna2DataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+            if (Status == "Requested")
+            {
+                guna2Button2.Enabled = true;
+            }
+            else
+            {
+                guna2Button2.Enabled = false;
+            }
         }
     }
 }

@@ -173,7 +173,7 @@
             guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2Button5.Size = new Size(197, 46);
             guna2Button5.TabIndex = 31;
-            guna2Button5.Text = "Add New Employee";
+            guna2Button5.Text = "Manage Employee";
             guna2Button5.Click += guna2Button5_Click;
             // 
             // guna2Button6
