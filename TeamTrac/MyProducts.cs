@@ -30,7 +30,7 @@ namespace TeamTrac
         void BindGridView()
         {
             string ID = Form1.ID;
-            DataTable AssignTable = Global.Get.AssignedProductDelegate(ID);
+            DataTable AssignTable = Global.Get.AssignedProductDel(ID);
             guna2DataGridView1.DataSource = AssignTable;
 
             //DataGridViewImageColumn dgv = new DataGridViewImageColumn();
@@ -96,7 +96,7 @@ namespace TeamTrac
 
         private void guna2DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            string Status = guna2DataGridView1.SelectedRows[0].Cells[8].Value.ToString();
+            string Status = guna2DataGridView1.SelectedRows[0].Cells[4].Value.ToString();
             if (Status == "Pending")
             {
                 guna2Button1.Enabled = true;
@@ -105,6 +105,11 @@ namespace TeamTrac
             {
                 guna2Button1.Enabled = false;
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -67,7 +67,7 @@ namespace TeamTrac
             string ShopName = comboBox2.SelectedItem.ToString();
             string ShopID = Global.Get.GetShopID(ShopName);
 
-            int AvailableQuantity = Global.Get.GetAssignedQuantity(selectedProductName);
+            int AvailableQuantity = Global.Get.GetAssignedQuantity(ProductID);
             int AssignQuantity = Convert.ToInt32(textBox1.Text);
 
             if (AssignQuantity > AvailableQuantity)

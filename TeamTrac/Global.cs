@@ -856,6 +856,24 @@ namespace TeamTrac
                 }
             }
 
+            public static DataTable AssignedProductDel(string ID)
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT  * FROM [TeamTrac].[dbo].[DelegateProductAssignment] where [DelegateID]='" + ID + "'";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    DataTable dt = new DataTable();
+
+                    SqlDataReader sdr = cmd.ExecuteReader();
+                    dt.Load(sdr);
+
+                    return dt;
+                }
+            }
+
             //delete product category by id
             public static void DeleteProductCategory(string ProductCategoryID)
             {
@@ -1327,17 +1345,17 @@ namespace TeamTrac
                 return quantity;
             }
 
-            public static int GetAssignedQuantity(string productName)
+            public static int GetAssignedQuantity(string  ProductID )
             {
                 int quantity = 0;
 
                 using (SqlConnection con = new SqlConnection(Global.Connection_String()))
                 {
-                    string query = "SELECT Quantity FROM [TeamTrac].[dbo].[DelegateProductView] WHERE ProductName = @ProductName";
+                    string query = "SELECT Quantity FROM  [TeamTrac].[dbo].[DelegateProductAssignment] WHERE ProductID = @ProductID";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        cmd.Parameters.AddWithValue("@ProductName", productName);
+                        cmd.Parameters.AddWithValue("@ProductID", ProductID);
                         con.Open();
 
                         SqlDataReader reader = cmd.ExecuteReader();
@@ -1627,20 +1645,18 @@ namespace TeamTrac
                 {
                     connec.Open();
 
-                    string query = "UPDATE [TeamTrac].[dbo].[Product] SET  ProductID = @ProductID, [Quantity] = @Quantity WHERE [ProductID] = @ProductID";
+                    string query = "UPDATE [TeamTrac].[dbo].[Product] SET [Quantity] = @Quantity WHERE [ProductID] = @ProductID";
 
                     using (SqlCommand cmd = new SqlCommand(query, connec))
                     {
-                        cmd.Parameters.AddWithValue("@ProductID", ProductID);
                         cmd.Parameters.AddWithValue("@Quantity", Quantity);
-                       
+                        cmd.Parameters.AddWithValue("@ProductID", ProductID);
 
                         cmd.ExecuteNonQuery();
                     }
-
-                    connec.Close();
                 }
             }
+
 
             public static void UpdateAssignedQuantity(string ProductID, int Quantity)
             {

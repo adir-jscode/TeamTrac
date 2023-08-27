@@ -69,8 +69,9 @@ namespace TeamTrac
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            string ProductID = guna2DataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+           
             string selectedProductName = comboBox1.SelectedItem.ToString();
+            string productID = Global.Get.GetProductID(selectedProductName);
 
             int AvailableQuantity = Global.Get.GetProductQuantity(selectedProductName);
             int AssignQuantity = Convert.ToInt32(textBox1.Text);
@@ -88,13 +89,14 @@ namespace TeamTrac
             {
                 int NewQuantity = AvailableQuantity - AssignQuantity;
 
-                Global.Get.UpdateQuantity(ProductID, NewQuantity);
+                Global.Get.UpdateQuantity(productID, NewQuantity);
 
 
                 string selectedDelegateName = comboBox2.SelectedItem.ToString();
 
-                string productID = Global.Get.GetProductID(selectedProductName);
+                
                 string delegateID = Global.Get.GetDelegateID(selectedDelegateName);
+
                 Global.Get.AssignProduct(productID, delegateID, AssignQuantity);
                 MessageBox.Show("Product Assigned Successfully");
                 BindGridView();
