@@ -34,8 +34,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            label6 = new Label();
-            label5 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             textBox1 = new TextBox();
             label4 = new Label();
@@ -51,8 +49,6 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(label5);
             panel1.Controls.Add(guna2Button1);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(label4);
@@ -66,24 +62,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(881, 247);
             panel1.TabIndex = 0;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(666, 197);
-            label6.Name = "label6";
-            label6.Size = new Size(21, 22);
-            label6.TabIndex = 9;
-            label6.Text = "0";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(625, 162);
-            label5.Name = "label5";
-            label5.Size = new Size(157, 22);
-            label5.TabIndex = 8;
-            label5.Text = "Available Quantity";
             // 
             // guna2Button1
             // 
@@ -250,7 +228,5 @@
         private ComboBox comboBox1;
         private Label label2;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private Label label6;
-        private Label label5;
     }
 }

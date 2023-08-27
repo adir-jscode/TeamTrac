@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace TeamTrac
         public SalesReportDelegate()
         {
             InitializeComponent();
+            BindGridView();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -22,6 +24,33 @@ namespace TeamTrac
             this.Hide();
             DelegateDashboard dashboard = new DelegateDashboard();
             dashboard.Show();
+        }
+        void BindGridView()
+        {
+
+            DataTable sales = Global.Get.SalesReport();
+            guna2DataGridView1.DataSource = sales;
+
+            //// Manipulate the "status" column
+            //foreach (DataRow row in AssignTable.Rows)
+            //{
+            //    // Access the "status" column by its name
+            //    if (row["status"].ToString() == "1")
+            //    {
+            //        // You can update the value of the "status" column
+            //        row["status"] = "Assigned";
+            //    }
+            //    else
+            //    {
+            //        row["status"] = "Delivered";
+            //    }
+            //}
+
+
+        }
+        private void SalesReportDelegate_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

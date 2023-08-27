@@ -23,6 +23,9 @@ namespace TeamTrac
             int TotalShops = Global.Get.CountTotalShops();
             label8.Text = TotalShops.ToString();
 
+            int TotalSales = Global.Get.CountTotalSales(DelegateID);
+            label6.Text = TotalSales.ToString();
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -135,6 +138,16 @@ namespace TeamTrac
         }
 
         private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+            AddControlsToPanel(new SellProduct());
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
         }

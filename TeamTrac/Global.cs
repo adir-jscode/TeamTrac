@@ -470,6 +470,61 @@ namespace TeamTrac
                 }
             }
 
+            public static void NewSell(string ProductID, string DelegateID, string ShopID, int Quantity)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("InsertNewSalesDetails", connec))
+                    {
+
+                        connec.Open();
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+
+
+                        cmd.Parameters.AddWithValue("@SalesID", "SALES" + DateTime.Now.ToString("ddMMyyyyhhmmssfff"));
+                        cmd.Parameters.AddWithValue("@ProductID", ProductID);
+                        cmd.Parameters.AddWithValue("@ShopID", ShopID);
+                        cmd.Parameters.AddWithValue("@Quantity", Quantity);
+                        cmd.Parameters.AddWithValue("@DelegateID", DelegateID);
+                        cmd.Parameters.AddWithValue("@DateTime", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@Status", "1");
+
+
+
+
+
+                        cmd.ExecuteNonQuery();
+                        // ID = cmd.ExecuteScalar().ToString();
+
+                        connec.Close();
+
+                    }
+
+                }
+            }
+
+            public static DataTable SalesReport()
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT SalesID,SaleDateTime,ProductName,DelegateName,UnitPrice,TotalSalesAmount  FROM SalesReportView";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    DataTable dt = new DataTable();
+
+                    SqlDataReader sdr = cmd.ExecuteReader();
+                    dt.Load(sdr);
+
+                    return dt;
+                }
+            }
 
 
 
@@ -593,6 +648,23 @@ namespace TeamTrac
                 }
             }
 
+            //count total sales by delegate id
+            public static int CountTotalSales(string DelegateID)
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT COUNT(*) FROM SalesReportView WHERE DelegateID = @DelegateID";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    cmd.Parameters.AddWithValue("@DelegateID", DelegateID);
+
+                    int count = (int)cmd.ExecuteScalar();
+
+                    return count;
+                }
+            }
 
             
 
@@ -604,6 +676,24 @@ namespace TeamTrac
                 using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
                 {
                     string strQuery = "SELECT DelegateID,DelegateName,PhoneNo,Email,NID,DelegateArea,DelegateDistrict,Username,Logo  FROM DelegateDetails";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    DataTable dt = new DataTable();
+
+                    SqlDataReader sdr = cmd.ExecuteReader();
+                    dt.Load(sdr);
+
+                    return dt;
+                }
+            }
+
+            public static DataTable ShopDetails()
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT *  FROM ShopDetails";
 
                     SqlCommand cmd = new SqlCommand(strQuery, conn);
                     conn.Open();
@@ -691,6 +781,25 @@ namespace TeamTrac
                     return dt;
                 }
             }
+
+            public static DataTable Sales()
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT *  FROM SalesDetails";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    DataTable dt = new DataTable();
+
+                    SqlDataReader sdr = cmd.ExecuteReader();
+                    dt.Load(sdr);
+
+                    return dt;
+                }
+            }
+
 
             //by id
             public static DataTable AssignedProductDelegate(string ID)
@@ -1040,6 +1149,35 @@ namespace TeamTrac
 
             }
 
+            public static string GetShopID(string ShopName)
+            {
+
+                using (SqlConnection con = new SqlConnection(Global.Connection_String()))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("SELECT ShopID FROM [TeamTrac].[dbo].[ShopDetails] where [ShopName]='" + ShopName + "'", con))
+                    {
+                        con.Open();
+
+                        SqlDataReader sdr = cmd.ExecuteReader();
+                        if (sdr.Read())
+                        {
+                            string ProductID = sdr.GetValue(0).ToString();
+
+                            return ProductID;
+                        }
+                        else
+                        {
+                            string ProductID = "";
+
+                            return ProductID;
+                        }
+
+                    }
+                }
+
+            }
+
             public static string GetDelegateID(string DelegateName)
             {
 
@@ -1094,9 +1232,33 @@ namespace TeamTrac
                 return quantity;
             }
 
+            public static int GetAssignedQuantity(string productName)
+            {
+                int quantity = 0;
+
+                using (SqlConnection con = new SqlConnection(Global.Connection_String()))
+                {
+                    string query = "SELECT Quantity FROM [TeamTrac].[dbo].[DelegateProductView] WHERE ProductName = @ProductName";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductName", productName);
+                        con.Open();
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            quantity = Convert.ToInt32(reader["Quantity"]);
+                        }
+                    }
+                }
+
+                return quantity;
+            }
 
 
-            
+
+
 
             public static void UpdateCompnayDetails(string ID, string CompanyName,string CompanyAddress,string CompnayBin, string TradeLicenceNo, string ContactNo, string CompanyEmail,string Username,string OwnerFullName,string OwnerEmail,string NID,string PhoneNo,byte[] Logo)
             {
@@ -1351,6 +1513,27 @@ namespace TeamTrac
                         cmd.Parameters.AddWithValue("@ProductID", ProductID);
                         cmd.Parameters.AddWithValue("@Quantity", Quantity);
                        
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    connec.Close();
+                }
+            }
+
+            public static void UpdateAssignedQuantity(string ProductID, int Quantity)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+                    connec.Open();
+
+                    string query = "UPDATE [TeamTrac].[dbo].[DelegateProductAssignment] SET  ProductID = @ProductID, [Quantity] = @Quantity WHERE [ProductID] = @ProductID";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connec))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductID", ProductID);
+                        cmd.Parameters.AddWithValue("@Quantity", Quantity);
+
 
                         cmd.ExecuteNonQuery();
                     }

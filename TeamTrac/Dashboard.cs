@@ -240,5 +240,10 @@ namespace TeamTrac
         {
 
         }
+
+        private void guna2Button4_Click_1(object sender, EventArgs e)
+        {
+            AddControlsToPanel(new SalesReportDelegate());
+        }
     }
 }

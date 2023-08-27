@@ -112,15 +112,15 @@ namespace TeamTrac
             int Quantity = Global.Get.GetProductQuantity(selectedProductName);
             //after assign quantity make it visible
 
-            if (Quantity > 0)
-            {
-                label6.Visible = true;
-                label6.Text = Quantity.ToString();
-            }
-            else
-            {
-                label6.Visible = false;
-            }
+            //if (Quantity > 0)
+            //{
+            //    label6.Visible = true;
+            //    label6.Text = Quantity.ToString();
+            //}
+            //else
+            //{
+            //    label6.Visible = false;
+            //}
         }
     }
 }
