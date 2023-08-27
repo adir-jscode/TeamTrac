@@ -245,5 +245,15 @@ namespace TeamTrac
         {
             AddControlsToPanel(new SalesReportDelegate());
         }
+
+        private void guna2Button13_Click(object sender, EventArgs e)
+        {
+            AddControlsToPanel(new StockRequest());
+        }
+
+        private void guna2Button14_Click(object sender, EventArgs e)
+        {
+            AddControlsToPanel(new ShopList());
+        }
     }
 }

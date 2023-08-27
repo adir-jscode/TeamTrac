@@ -763,6 +763,42 @@ namespace TeamTrac
                 }
             }
 
+            public static DataTable AllStockRequest()
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT  StockReqID,DelegateID,Quantity,DateTime,Status FROM [TeamTrac].[dbo].[StockRequest]";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    DataTable dt = new DataTable();
+
+                    SqlDataReader sdr = cmd.ExecuteReader();
+                    dt.Load(sdr);
+
+                    return dt;
+                }
+            }
+
+            public static DataTable AllShops()
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT ShopID,ShopName,Address,OwnerName,TradeLicense FROM [TeamTrac].[dbo].[ShopDetails]";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    DataTable dt = new DataTable();
+
+                    SqlDataReader sdr = cmd.ExecuteReader();
+                    dt.Load(sdr);
+
+                    return dt;
+                }
+            }
+
 
             public static DataTable DelegateProductView()
             {
@@ -846,6 +882,22 @@ namespace TeamTrac
                     conn.Open();
 
                     cmd.Parameters.AddWithValue("@ProductID", ProductID);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+
+            public static void DeleteShop(string ShopID)
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "DELETE FROM ShopDetails WHERE ShopID = @ShopID";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    cmd.Parameters.AddWithValue("@ShopID", ShopID);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -1034,6 +1086,24 @@ namespace TeamTrac
                 }
             }
 
+            public static bool DelegateExist(string Value)
+            {
+                using (SqlConnection con = new SqlConnection(Global.Connection_String()))
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM [TeamTrac].[dbo].[DelegateDetails] where [Email]='" + Value + "' OR [Username]='" + Value + "'", con))
+                    {
+                        cmd.Parameters.AddWithValue("@CompnayEmail", Value);
+                        cmd.Parameters.AddWithValue("@Username", Value);
+
+                        con.Open();
+
+                        int count = (int)cmd.ExecuteScalar();
+
+                        return count > 0;
+                    }
+                }
+            }
+
 
 
             public static void UpdatePassword(string Email,string Password)
@@ -1043,6 +1113,31 @@ namespace TeamTrac
 
 
                     using (SqlCommand cmd = new SqlCommand("UPDATE [TeamTrac].[dbo].[CompanyDetails] SET [Password] = '" + Password + "' WHERE [CompanyEmail] ='" + Email + "'", connec))
+                    {
+
+
+
+                        connec.Open();
+
+
+                        cmd.Parameters.AddWithValue("@Password", Password);
+
+
+                        cmd.ExecuteNonQuery();
+                        connec.Close();
+
+
+                    }
+                }
+            }//Func End
+
+            public static void UpdatePasswordDel(string Email, string Password)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+
+
+                    using (SqlCommand cmd = new SqlCommand("UPDATE [TeamTrac].[dbo].[DelegateDetails] SET [Password] = '" + Password + "' WHERE [Email] ='" + Email + "'", connec))
                     {
 
 
@@ -1455,6 +1550,32 @@ namespace TeamTrac
 
 
                     using (SqlCommand cmd = new SqlCommand("UPDATE [TeamTrac].[dbo].[SupportTicket] SET [Status] = '2' WHERE [TicketID] ='" + TicketID + "'", connec))
+                    {
+
+
+
+                        connec.Open();
+
+
+                        cmd.Parameters.AddWithValue("@Status", "2");
+
+
+                        cmd.ExecuteNonQuery();
+                        connec.Close();
+
+
+                    }
+                }
+            }//Func End
+
+
+            public static void ApproveStock(string StockReqID)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+
+
+                    using (SqlCommand cmd = new SqlCommand("UPDATE [TeamTrac].[dbo].[StockRequest] SET [Status] = '2' WHERE [StockReqID] ='" + StockReqID + "'", connec))
                     {
 
 

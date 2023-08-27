@@ -27,7 +27,8 @@ namespace TeamTrac
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             bool exists = Global.Get.UserExist(textBox1.Text);
-            if (!exists)
+            bool DelExists = Global.Get.DelegateExist(textBox1.Text);
+            if (!exists && !DelExists)
             {
                 MessageBox.Show("User does not exist");
                 return;
@@ -40,6 +41,7 @@ namespace TeamTrac
             else
             {
                 Global.Get.UpdatePassword(textBox1.Text, textBox2.Text);
+                Global.Get.UpdatePasswordDel(textBox1.Text, textBox2.Text);
                 MessageBox.Show("Password Updated");
                 this.Hide();
                 Form1 f1 = new Form1();
@@ -66,7 +68,8 @@ namespace TeamTrac
         private void textBox1_Leave(object sender, EventArgs e)
         {
             bool exists = Global.Get.UserExist(textBox1.Text);
-            if (string.IsNullOrEmpty(textBox1.Text) || !exists)
+            bool DelExists = Global.Get.DelegateExist(textBox1.Text);
+            if (string.IsNullOrEmpty(textBox1.Text) || !exists && !DelExists)
             {
                 textBox1.Focus();
                 errorProvider1.Icon = Properties.Resources.error;

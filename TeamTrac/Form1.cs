@@ -35,7 +35,8 @@ namespace TeamTrac
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             bool exists = Global.Get.UserExist(textBox1.Text);
-            if (string.IsNullOrEmpty(textBox1.Text) || !exists)
+            bool DelExists = Global.Get.DelegateExist(textBox1.Text);
+            if (string.IsNullOrEmpty(textBox1.Text) || !exists && !DelExists)
             {
                 textBox1.Focus();
                 errorProvider1.Icon = Properties.Resources.error;
