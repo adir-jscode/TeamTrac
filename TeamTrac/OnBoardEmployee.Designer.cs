@@ -80,7 +80,7 @@
             panel2.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             panel2.Location = new Point(291, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(588, 635);
+            panel2.Size = new Size(618, 635);
             panel2.TabIndex = 2;
             // 
             // button1
@@ -88,9 +88,9 @@
             button1.BackColor = Color.RoyalBlue;
             button1.FlatStyle = FlatStyle.Popup;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(269, 588);
+            button1.Location = new Point(269, 587);
             button1.Name = "button1";
-            button1.Size = new Size(106, 37);
+            button1.Size = new Size(113, 38);
             button1.TabIndex = 41;
             button1.Text = "Register";
             button1.UseVisualStyleBackColor = false;
@@ -138,7 +138,7 @@
             // 
             label8.AutoSize = true;
             label8.ForeColor = Color.White;
-            label8.Location = new Point(61, 324);
+            label8.Location = new Point(51, 324);
             label8.Name = "label8";
             label8.Size = new Size(56, 22);
             label8.TabIndex = 37;
@@ -156,7 +156,7 @@
             // 
             label6.AutoSize = true;
             label6.ForeColor = Color.White;
-            label6.Location = new Point(61, 276);
+            label6.Location = new Point(51, 276);
             label6.Name = "label6";
             label6.Size = new Size(90, 22);
             label6.TabIndex = 35;
@@ -173,7 +173,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.White;
-            label1.Location = new Point(61, 225);
+            label1.Location = new Point(51, 225);
             label1.Name = "label1";
             label1.Size = new Size(92, 22);
             label1.TabIndex = 33;
@@ -209,7 +209,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(197, 167);
+            textBox1.Location = new Point(197, 170);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(310, 30);
             textBox1.TabIndex = 24;
@@ -218,7 +218,7 @@
             // 
             label7.AutoSize = true;
             label7.ForeColor = Color.White;
-            label7.Location = new Point(61, 545);
+            label7.Location = new Point(51, 545);
             label7.Name = "label7";
             label7.Size = new Size(108, 22);
             label7.TabIndex = 23;
@@ -228,7 +228,7 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = Color.White;
-            label5.Location = new Point(61, 482);
+            label5.Location = new Point(52, 482);
             label5.Name = "label5";
             label5.Size = new Size(76, 22);
             label5.TabIndex = 21;
@@ -238,7 +238,7 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.White;
-            label4.Location = new Point(61, 425);
+            label4.Location = new Point(51, 425);
             label4.Name = "label4";
             label4.Size = new Size(77, 22);
             label4.TabIndex = 20;
@@ -248,7 +248,7 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.White;
-            label3.Location = new Point(61, 371);
+            label3.Location = new Point(51, 368);
             label3.Name = "label3";
             label3.Size = new Size(132, 22);
             label3.TabIndex = 19;
@@ -258,7 +258,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(61, 170);
+            label2.Location = new Point(51, 173);
             label2.Name = "label2";
             label2.Size = new Size(142, 22);
             label2.TabIndex = 18;

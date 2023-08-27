@@ -512,7 +512,7 @@ namespace TeamTrac
             {
                 using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
                 {
-                    string strQuery = "SELECT SalesID,SaleDateTime,ProductName,DelegateName,UnitPrice,TotalSalesAmount  FROM SalesReportView";
+                    string strQuery = "SELECT *  FROM [TeamTrac].[dbo].[SalesDetails]";
 
                     SqlCommand cmd = new SqlCommand(strQuery, conn);
                     conn.Open();
@@ -951,6 +951,21 @@ namespace TeamTrac
                 }
             }
 
+            public static void DeleteAssignment(string AssignmentID)
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "DELETE FROM DelegateProductAssignment WHERE AssignmentID = @AssignmentID";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    cmd.Parameters.AddWithValue("@AssignmentID", AssignmentID);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
             //Update Product Category by ID
             public static void UpdateProductCategory(string ProductCategoryID, string MainCategory, string SubCategory)
             {
@@ -1122,6 +1137,43 @@ namespace TeamTrac
                 }
             }
 
+            public static bool IsAssigned(string ProductID,string DelegateID)
+            {
+                using (SqlConnection con = new SqlConnection(Global.Connection_String()))
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM [TeamTrac].[dbo].[DelegateProductAssignment] where [ProductID]='" + ProductID + "' AND [DelegateID] = '" + DelegateID +"'", con))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductID", ProductID);
+                        
+
+                        con.Open();
+
+                        int count = (int)cmd.ExecuteScalar();
+
+                        return count > 0;
+                    }
+                }
+            }
+
+            public static bool IsSold(string ProductID, string ShopID)
+            {
+                using (SqlConnection con = new SqlConnection(Global.Connection_String()))
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM [TeamTrac].[dbo].[SalesDetails] where [ProductID]='" + ProductID + "' AND [ShopID] = '" + ShopID + "'", con))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductID", ProductID);
+                        cmd.Parameters.AddWithValue("@ShopID", ShopID);
+
+
+                        con.Open();
+
+                        int count = (int)cmd.ExecuteScalar();
+
+                        return count > 0;
+                    }
+                }
+            }
+
 
 
             public static void UpdatePassword(string Email,string Password)
@@ -1235,32 +1287,29 @@ namespace TeamTrac
 
             public static string GetProductID(string ProductName)
             {
-
                 using (SqlConnection con = new SqlConnection(Global.Connection_String()))
                 {
+                    con.Open();
 
-                    using (SqlCommand cmd = new SqlCommand("SELECT ProductID FROM [TeamTrac].[dbo].[Product] where [ProductName]='" + ProductName + "'", con))
+                    string query = "SELECT ProductID FROM [TeamTrac].[dbo].[Product] WHERE [ProductName] = @ProductName";
+                    using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        con.Open();
+                        cmd.Parameters.AddWithValue("@ProductName", ProductName);
 
                         SqlDataReader sdr = cmd.ExecuteReader();
                         if (sdr.Read())
                         {
                             string ProductID = sdr.GetValue(0).ToString();
-
                             return ProductID;
                         }
                         else
                         {
-                            string ProductID = "";
-
-                            return ProductID;
+                            return "";
                         }
-
                     }
                 }
-
             }
+
 
             public static string GetShopID(string ShopName)
             {

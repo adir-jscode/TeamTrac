@@ -90,7 +90,7 @@ namespace TeamTrac
             textBox2.Clear();
             textBox3.Clear();
             textBox4.Clear();
-          
+
 
             //numericUpDown1.Value = 0;
             //guna2CirclePictureBox1.Image = Properties.Resources.login_teamtrac;
@@ -106,7 +106,7 @@ namespace TeamTrac
             Global.Get.AddNewProduct(ProductName, ProductCategory, Price, Quantity, imageBytes);
             MessageBox.Show("Product Added Successfully");
             ResetControl();
-           
+
         }
 
 

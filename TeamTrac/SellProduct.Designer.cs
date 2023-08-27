@@ -207,10 +207,11 @@
             Controls.Add(panel1);
             Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "SellProduct";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SellProduct";
+            Load += SellProduct_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();

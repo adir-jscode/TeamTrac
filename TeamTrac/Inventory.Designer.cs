@@ -55,13 +55,9 @@
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            panel1 = new Panel();
-            label5 = new Label();
-            textBox1 = new TextBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -221,7 +217,7 @@
             guna2Button1.FillColor = Color.FromArgb(255, 128, 0);
             guna2Button1.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(216, 99);
+            guna2Button1.Location = new Point(237, 95);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Button1.Size = new Size(126, 46);
@@ -237,7 +233,7 @@
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges7;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CirclePictureBox1.Size = new Size(203, 194);
+            guna2CirclePictureBox1.Size = new Size(182, 155);
             guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             guna2CirclePictureBox1.TabIndex = 20;
             guna2CirclePictureBox1.TabStop = false;
@@ -297,40 +293,12 @@
             guna2DataGridView1.CellContentClick += guna2DataGridView1_CellContentClick;
             guna2DataGridView1.CellMouseClick += guna2DataGridView1_CellMouseClick;
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(textBox1);
-            panel1.Location = new Point(778, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(395, 77);
-            panel1.TabIndex = 3;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(15, 28);
-            label5.Name = "label5";
-            label5.Size = new Size(63, 22);
-            label5.TabIndex = 32;
-            label5.Text = "Search";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(107, 27);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(216, 23);
-            textBox1.TabIndex = 23;
-            // 
             // Inventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 28, 36);
             ClientSize = new Size(1205, 679);
-            Controls.Add(panel1);
             Controls.Add(guna2DataGridView1);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
@@ -342,8 +310,6 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -361,11 +327,8 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private Panel panel1;
         private TextBox textBox5;
         private TextBox textBox4;
-        private Label label5;
-        private TextBox textBox1;
         private ComboBox comboBox1;
         private Label label6;
     }

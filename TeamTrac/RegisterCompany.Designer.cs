@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterCompany));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            button2 = new Button();
             textBox12 = new TextBox();
             textBox11 = new TextBox();
             textBox10 = new TextBox();
@@ -62,7 +63,6 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            button2 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             SuspendLayout();
@@ -104,6 +104,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1030, 633);
             panel1.TabIndex = 2;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(255, 128, 128);
+            button2.FlatStyle = FlatStyle.Popup;
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(668, 578);
+            button2.Name = "button2";
+            button2.Size = new Size(136, 46);
+            button2.TabIndex = 34;
+            button2.Text = "Cancel";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // textBox12
             // 
@@ -224,7 +237,7 @@
             // 
             // guna2Button1
             // 
-            guna2Button1.CustomizableEdges = customizableEdges4;
+            guna2Button1.CustomizableEdges = customizableEdges1;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -234,7 +247,7 @@
             guna2Button1.ForeColor = Color.White;
             guna2Button1.Location = new Point(447, 166);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button1.Size = new Size(126, 46);
             guna2Button1.TabIndex = 19;
             guna2Button1.Text = "Upload";
@@ -246,7 +259,7 @@
             guna2CirclePictureBox1.ImageRotate = 0F;
             guna2CirclePictureBox1.Location = new Point(449, 43);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges3;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox1.Size = new Size(124, 117);
             guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -373,19 +386,6 @@
             label1.TabIndex = 0;
             label1.Text = "Welcome to TeamTrac";
             // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(255, 128, 128);
-            button2.FlatStyle = FlatStyle.Popup;
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(668, 578);
-            button2.Name = "button2";
-            button2.Size = new Size(136, 46);
-            button2.TabIndex = 34;
-            button2.Text = "Cancel";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
             // RegisterCompany
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
@@ -395,7 +395,6 @@
             Controls.Add(panel1);
             Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = Color.White;
-            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "RegisterCompany";
             StartPosition = FormStartPosition.CenterScreen;

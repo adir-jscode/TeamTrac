@@ -62,6 +62,25 @@ namespace TeamTrac
             return ms.GetBuffer();
         }
 
+        void ResetControl()
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+            textBox7.Clear();
+            textBox8.Clear();
+            textBox9.Clear();
+            textBox10.Clear();
+
+
+
+            //numericUpDown1.Value = 0;
+            //guna2CirclePictureBox1.Image = Properties.Resources.login_teamtrac;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             string Name = textBox1.Text;
@@ -76,7 +95,7 @@ namespace TeamTrac
             string DelegatingDistrict = textBox8.Text;
             string DelegateAddress = textBox9.Text;
             string ZipCode = textBox10.Text;
-            byte [] imageBytes = SavePhoto();
+            byte[] imageBytes = SavePhoto();
             //string Image = Convert.ToBase64String(imageBytes);
 
 
@@ -90,6 +109,8 @@ namespace TeamTrac
                 Global.Get.OnboardDelegate(Name, Phone, Email, DelegateAddress, NID, DOB, JoiningDate, Username, Password, DelegatingArea, DelegatingDistrict, imageBytes, ZipCode);
                 MessageBox.Show("Delegate Onboarded Successfully");
             }
+
+            ResetControl();
 
 
         }

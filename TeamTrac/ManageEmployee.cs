@@ -48,14 +48,13 @@ namespace TeamTrac
             //((BindingSource) guna2DataGridView1.DataSource).ResetBindings(false);
 
 
+            DataGridViewImageColumn dgv = new DataGridViewImageColumn();
+            dgv = (DataGridViewImageColumn)guna2DataGridView1.Columns[7];
+            dgv.ImageLayout = DataGridViewImageCellLayout.Stretch;
 
-            //DataGridViewImageColumn dgv = new DataGridViewImageColumn();
-            //dgv = (DataGridViewImageColumn)dataGridView1.Columns[3];
-            //dgv.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            //dataGridView1.RowTemplate.Height = 80;
+            guna2DataGridView1.RowTemplate.Height = 80;
         }
 
         private void ManageEmployee_Load(object sender, EventArgs e)
@@ -154,6 +153,11 @@ namespace TeamTrac
             Global.Get.DeleteEmployee(EID);
             BindGridView();
             MessageBox.Show("Employee Removed");
+        }
+
+        private void guna2DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

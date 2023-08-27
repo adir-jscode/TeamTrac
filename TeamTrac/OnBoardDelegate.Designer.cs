@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OnBoardDelegate));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            textBox10 = new TextBox();
+            label14 = new Label();
             textBox9 = new TextBox();
             label13 = new Label();
             textBox8 = new TextBox();
@@ -60,8 +62,6 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            textBox10 = new TextBox();
-            label14 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             SuspendLayout();
@@ -102,6 +102,23 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1055, 633);
             panel1.TabIndex = 1;
+            // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(679, 503);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(310, 30);
+            textBox10.TabIndex = 31;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.ForeColor = Color.White;
+            label14.Location = new Point(504, 511);
+            label14.Name = "label14";
+            label14.Size = new Size(81, 22);
+            label14.TabIndex = 30;
+            label14.Text = "Zip Code";
             // 
             // textBox9
             // 
@@ -160,6 +177,7 @@
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(310, 30);
             textBox6.TabIndex = 23;
+            textBox6.UseSystemPasswordChar = true;
             // 
             // textBox5
             // 
@@ -190,7 +208,7 @@
             // 
             // guna2Button1
             // 
-            guna2Button1.CustomizableEdges = customizableEdges4;
+            guna2Button1.CustomizableEdges = customizableEdges1;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -200,7 +218,7 @@
             guna2Button1.ForeColor = Color.White;
             guna2Button1.Location = new Point(447, 166);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button1.Size = new Size(126, 46);
             guna2Button1.TabIndex = 19;
             guna2Button1.Text = "Upload";
@@ -212,7 +230,7 @@
             guna2CirclePictureBox1.ImageRotate = 0F;
             guna2CirclePictureBox1.Location = new Point(449, 43);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges3;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox1.Size = new Size(124, 117);
             guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -357,23 +375,6 @@
             label1.Size = new Size(234, 32);
             label1.TabIndex = 0;
             label1.Text = "OnBoard Delegates";
-            // 
-            // textBox10
-            // 
-            textBox10.Location = new Point(679, 503);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(310, 30);
-            textBox10.TabIndex = 31;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.ForeColor = Color.White;
-            label14.Location = new Point(504, 511);
-            label14.Name = "label14";
-            label14.Size = new Size(81, 22);
-            label14.TabIndex = 30;
-            label14.Text = "Zip Code";
             // 
             // OnBoardDelegate
             // 

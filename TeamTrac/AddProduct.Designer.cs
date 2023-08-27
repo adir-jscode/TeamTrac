@@ -176,7 +176,7 @@
             guna2Button1.FillColor = Color.FromArgb(255, 128, 0);
             guna2Button1.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(120, 429);
+            guna2Button1.Location = new Point(96, 429);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Button1.Size = new Size(126, 46);
@@ -188,11 +188,11 @@
             // 
             guna2CirclePictureBox1.Image = (Image)resources.GetObject("guna2CirclePictureBox1.Image");
             guna2CirclePictureBox1.ImageRotate = 0F;
-            guna2CirclePictureBox1.Location = new Point(30, 116);
+            guna2CirclePictureBox1.Location = new Point(42, 158);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges5;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CirclePictureBox1.Size = new Size(336, 307);
+            guna2CirclePictureBox1.Size = new Size(253, 253);
             guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             guna2CirclePictureBox1.TabIndex = 20;
             guna2CirclePictureBox1.TabStop = false;

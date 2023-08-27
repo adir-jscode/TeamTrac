@@ -69,9 +69,22 @@ namespace TeamTrac
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-           
+
             string selectedProductName = comboBox1.SelectedItem.ToString();
             string productID = Global.Get.GetProductID(selectedProductName);
+            string selectedDelegateName = comboBox2.SelectedItem.ToString();
+
+
+            string delegateID = Global.Get.GetDelegateID(selectedDelegateName);
+
+            //check assigned or not 
+            bool isAssigned = Global.Get.IsAssigned(productID,delegateID);
+            if (isAssigned)
+            {
+                MessageBox.Show("Product is already assigned");
+                return;
+            }
+
 
             int AvailableQuantity = Global.Get.GetProductQuantity(selectedProductName);
             int AssignQuantity = Convert.ToInt32(textBox1.Text);
@@ -92,10 +105,7 @@ namespace TeamTrac
                 Global.Get.UpdateQuantity(productID, NewQuantity);
 
 
-                string selectedDelegateName = comboBox2.SelectedItem.ToString();
-
                 
-                string delegateID = Global.Get.GetDelegateID(selectedDelegateName);
 
                 Global.Get.AssignProduct(productID, delegateID, AssignQuantity);
                 MessageBox.Show("Product Assigned Successfully");
@@ -123,6 +133,14 @@ namespace TeamTrac
             //{
             //    label6.Visible = false;
             //}
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            string AssignmentID = guna2DataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            Global.Get.DeleteAssignment(AssignmentID);
+            MessageBox.Show("Assignment Deleted Successfully");
+            BindGridView();
         }
     }
 }

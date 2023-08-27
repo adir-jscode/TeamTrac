@@ -54,6 +54,17 @@ namespace TeamTrac
                 {
                     row["status"] = "Inactive";
                 }
+
+                if (row["IsAvailableStock"].ToString() == "1")
+                {
+                    // You can update the value of the "status" column
+                    row["IsAvailableStock"] = "Available";
+                }
+                else
+                {
+                    row["IsAvailableStock"] = "Unavailale";
+                }
+
             }
         }
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

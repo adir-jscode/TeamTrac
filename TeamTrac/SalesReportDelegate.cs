@@ -31,20 +31,20 @@ namespace TeamTrac
             DataTable sales = Global.Get.SalesReport();
             guna2DataGridView1.DataSource = sales;
 
-            //// Manipulate the "status" column
-            //foreach (DataRow row in AssignTable.Rows)
-            //{
-            //    // Access the "status" column by its name
-            //    if (row["status"].ToString() == "1")
-            //    {
-            //        // You can update the value of the "status" column
-            //        row["status"] = "Assigned";
-            //    }
-            //    else
-            //    {
-            //        row["status"] = "Delivered";
-            //    }
-            //}
+            // Manipulate the "status" column
+            foreach (DataRow row in sales.Rows)
+            {
+                // Access the "status" column by its name
+                if (row["status"].ToString() == "1")
+                {
+                    // You can update the value of the "status" column
+                    row["status"] = "Sold";
+                }
+                else
+                {
+                    row["status"] = "Done";
+                }
+            }
 
 
         }
