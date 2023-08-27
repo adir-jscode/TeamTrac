@@ -102,7 +102,7 @@ namespace TeamTrac
 
             guna2CirclePictureBox1.Image = GetPhoto((byte[])guna2DataGridView1.CurrentRow.Cells[8].Value);
 
-           
+
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
@@ -117,26 +117,42 @@ namespace TeamTrac
         {
             string DelegateID = guna2DataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
-            string DelegateName = guna2DataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-            textBox1.Text = DelegateName;
-            string PhoneNo = guna2DataGridView1.SelectedRows[0].Cells[2].Value.ToString();
-            textBox2.Text = PhoneNo;
-            string Email = guna2DataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-            textBox3.Text = Email;
-            string NID = guna2DataGridView1.SelectedRows[0].Cells[4].Value.ToString();
-            textBox4.Text = NID;
-            string DelegateArea = guna2DataGridView1.SelectedRows[0].Cells[5].Value.ToString();
-            textBox7.Text = DelegateArea;
-            string DelegateDistrict = guna2DataGridView1.SelectedRows[0].Cells[6].Value.ToString();
-            textBox8.Text = DelegateDistrict;
-            string Username = guna2DataGridView1.SelectedRows[0].Cells[7].Value.ToString();
-            textBox5.Text = Username;
+            string DelegateName = textBox1.Text;
+            string PhoneNo = textBox2.Text;
+            string Email = textBox3.Text;
+            string NID = textBox4.Text;
+            string DelegateArea = textBox7.Text;
+            string DelegateDistrict = textBox8.Text;
+            string Username = textBox5.Text;
 
-            guna2CirclePictureBox1.Image = GetPhoto((byte[])guna2DataGridView1.CurrentRow.Cells[8].Value);
+
+
 
             byte[] img = SavePhoto();
+
+
+
             Global.Get.UpdateDelegateDetails(DelegateID, DelegateName, Email, NID, DelegateArea, Username, DelegateDistrict, img);
+            BindGridView();
             MessageBox.Show("Delegate Updated");
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select Image";
+            //ofd.Filter = "PNG FILE (*.PNG) | *.PNG";
+            ofd.Filter = "ALL IMAGE FILE (*.*) | *.*";
+            //ofd.ShowDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                guna2CirclePictureBox1.Image = new Bitmap(ofd.FileName);
+            }
         }
     }
 }

@@ -70,7 +70,7 @@ namespace TeamTrac
         private void button1_Click(object sender, EventArgs e)
         {
             UserName = textBox1.Text;
-             Password = textBox2.Text;
+            Password = textBox2.Text;
 
             //Login as company
 
@@ -166,6 +166,13 @@ namespace TeamTrac
             this.Hide();
             ForgotPassword forgotPassword = new ForgotPassword();
             forgotPassword.Show();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegisterCompany registerCompany = new RegisterCompany();
+            registerCompany.Show();
         }
     }
 }

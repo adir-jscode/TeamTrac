@@ -45,6 +45,8 @@
             errorProvider1 = new ErrorProvider(components);
             errorProvider2 = new ErrorProvider(components);
             guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            label7 = new Label();
+            label8 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -54,6 +56,8 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(label7);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(checkBox1);
             panel1.Controls.Add(button1);
@@ -75,7 +79,7 @@
             label6.Cursor = Cursors.Hand;
             label6.Font = new Font("Cambria", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(193, 209);
+            label6.Location = new Point(190, 225);
             label6.Name = "label6";
             label6.Size = new Size(106, 14);
             label6.TabIndex = 7;
@@ -87,7 +91,7 @@
             checkBox1.AutoSize = true;
             checkBox1.Font = new Font("Cambria", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox1.ForeColor = SystemColors.ActiveCaption;
-            checkBox1.Location = new Point(186, 243);
+            checkBox1.Location = new Point(183, 194);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(113, 19);
             checkBox1.TabIndex = 6;
@@ -100,9 +104,9 @@
             button1.BackColor = Color.FromArgb(35, 112, 248);
             button1.FlatStyle = FlatStyle.Popup;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(125, 299);
+            button1.Location = new Point(139, 257);
             button1.Name = "button1";
-            button1.Size = new Size(109, 49);
+            button1.Size = new Size(86, 38);
             button1.TabIndex = 5;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
@@ -110,7 +114,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(112, 174);
+            textBox2.Location = new Point(109, 144);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(187, 32);
             textBox2.TabIndex = 4;
@@ -119,7 +123,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(112, 118);
+            textBox1.Location = new Point(109, 89);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(187, 32);
             textBox1.TabIndex = 3;
@@ -129,7 +133,7 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.White;
-            label3.Location = new Point(6, 174);
+            label3.Location = new Point(3, 144);
             label3.Name = "label3";
             label3.Size = new Size(100, 25);
             label3.TabIndex = 2;
@@ -139,7 +143,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(3, 121);
+            label2.Location = new Point(0, 89);
             label2.Name = "label2";
             label2.Size = new Size(103, 25);
             label2.TabIndex = 1;
@@ -214,6 +218,31 @@
             guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             guna2MessageDialog1.Text = null;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Cursor = Cursors.Hand;
+            label7.Font = new Font("Cambria", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(125, 318);
+            label7.Name = "label7";
+            label7.Size = new Size(119, 14);
+            label7.TabIndex = 8;
+            label7.Text = "Don't Have Account?";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Cursor = Cursors.Hand;
+            label8.Font = new Font("Cambria", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = Color.FromArgb(255, 192, 192);
+            label8.Location = new Point(139, 343);
+            label8.Name = "label8";
+            label8.Size = new Size(81, 14);
+            label8.TabIndex = 9;
+            label8.Text = "Register Now";
+            label8.Click += label8_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -256,5 +285,7 @@
         private ErrorProvider errorProvider2;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
         private Label label6;
+        private Label label7;
+        private Label label8;
     }
 }

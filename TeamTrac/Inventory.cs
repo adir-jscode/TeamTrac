@@ -16,7 +16,7 @@ namespace TeamTrac
         {
             InitializeComponent();
             BindGridView();
-            
+
 
         }
 
@@ -127,7 +127,7 @@ namespace TeamTrac
             //convert product quantity to int
             int ProductQuantity = Convert.ToInt32(textBox3.Text);
             string Status = comboBox1.SelectedIndex.ToString();
-            if(comboBox1.SelectedIndex == 0)
+            if (comboBox1.SelectedIndex == 0)
             {
                 Status = "1";
             }

@@ -16,6 +16,15 @@ namespace TeamTrac
         {
             InitializeComponent();
             label3.Text = Form1.UserName;
+
+            int totalProducts = Global.Get.CountTotalProducts();
+            label7.Text = totalProducts.ToString();
+
+            int Employees = Global.Get.CountTotalEmployees();
+            label6.Text = Employees.ToString();
+
+            int Delegate = Global.Get.CountTotalDelegates();
+            label8.Text = Delegate.ToString();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -223,6 +232,11 @@ namespace TeamTrac
         }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
         }

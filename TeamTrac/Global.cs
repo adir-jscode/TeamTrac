@@ -154,7 +154,7 @@ namespace TeamTrac
 
 
                         cmd.ExecuteNonQuery();
-                        // ID = cmd.ExecuteScalar().ToString();
+                        
 
                         connec.Close();
                     }
@@ -205,7 +205,7 @@ namespace TeamTrac
             }
 
 
-            public static void AssignProduct(string ProductID, string DelegateID)
+            public static void AssignProduct(string ProductID, string DelegateID,int Quantity)
             {
                 using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
                 {
@@ -223,7 +223,8 @@ namespace TeamTrac
 
                         cmd.Parameters.AddWithValue("@AssignmentID", "ASSIGN" + DateTime.Now.ToString("ddMMyyyyhhmmssfff"));
                         cmd.Parameters.AddWithValue("@DelegateID", DelegateID);
-                        cmd.Parameters.AddWithValue("@ProductID", ProductID);
+                        cmd.Parameters.AddWithValue("@ProductID", ProductID); 
+                        cmd.Parameters.AddWithValue("@Quantity", Quantity);
                         cmd.Parameters.AddWithValue("@AssignmentDate", DateTime.Now);
                         cmd.Parameters.AddWithValue("@Status", "1");
 
@@ -510,6 +511,93 @@ namespace TeamTrac
                 }
             }
 
+            //count total products
+            public static int CountTotalProducts()
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT COUNT(*) FROM Product";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    int count = (int)cmd.ExecuteScalar();
+
+                    return count;
+                }
+            }
+
+            //count total delegates
+            public static int CountTotalDelegates()
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT COUNT(*) FROM DelegateDetails";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    int count = (int)cmd.ExecuteScalar();
+
+                    return count;
+                }
+            }
+
+            //count total Employees
+            public static int CountTotalEmployees()
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT COUNT(*) FROM EmployeeDetails";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    int count = (int)cmd.ExecuteScalar();
+
+                    return count;
+                }
+            }
+
+            //count total shops
+            public static int CountTotalShops()
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT COUNT(*) FROM ShopDetails";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    int count = (int)cmd.ExecuteScalar();
+
+                    return count;
+                }
+            }
+
+            //count total assigned products by delegate id
+            public static int CountTotalAssignedProducts(string DelegateID)
+            {
+                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+                {
+                    string strQuery = "SELECT COUNT(*) FROM DelegateProductAssignment WHERE DelegateID = @DelegateID";
+
+                    SqlCommand cmd = new SqlCommand(strQuery, conn);
+                    conn.Open();
+
+                    cmd.Parameters.AddWithValue("@DelegateID", DelegateID);
+
+                    int count = (int)cmd.ExecuteScalar();
+
+                    return count;
+                }
+            }
+
+
+            
+
+
+
 
             public static DataTable DelegateDetails()
             {
@@ -571,7 +659,7 @@ namespace TeamTrac
             {
                 using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
                 {
-                    string strQuery = "SELECT  * FROM [TeamTrac].[dbo].[StockRequest] where [DelegateID]='" + ID + "'";
+                    string strQuery = "SELECT  StockReqID,Quantity,DateTime,Status FROM [TeamTrac].[dbo].[StockRequest] where [DelegateID]='" + ID + "'";
 
                     SqlCommand cmd = new SqlCommand(strQuery, conn);
                     conn.Open();
@@ -590,7 +678,7 @@ namespace TeamTrac
             {
                 using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
                 {
-                    string strQuery = "SELECT *  FROM DelegateProductView";
+                    string strQuery = "SELECT *  FROM DelegateProductAssignment";
 
                     SqlCommand cmd = new SqlCommand(strQuery, conn);
                     conn.Open();
@@ -766,6 +854,55 @@ namespace TeamTrac
 
             }
             //Function END
+
+            //Register Company
+            public static void RegisterCompnay(string CompanyName, string CompanyAddress, string CompanyBin, string TradeLicenceNo,string ContactNo,string OwnerFullName,string CompanyEmail,string OwnerEmail,string NID,string PhoneNo,string Username,string Password, byte[] Image)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+
+                    using (SqlCommand cmd = new SqlCommand("InsertNewCompanyDetails", connec))
+                    {
+
+                        connec.Open();
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+
+                        cmd.Parameters.AddWithValue("@ID", "CM" + DateTime.Now.ToString("ddMMyyyyhhmmssfff"));
+                        cmd.Parameters.AddWithValue("@CompanyName", CompanyName);
+                        cmd.Parameters.AddWithValue("@CompanyAddress", CompanyAddress);
+                        cmd.Parameters.AddWithValue("@CompnayBin", CompanyBin);
+                        cmd.Parameters.AddWithValue("@TradeLicenceNo", TradeLicenceNo);
+                        cmd.Parameters.AddWithValue("@ContactNo", ContactNo);
+
+                        cmd.Parameters.AddWithValue("@OwnerFullName", OwnerFullName);
+                        cmd.Parameters.AddWithValue("@CompanyEmail", CompanyEmail);
+                        cmd.Parameters.AddWithValue("@OwnerEmail", OwnerEmail);
+                        cmd.Parameters.AddWithValue("@NID", NID);
+                        cmd.Parameters.AddWithValue("@PhoneNo", PhoneNo);
+                        cmd.Parameters.AddWithValue("@Username", Username);
+
+
+                        cmd.Parameters.AddWithValue("@Password", Password);
+
+                        cmd.Parameters.AddWithValue("@Status", "1");
+
+                        cmd.Parameters.AddWithValue("@Image", Image);
+
+
+
+
+                        cmd.ExecuteNonQuery();
+                        // ID = cmd.ExecuteScalar().ToString();
+
+                        connec.Close();
+                    }
+                }
+            }
+
 
 
             //User Exists
@@ -965,7 +1102,7 @@ namespace TeamTrac
             {
                 using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
                 {
-                    using (SqlCommand cmd = new SqlCommand("UPDATE [TeamTrac].[dbo].[CompanyDetails] SET ID = @ID,CompanyName=@CompanyName,CompanyAddress=@CompanyAddress,CompnayBin=@CompnayBin,TradeLicenceNo=@TradeLicenceNo,ContactNo=@ContactNo,CompanyEmail=@CompanyEmail,Username=@Username,OwnerFullName=@OwnerFullName,OwnerEmail=@OwnerEmail,NID=@NID,PhoneNo=@PhoneNo,Logo=@Logo WHERE ID = @ID", connec))
+                    using (SqlCommand cmd = new SqlCommand("UPDATE [TeamTrac].[dbo].[CompanyDetails] SET ID = @ID,CompanyName=@CompanyName,CompanyAddress=@CompanyAddress,CompnayBin=@CompnayBin,TradeLicenceNo=@TradeLicenceNo,ContactNo=@ContactNo,CompanyEmail=@CompanyEmail,Username=@Username,OwnerFullName=@OwnerFullName,OwnerEmail=@OwnerEmail,NID=@NID,PhoneNo=@PhoneNo,Image=@Logo WHERE ID = @ID", connec))
                     {
                         connec.Open();
 
@@ -981,7 +1118,7 @@ namespace TeamTrac
                         cmd.Parameters.AddWithValue("@OwnerEmail", OwnerEmail);
                         cmd.Parameters.AddWithValue("@NID", NID);
                         cmd.Parameters.AddWithValue("@PhoneNo", PhoneNo);
-                        cmd.Parameters.AddWithValue("@Image", Logo);
+                        cmd.Parameters.AddWithValue("@Logo", Logo);
 
 
 
@@ -1005,10 +1142,10 @@ namespace TeamTrac
                         cmd.Parameters.AddWithValue("@Email", Email);
                         cmd.Parameters.AddWithValue("@NID", NID);
                         cmd.Parameters.AddWithValue("@DelegateArea", DelegateArea);
-                       
+                        cmd.Parameters.AddWithValue("@DelegateDistrict", DelegateDistrict);
                         cmd.Parameters.AddWithValue("@Username", Username);
                         
-                        cmd.Parameters.AddWithValue("@DelegateDistrict", DelegateDistrict);
+                        
                         cmd.Parameters.AddWithValue("@Image", Image);
                         
 
@@ -1199,6 +1336,29 @@ namespace TeamTrac
                     }
                 }
             }//Func End
+
+            //Update Quantity in Product Table
+            public static void UpdateQuantity(string ProductID, int Quantity)
+            {
+                using (SqlConnection connec = new SqlConnection(Global.Connection_String()))
+                {
+                    connec.Open();
+
+                    string query = "UPDATE [TeamTrac].[dbo].[Product] SET  ProductID = @ProductID, [Quantity] = @Quantity WHERE [ProductID] = @ProductID";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connec))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductID", ProductID);
+                        cmd.Parameters.AddWithValue("@Quantity", Quantity);
+                       
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    connec.Close();
+                }
+            }
+
 
 
 

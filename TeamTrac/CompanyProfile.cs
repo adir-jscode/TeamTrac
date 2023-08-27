@@ -105,6 +105,7 @@ namespace TeamTrac
            
             Global.Get.UpdateCompnayDetails(ID, CompanyName, CompanyAddress, CompnayBin, TradeLicenceNo, ContactNo, CompanyEmail, Username, OwnerFullName, OwnerEmail, NID, PhoneNo, Logo);
             MessageBox.Show("Company Details Updated Successfully");
+            CompnayInfo();
 
 
 

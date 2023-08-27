@@ -31,18 +31,9 @@ namespace TeamTrac
                 comboBox2.Items.Add(row["DelegateName"].ToString());
             }
 
-            //if (comboBox1.SelectedIndex != -1)
-            //{
-            //    string selectedProductName = comboBox1.SelectedItem.ToString();
-            //    int productQuantity = Global.Get.GetProductQuantity(selectedProductName);
-            //    textBox1.Text = productQuantity.ToString();
-            //    // Now you can use the productQuantity as needed
-            //    MessageBox.Show($"Quantity of {selectedProductName}: {productQuantity}");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Please select a product from the list.");
-            //}
+
+
+
         }
 
         void BindGridView()
@@ -51,14 +42,6 @@ namespace TeamTrac
             DataTable AssignTable = Global.Get.DelegateProductView();
             guna2DataGridView1.DataSource = AssignTable;
 
-            //DataGridViewImageColumn dgv = new DataGridViewImageColumn();
-            //dgv = (DataGridViewImageColumn)guna2DataGridView1.Columns[7];
-            //dgv.ImageLayout = DataGridViewImageCellLayout.Stretch;
-
-            //guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            //guna2DataGridView1.RowTemplate.Height = 80;
-
             // Manipulate the "status" column
             foreach (DataRow row in AssignTable.Rows)
             {
@@ -66,15 +49,15 @@ namespace TeamTrac
                 if (row["status"].ToString() == "1")
                 {
                     // You can update the value of the "status" column
-                    row["status"] = "Active";
+                    row["status"] = "Assigned";
                 }
                 else
                 {
-                    row["status"] = "Inactive";
+                    row["status"] = "Delivered";
                 }
             }
 
-           
+
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
@@ -86,17 +69,58 @@ namespace TeamTrac
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            //after click assign button
-            //get product name and delegate name from combobox
+            string ProductID = guna2DataGridView1.SelectedRows[0].Cells[2].Value.ToString();
             string selectedProductName = comboBox1.SelectedItem.ToString();
-            string selectedDelegateName = comboBox2.SelectedItem.ToString();
-            //get product id and delegate id from database
-            string productID = Global.Get.GetProductID(selectedProductName);
-            string delegateID = Global.Get.GetDelegateID(selectedDelegateName);
-            Global.Get.AssignProduct(productID, delegateID);
-            MessageBox.Show("Product Assigned Successfully");
-            BindGridView();
 
+            int AvailableQuantity = Global.Get.GetProductQuantity(selectedProductName);
+            int AssignQuantity = Convert.ToInt32(textBox1.Text);
+
+            if (AssignQuantity > AvailableQuantity)
+            {
+                MessageBox.Show("Quantity is greater than Available Quantity");
+            }
+            //update Quantity in Product Table
+
+
+
+
+            else
+            {
+                int NewQuantity = AvailableQuantity - AssignQuantity;
+
+                Global.Get.UpdateQuantity(ProductID, NewQuantity);
+
+
+                string selectedDelegateName = comboBox2.SelectedItem.ToString();
+
+                string productID = Global.Get.GetProductID(selectedProductName);
+                string delegateID = Global.Get.GetDelegateID(selectedDelegateName);
+                Global.Get.AssignProduct(productID, delegateID, AssignQuantity);
+                MessageBox.Show("Product Assigned Successfully");
+                BindGridView();
+            }
+
+
+
+
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedProductName = comboBox1.SelectedItem.ToString();
+            int Quantity = Global.Get.GetProductQuantity(selectedProductName);
+            //after assign quantity make it visible
+
+            if (Quantity > 0)
+            {
+                label6.Visible = true;
+                label6.Text = Quantity.ToString();
+            }
+            else
+            {
+                label6.Visible = false;
+            }
         }
     }
 }

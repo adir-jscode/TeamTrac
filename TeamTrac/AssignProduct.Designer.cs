@@ -34,6 +34,8 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            label6 = new Label();
+            label5 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             textBox1 = new TextBox();
             label4 = new Label();
@@ -49,6 +51,8 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label5);
             panel1.Controls.Add(guna2Button1);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(label4);
@@ -62,6 +66,24 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(881, 247);
             panel1.TabIndex = 0;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(666, 197);
+            label6.Name = "label6";
+            label6.Size = new Size(21, 22);
+            label6.TabIndex = 9;
+            label6.Text = "0";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(625, 162);
+            label5.Name = "label5";
+            label5.Size = new Size(157, 22);
+            label5.TabIndex = 8;
+            label5.Text = "Available Quantity";
             // 
             // guna2Button1
             // 
@@ -123,6 +145,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(169, 30);
             comboBox1.TabIndex = 2;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -157,7 +180,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            guna2DataGridView1.ColumnHeadersHeight = 4;
+            guna2DataGridView1.ColumnHeadersHeight = 25;
             guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
@@ -181,12 +204,12 @@
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
             guna2DataGridView1.ThemeStyle.BackColor = Color.White;
             guna2DataGridView1.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(22, 28, 36);
             guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
             guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
+            guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 25;
             guna2DataGridView1.ThemeStyle.ReadOnly = false;
             guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
             guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -227,5 +250,7 @@
         private ComboBox comboBox1;
         private Label label2;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Label label6;
+        private Label label5;
     }
 }
