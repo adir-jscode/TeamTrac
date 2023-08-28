@@ -653,7 +653,7 @@ namespace TeamTrac
             {
                 using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
                 {
-                    string strQuery = "SELECT COUNT(*) FROM SalesReportView WHERE DelegateID = @DelegateID";
+                    string strQuery = "SELECT COUNT(*) FROM SalesDetails WHERE DelegateID = @DelegateID";
 
                     SqlCommand cmd = new SqlCommand(strQuery, conn);
                     conn.Open();
@@ -708,23 +708,23 @@ namespace TeamTrac
             }
 
 
-            public static DataTable ProductCategory()
-            {
-                using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
-                {
-                    string strQuery = "SELECT *  FROM ProductCategory";
+            //public static DataTable ProductCategory()
+            //{
+            //    using (SqlConnection conn = new SqlConnection(Global.Connection_String()))
+            //    {
+            //        string strQuery = "SELECT *  FROM ProductCategory";
 
-                    SqlCommand cmd = new SqlCommand(strQuery, conn);
-                    conn.Open();
+            //        SqlCommand cmd = new SqlCommand(strQuery, conn);
+            //        conn.Open();
 
-                    DataTable dt = new DataTable();
+            //        DataTable dt = new DataTable();
 
-                    SqlDataReader sdr = cmd.ExecuteReader();
-                    dt.Load(sdr);
+            //        SqlDataReader sdr = cmd.ExecuteReader();
+            //        dt.Load(sdr);
 
-                    return dt;
-                }
-            }
+            //        return dt;
+            //    }
+            //}
 
             public static DataTable SupportTickets()
             {

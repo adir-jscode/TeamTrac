@@ -27,13 +27,13 @@ namespace TeamTrac
 
         private void LoadCategory()
         {
-            DataTable CategoryTable = Global.Get.ProductCategory();
+           
 
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-            DataTable CategoryTable = Global.Get.ProductCategory();
+            
 
         }
 
@@ -121,7 +121,7 @@ namespace TeamTrac
 
         private void AddProduct_Load(object sender, EventArgs e)
         {
-            DataTable CategoryTable = Global.Get.ProductCategory();
+            
 
 
         }

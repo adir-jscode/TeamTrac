@@ -30,8 +30,7 @@ namespace TeamTrac
         private void button7_Click(object sender, EventArgs e)
         {
 
-            AddCategory category = new AddCategory();
-            category.Show();
+            
         }
 
         private void button8_Click(object sender, EventArgs e)

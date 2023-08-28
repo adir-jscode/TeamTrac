@@ -228,7 +228,7 @@
             guna2Button10.FillColor = Color.PaleVioletRed;
             guna2Button10.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             guna2Button10.ForeColor = Color.White;
-            guna2Button10.Location = new Point(68, 601);
+            guna2Button10.Location = new Point(68, 393);
             guna2Button10.Name = "guna2Button10";
             guna2Button10.ShadowDecoration.CustomizableEdges = customizableEdges16;
             guna2Button10.Size = new Size(197, 46);
@@ -259,11 +259,11 @@
             panel2.Controls.Add(guna2Button14);
             panel2.Controls.Add(guna2Button13);
             panel2.Controls.Add(guna2Button4);
+            panel2.Controls.Add(guna2Button10);
             panel2.Controls.Add(guna2Button11);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(guna2Button7);
             panel2.Controls.Add(guna2Button5);
-            panel2.Controls.Add(guna2Button10);
             panel2.Controls.Add(guna2Button12);
             panel2.Controls.Add(guna2Button6);
             panel2.Controls.Add(guna2Button1);
@@ -304,7 +304,7 @@
             guna2Button13.FillColor = Color.PaleVioletRed;
             guna2Button13.Font = new Font("Cambria", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             guna2Button13.ForeColor = Color.White;
-            guna2Button13.Location = new Point(68, 393);
+            guna2Button13.Location = new Point(68, 601);
             guna2Button13.Name = "guna2Button13";
             guna2Button13.ShadowDecoration.CustomizableEdges = customizableEdges22;
             guna2Button13.Size = new Size(197, 46);
